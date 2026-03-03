@@ -5,6 +5,8 @@
 Team Members: Braxton LaNois, Kyle Burgess, James Kelly, Corinne Kadri, Srikar Kunapali
 
 
+Milestone 2 Progress: 
+
 Srikar Kunapuli: Setting up the Git repo and planning the stack for the project; has discused with TA's regarding
 project stack organization and learned database and backend stack devolpment following the Mini-Amazon Project 
 
