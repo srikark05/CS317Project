@@ -27,7 +27,7 @@ CREATE TABLE Coach (
 
 CREATE TABLE Staff (
     staff_id INT ,
-    name VARCHAR(100)
+    name VARCHAR(100),
 
     FOREIGN KEY team_name VARCHAR(100)
         REFERENCES Team(name),
@@ -45,20 +45,22 @@ CREATE TABLE Games (
         REFERENCES Team(name),
     FOREIGN KEY away_team VARCHAR(100)        
         REFERENCES Team(name)
-PRIMARY KEY (week, season, play_date, home_team, away_team)
+PRIMARY KEY (week, season, home_team)
 );
 
 CREATE TABLE Trade (
-    trade_id INT PRIMARY KEY,
     team_from VARCHAR(100),
     team_to VARCHAR(100),
     trade_date DATE,
-    team_from_player VARCHAR(100),
-    team_to_player VARCHAR(100),
+    trade_time TIMESTAMP,
+    team_from_players VARCHAR(1000),
+    team_to_player VARCHAR(1000),
     team_to_cash DECIMAL(12,2),
 
     FOREIGN KEY (team_from) REFERENCES Team(name),
     FOREIGN KEY (team_to) REFERENCES Team(name)
+
+    PRIMARY KEY (team_from, team_to, trade_date, trade_time)
 );
 
 CREATE TABLE PlaysFor (
@@ -92,31 +94,25 @@ CREATE TABLE CoachesFor (
         REFERENCES Team(name)
 );
 
-CREATE TABLE Staffs (
-    staff_id INT,
-    team_name VARCHAR(100),
-
-    PRIMARY KEY (staff_id, team_name),
-
-    FOREIGN KEY (staff_id)
-        REFERENCES Staff(staff_id),
-
-    FOREIGN KEY (team_name)
-        REFERENCES Team(name)
-);
 
 CREATE TABLE Played_In (
     player_name VARCHAR(100),
     player_dob DATE,
-    game_id INT,
+    game DATE,
+    Week INT,
+    home_team VARCHAR(100)
 
-    PRIMARY KEY (player_name, player_dob, game_id),
+    PRIMARY KEY (player_name, player_dob, game),
 
     FOREIGN KEY (player_name, player_dob)
         REFERENCES Player(name, dob),
 
-    FOREIGN KEY (game_id)
-        REFERENCES Games(game_id)
+    FOREIGN KEY (game)
+        REFERENCES Game(play_date)
+    FOREIGN KEY (week)
+        REFERENCES Game(week)
+    FOREIGN KEY (home_team)
+        REFERENCES Game(home_team)
 );
 
 
