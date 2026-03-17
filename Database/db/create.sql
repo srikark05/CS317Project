@@ -114,7 +114,7 @@ CREATE TABLE Played_In (
     FOREIGN KEY (home_team)
         REFERENCES Game(home_team)
 );
-
+'I need to finish including the stats because idk how to set up the ISAs'
 
 CREATE TABLE Passing_Stat (
     stat_id INT PRIMARY KEY,
