@@ -1,10 +1,11 @@
 
 CREATE TABLE Team (
-    name VARCHAR(100) PRIMARY KEY,
+    name VARCHAR(100),
+    Team_id INT PRIMARY KEY,
     division VARCHAR(100),
-    location VARCHAR(100),
+    adress VARCHAR(100),
     titles INT,
-    owner VARCHAR(100),
+    president VARCHAR(100),
     tv_tag VARCHAR(3)
 );
 CREATE TABLE Positions (
@@ -46,11 +47,11 @@ CREATE TABLE Coach (
 
 CREATE TABLE Staff (
     staff_id INT ,
-    name VARCHAR(100),
+    team_id INT,
 
-    FOREIGN KEY team_name VARCHAR(100)
-        REFERENCES Team(name),
-    PRIMARY KEY (staff_id, team_name)
+    FOREIGN KEY team_id INT
+        REFERENCES Team(id),
+    PRIMARY KEY (staff_id, team_id)
 );
 
 CREATE TABLE Games (
@@ -58,44 +59,44 @@ CREATE TABLE Games (
     season INT,
     day play_date DATE,
     date_time TIMESTAMP,
-    location VARCHAR(100),
+    adress VARCHAR(100),
     score VARCHAR(20)
-    FOREIGN KEY home_team VARCHAR(100)
-        REFERENCES Team(name),
-    FOREIGN KEY away_team VARCHAR(100)        
-        REFERENCES Team(name)
+    FOREIGN KEY home_team INT
+        REFERENCES Team(Team_id),
+    FOREIGN KEY away_team INT        
+        REFERENCES Team(Team_id)
 PRIMARY KEY (week, season, home_team)
 );
 
 CREATE TABLE Trade (
-    team_from VARCHAR(100),
-    team_to VARCHAR(100),
+    team_from INT,
+    team_to INT,
     trade_date DATE,
     trade_time TIMESTAMP,
     team_from_players VARCHAR(1000),
     team_to_player VARCHAR(1000),
     team_to_cash DECIMAL(12,2),
 
-    FOREIGN KEY (team_from) REFERENCES Team(name),
-    FOREIGN KEY (team_to) REFERENCES Team(name)
+    FOREIGN KEY (team_from) REFERENCES Team(Team_id),
+    FOREIGN KEY (team_to) REFERENCES Team(Team_id)
 
     PRIMARY KEY (team_from, team_to, trade_date, trade_time)
 );
 
 CREATE TABLE PlaysFor (
     player_name VARCHAR(100),
-    player_dob DATE,
-    team_name VARCHAR(100),
+    player_number INT,
+    team_name INT,
     season INT,
     
 
-    PRIMARY KEY (player_name, player_dob, team_name, season),
+    PRIMARY KEY (player_name, player_number, team_id, season),
 
-    FOREIGN KEY (player_name, player_dob)
-        REFERENCES Player(name, dob),
+    FOREIGN KEY (player_name, player_number)
+        REFERENCES Player(name, number),
 
-    FOREIGN KEY (team_name)
-        REFERENCES Team(name)
+    FOREIGN KEY (team_name) INT
+        REFERENCES Team(Team_id)
 
      FOREIGN KEY  (position) REFERENCES Positions(position)
 );
@@ -104,7 +105,7 @@ CREATE TABLE PlaysFor (
 CREATE TABLE CoachesFor (
     coach_name VARCHAR(100),
     coach_dob DATE,
-    team_name VARCHAR(100),
+    team_name INT,
     season INT,
 
     PRIMARY KEY (coach_name, coach_dob, team_name, season),
@@ -113,12 +114,12 @@ CREATE TABLE CoachesFor (
         REFERENCES Coach(name, dob),
 
     FOREIGN KEY (team_name)
-        REFERENCES Team(name)
+        REFERENCES Team(Team_id)
 );
 
 Create Table season_stats(
     player_name VARCHAR(100),
-    player_dob DATE,
+    player_number INT,
     season INT,
     season_rushing_yards INT,
     season_rushing_attempts INT,
@@ -148,14 +149,14 @@ Create Table season_stats(
     season_extra_point_attempts INT,
     season_extra_points_made INT,
 
-     PRIMARY KEY (player_name, player_dob,season),
+     PRIMARY KEY (player_name, player_number,season),
 
-     FOREIGN KEY (player_name, player_dob)
-        REFERENCES Player(name, dob);
+     FOREIGN KEY (player_name, player_number)
+        REFERENCES Player(name, number);
 
 CREATE TABLE Played_In (
     player_name VARCHAR(100),
-    player_dob DATE,
+    player_number INT,
     game DATE,
     Week INT,
     home_team VARCHAR(100)
@@ -186,10 +187,10 @@ CREATE TABLE Played_In (
     game_kicking_made INT,
     game_extra_point_attempts INT,
     game_extra_points_made INT,
-    PRIMARY KEY (player_name, player_dob, game),
+    PRIMARY KEY (player_name, player_number, game),
 
-    FOREIGN KEY (player_name, player_dob)
-        REFERENCES Player(name, dob),
+    FOREIGN KEY (player_name, player_number)
+        REFERENCES Player(name, number),
 
     FOREIGN KEY (game)
         REFERENCES Game(play_date)
