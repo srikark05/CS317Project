@@ -6,6 +6,9 @@ folder = Path("../Data")
 all_dfs = []
 
 for file in folder.rglob("*.csv"):
+    if file.name == "wnfc_player_stats_master.csv":
+        continue
+
     df = pd.read_csv(file)
 
     df.columns = (
@@ -16,13 +19,25 @@ for file in folder.rglob("*.csv"):
     )
 
     filename = file.stem
-    parts = filename.split(" - ")
+    season = None
+    team = None
 
-    season = parts[0].split("-")[1]
-    team = parts[1]
+    if " - " in filename:
+        left, team = filename.split(" - ", 1)
+        left_parts = left.split("-")
+        if len(left_parts) >= 2:
+            season = left_parts[-1]
+    else:
+        parts = filename.split("-")
+        if len(parts) >= 3:
+            season = parts[1]
+            team = "-".join(parts[2:])
+
+    if season is None or team is None:
+        raise ValueError(f"Unexpected filename format: {filename}")
 
     df["season"] = int(season)
-    df["team"] = team
+    df["team"] = team.strip()
 
     all_dfs.append(df)
 

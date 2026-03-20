@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Teams</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roster Entries</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in teams %}
+            <tr>
+                <td>{{ team.name }}</td>
+                <td>{{ team.roster_entries }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="2">No team data available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Top Players (Rushing Yards)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>#</th>
+                <th>Season</th>
+                <th>Team</th>
+                <th>Rushing</th>
+                <th>Passing</th>
+                <th>Receiving</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in players %}
+            <tr>
+                <td>{{ p.player_name }}</td>
+                <td>{{ p.player_number }}</td>
+                <td>{{ p.season }}</td>
+                <td>{{ p.team_name }}</td>
+                <td>{{ p.season_rushing_yards }}</td>
+                <td>{{ p.season_passing_yards }}</td>
+                <td>{{ p.season_receiving_yards }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7">No player stats available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

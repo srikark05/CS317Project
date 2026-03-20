@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Database Overview</h2>
+    {% if db_ok %}
+        <p>Connected successfully.</p>
+    {% else %}
+        <p class="warn">Unable to connect to database. Check DB environment variables.</p>
+    {% endif %}
+    <div class="cards">
+        <div class="card">
+            <h3>Teams</h3>
+            <p>{{ stats.teams }}</p>
+        </div>
+        <div class="card">
+            <h3>Players</h3>
+            <p>{{ stats.players }}</p>
+        </div>
+        <div class="card">
+            <h3>Season Stat Rows</h3>
+            <p>{{ stats.season_rows }}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
