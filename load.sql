@@ -1,7 +1,4 @@
--- Run parsing.py first so this file exists:
---   Database/Data/wnfc_player_stats_master.csv
---
--- This load script assumes MySQL 8+ and the schema from create.sql is already created.
+
 
 START TRANSACTION;
 
@@ -95,13 +92,12 @@ IGNORE 1 LINES
     season, team
 );
 
--- Reference positions
+
 INSERT IGNORE INTO Positions (position)
 SELECT DISTINCT LEFT(TRIM(position), 2)
 FROM staging_wnfc_player_stats
 WHERE position IS NOT NULL AND TRIM(position) <> '';
 
--- Base player identities and attributes
 INSERT IGNORE INTO Player (name, dob, position, number, weight, height, war)
 SELECT
     s.player_name,
@@ -119,13 +115,13 @@ SELECT
 FROM staging_wnfc_player_stats s
 WHERE s.player_name IS NOT NULL;
 
--- Create Team records from parsed data (name only; other fields can be updated later)
+
 INSERT IGNORE INTO Team (name)
 SELECT DISTINCT TRIM(s.team)
 FROM staging_wnfc_player_stats s
 WHERE s.team IS NOT NULL AND TRIM(s.team) <> '';
 
--- Team-season affiliation
+
 INSERT IGNORE INTO PlaysFor (player_name, player_number, team_id, season)
 SELECT DISTINCT
     s.player_name,
@@ -136,7 +132,6 @@ FROM staging_wnfc_player_stats s
 JOIN Team t
     ON t.name = s.team;
 
--- Season totals from master CSV
 INSERT IGNORE INTO season_stats (
     player_name, player_number, season,
     season_rushing_yards, season_rushing_attempts, season_rushing_touchdowns,
