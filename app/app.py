@@ -25,21 +25,21 @@ def create_app() -> Flask:
         finally:
             conn.close()
 
-    def run_one(query: str, default=None):
+    def run_one(query: str, params=None, default=None):
         try:
             with get_db_connection() as conn:
                 with conn.cursor() as cur:
-                    cur.execute(query)
+                    cur.execute(query, params or ())
                     return cur.fetchone()
         except Exception as exc:
             app.logger.exception("Query failed in run_one: %s", exc)
             return default
 
-    def run_all(query: str, default=None):
+    def run_all(query: str, params=None, default=None):
         try:
             with get_db_connection() as conn:
                 with conn.cursor() as cur:
-                    cur.execute(query)
+                    cur.execute(query, params or ())
                     return cur.fetchall()
         except Exception as exc:
             app.logger.exception("Query failed in run_all: %s", exc)
@@ -85,16 +85,16 @@ def create_app() -> Flask:
         sort = request.args.get("sort", "rushing")
         order = request.args.get("order", "desc")
 
-        sort_options = {
-        "rushing": "s.season_rushing_yards",
-        "passing": "s.season_passing_yards",
-        "receiving": "s.season_receiving_yards",
-        "name": "s.player_name"
+        # Validate sort parameter
+        valid_sorts = {
+            "rushing": "s.season_rushing_yards",
+            "passing": "s.season_passing_yards", 
+            "receiving": "s.season_receiving_yards",
+            "name": "s.player_name"
         }
+        order_by = valid_sorts.get(sort, "s.season_rushing_yards")
         
-
-        order_by = sort_options.get(sort, "s.season_rushing_yards")
-        
+        # Validate order parameter
         if order.lower() not in ["asc", "desc"]:
             order = "desc"
 
@@ -116,7 +116,7 @@ def create_app() -> Flask:
             ON t.team_id = pf.team_id
         ORDER BY {order_by} {order.upper()}
         LIMIT 25
-    """
+        """
         rows = run_all(query)
         return render_template("players.html", players=rows,current_sort=sort,
         current_order=order)
@@ -124,6 +124,14 @@ def create_app() -> Flask:
     @app.route("/search")
     def search():
         query = request.args.get("q", "").strip()
+        
+        # Basic input validation - limit length and prevent obviously malicious input
+        if len(query) > 100:
+            query = query[:100]
+        
+        # Remove potentially dangerous characters (though parameterized queries protect us)
+        query = query.replace('%', '').replace('_', '').replace(';', '').replace('--', '')
+        
         if not query:
             return render_template("search.html", query=query, players=[], teams=[], coaches=[])
 
@@ -135,7 +143,7 @@ def create_app() -> Flask:
             WHERE name ILIKE %s
             ORDER BY name
             """,
-            (f"%{query}%",)
+            params=(f"%{query}%",)
         )
 
         # Search teams
@@ -146,7 +154,7 @@ def create_app() -> Flask:
             WHERE name ILIKE %s
             ORDER BY name
             """,
-            (f"%{query}%",)
+            params=(f"%{query}%",)
         )
 
         # Search coaches
@@ -157,13 +165,16 @@ def create_app() -> Flask:
             WHERE name ILIKE %s
             ORDER BY name
             """,
-            (f"%{query}%",)
+            params=(f"%{query}%",)
         )
 
         return render_template("search.html", query=query, players=players, teams=teams, coaches=coaches)
 
     @app.route("/player/<name>/<int:number>")
     def player_stats(name, number):
+        # Validate URL parameters
+        if not name or len(name) > 100 or not isinstance(number, int) or number < 0 or number > 999:
+            return render_template("error.html", message="Invalid player parameters"), 400
         # Get player info
         player = run_one(
             """
@@ -171,7 +182,7 @@ def create_app() -> Flask:
             FROM player
             WHERE name = %s AND number = %s
             """,
-            (name, number)
+            params=(name, number)
         )
 
         if not player:
@@ -211,7 +222,7 @@ def create_app() -> Flask:
             FROM season_stats
             WHERE player_name = %s AND player_number = %s
             """,
-            (name, number)
+            params=(name, number)
         )
 
         # Get teams played for
@@ -223,13 +234,16 @@ def create_app() -> Flask:
             WHERE pf.player_name = %s AND pf.player_number = %s
             ORDER BY pf.season
             """,
-            (name, number)
+            params=(name, number)
         )
 
         return render_template("player_stats.html", player=player, career_stats=career_stats, teams=teams)
 
     @app.route("/team/<name>")
     def team_stats(name):
+        # Validate URL parameter
+        if not name or len(name) > 100:
+            return render_template("error.html", message="Invalid team name"), 400
         # Get team info
         team = run_one(
             """
@@ -237,7 +251,7 @@ def create_app() -> Flask:
             FROM team
             WHERE name = %s
             """,
-            (name,)
+            params=(name,)
         )
 
         if not team:
@@ -252,7 +266,7 @@ def create_app() -> Flask:
             WHERE pf.team_id = (SELECT team_id FROM team WHERE name = %s)
             ORDER BY p.name
             """,
-            (name,)
+            params=(name,)
         )
 
         # Get coaches
@@ -264,13 +278,16 @@ def create_app() -> Flask:
             WHERE cf.team_id = (SELECT team_id FROM team WHERE name = %s)
             ORDER BY cf.season DESC, c.name
             """,
-            (name,)
+            params=(name,)
         )
 
         return render_template("team_stats.html", team=team, roster=roster, coaches=coaches)
 
     @app.route("/coach/<name>/<dob>")
     def coach_stats(name, dob):
+        # Validate URL parameters
+        if not name or len(name) > 100 or not dob or len(dob) > 20:
+            return render_template("error.html", message="Invalid coach parameters"), 400
         # Get coach info
         coach = run_one(
             """
@@ -278,7 +295,7 @@ def create_app() -> Flask:
             FROM coach
             WHERE name = %s AND dob = %s
             """,
-            (name, dob)
+            params=(name, dob)
         )
 
         if not coach:
@@ -293,7 +310,7 @@ def create_app() -> Flask:
             WHERE cf.coach_name = %s AND cf.coach_dob = %s
             ORDER BY cf.season DESC
             """,
-            (name, dob)
+            params=(name, dob)
         )
 
         return render_template("coach_stats.html", coach=coach, teams=teams)
