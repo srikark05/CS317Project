@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Add New Player</h2>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" class="form">
+        <div class="form-group">
+            <label for="name">Player Name *</label>
+            <input type="text" id="name" name="name" required maxlength="100">
+        </div>
+        
+        <div class="form-group">
+            <label for="number">Player Number *</label>
+            <input type="number" id="number" name="number" required min="0" max="999">
+        </div>
+        
+        <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text" id="position" name="position" maxlength="2" placeholder="e.g., QB, WR, RB">
+        </div>
+        
+        <div class="form-group">
+            <label for="height">Height (inches)</label>
+            <input type="text" id="height" name="height" maxlength="20" placeholder="e.g., 6'2\"">
+        </div>
+        
+        <div class="form-group">
+            <label for="weight">Weight (lbs)</label>
+            <input type="number" id="weight" name="weight" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+        
+        <button type="submit">Add Player</button>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</section>
+{% endblock %}

@@ -14,8 +14,22 @@
             <a href="{{ url_for('teams') }}">Teams</a>
             <a href="{{ url_for('players') }}">Top Players</a>
             <a href="{{ url_for('search') }}">Search</a>
+            {% if session.get('admin') %}
+                <a href="{{ url_for('logout') }}" class="admin-btn">Logout (Admin)</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="login-btn">Admin Login</a>
+            {% endif %}
         </nav>
     </header>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <main>
         {% block content %}{% endblock %}
     </main>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Admin Dashboard</h2>
+    
+    <p>Welcome, Administrator! Add game data with coaches and player statistics to automatically update all records.</p>
+    
+    <div class="admin-menu">
+        <div class="admin-card">
+            <h3>Add Game</h3>
+            <p>Add a new game with two coaches (one per team) and complete roster stats for all players in the game. Stats will automatically update season and career statistics.</p>
+            <a href="{{ url_for('add_game') }}" class="btn">Add Game</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -59,3 +59,315 @@ th {
     color: #991b1b;
     font-weight: bold;
 }
+
+/* Alert styles */
+.alert {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background: #dbeafe;
+    border-left-color: #0284c7;
+    color: #075985;
+}
+
+.alert-error {
+    background: #fee2e2;
+    border-left-color: #dc2626;
+    color: #7f1d1d;
+}
+
+/* Form styles */
+.login-form {
+    max-width: 400px;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+/* Navigation auth buttons */
+.login-btn, .admin-btn {
+    background: #3b82f6;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
+
+.login-btn:hover {
+    background: #2563eb;
+}
+
+.admin-btn {
+    background: #059669;
+}
+
+.admin-btn:hover {
+    background: #047857;
+}
+
+/* Admin styles */
+.admin-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.admin-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card h3 {
+    margin-top: 0;
+    color: #1f2937;
+}
+
+.admin-card p {
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.admin-card .btn {
+    display: inline-block;
+    background: #059669;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.admin-card .btn:hover {
+    background: #047857;
+}
+
+/* Form styles enhancement */
+.form {
+    max-width: 500px;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.form button {
+    margin-right: 0.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+
+.btn-secondary {
+    background: #6b7280;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+/* Game form styles */
+.game-form {
+    max-width: 1200px;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.game-form fieldset {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.game-form legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Roster container */
+.roster-container {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.player-entry {
+    background: white;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.player-entry details {
+    margin-top: 1rem;
+}
+
+.player-entry summary {
+    cursor: pointer;
+    padding: 0.5rem;
+    background: #f3f4f6;
+    border-radius: 4px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.player-entry summary:hover {
+    background: #e5e7eb;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.stat-group {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.stat-group h4 {
+    margin: 0 0 0.5rem 0;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.stat-group input {
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 0.4rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.stat-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.btn-remove-player {
+    background: #ef4444;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.btn-remove-player:hover {
+    background: #dc2626;
+}
+
+.btn-primary {
+    background: #059669;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background: #047857;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+}

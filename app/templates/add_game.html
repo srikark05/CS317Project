@@ -1,0 +1,405 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Add Game with Coaches and Player Stats</h2>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" class="game-form" id="gameForm">
+        <!-- Game Metadata -->
+        <fieldset>
+            <legend>Game Information</legend>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="season">Season *</label>
+                    <input type="number" id="season" name="season" required min="1900" max="2100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="week">Week *</label>
+                    <input type="number" id="week" name="week" required min="1" max="18">
+                </div>
+                
+                <div class="form-group">
+                    <label for="game_date">Game Date *</label>
+                    <input type="date" id="game_date" name="game_date" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" maxlength="100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="score">Score</label>
+                    <input type="text" id="score" name="score" maxlength="20" placeholder="e.g., 28-21">
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Home Team -->
+        <fieldset>
+            <legend>Home Team</legend>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="home_team_id">Team *</label>
+                    <select id="home_team_id" name="home_team_id" required>
+                        <option value="">-- Select Team --</option>
+                        {% for team in teams %}
+                            <option value="{{ team.team_id }}">{{ team.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="home_coach_name">Coach Name *</label>
+                    <input type="text" id="home_coach_name" name="home_coach_name" required maxlength="100"
+                           list="coach_list" placeholder="Start typing or select from list">
+                </div>
+
+                <div class="form-group">
+                    <label for="home_coach_dob">Coach DOB *</label>
+                    <input type="date" id="home_coach_dob" name="home_coach_dob" required>
+                </div>
+            </div>
+            
+            <h3>Home Team Roster</h3>
+            <div id="home_players" class="roster-container">
+                <div class="player-entry">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Player Name</label>
+                            <input type="text" name="home_player_0_name" maxlength="100" class="player-name">
+                        </div>
+                        <div class="form-group">
+                            <label>Number</label>
+                            <input type="number" name="home_player_0_number" min="0" max="999" class="player-number">
+                        </div>
+                        <button type="button" class="btn-remove-player" onclick="removePlayer(this)">Remove</button>
+                    </div>
+                    <details>
+                        <summary>Player Statistics</summary>
+                        <div class="stats-grid">
+                            <!-- Rushing -->
+                            <div class="stat-group">
+                                <h4>Rushing</h4>
+                                <input type="number" name="home_player_0_rushing_yards" placeholder="Yards" min="0">
+                                <input type="number" name="home_player_0_rushing_attempts" placeholder="Attempts" min="0">
+                                <input type="number" name="home_player_0_rushing_touchdowns" placeholder="TDs" min="0">
+                            </div>
+                            
+                            <!-- Receiving -->
+                            <div class="stat-group">
+                                <h4>Receiving</h4>
+                                <input type="number" name="home_player_0_receiving_yards" placeholder="Yards" min="0">
+                                <input type="number" name="home_player_0_receiving_attempts" placeholder="Targets" min="0">
+                                <input type="number" name="home_player_0_receiving_touchdowns" placeholder="TDs" min="0">
+                            </div>
+                            
+                            <!-- Passing -->
+                            <div class="stat-group">
+                                <h4>Passing</h4>
+                                <input type="number" name="home_player_0_passing_yards" placeholder="Yards" min="0">
+                                <input type="number" name="home_player_0_passing_attempts" placeholder="Attempts" min="0">
+                                <input type="number" name="home_player_0_passing_completions" placeholder="Completions" min="0">
+                                <input type="number" name="home_player_0_passing_touchdowns" placeholder="TDs" min="0">
+                                <input type="number" name="home_player_0_offensive_interceptions" placeholder="INTs" min="0">
+                            </div>
+                            
+                            <!-- Defense -->
+                            <div class="stat-group">
+                                <h4>Defense</h4>
+                                <input type="number" name="home_player_0_tackles" placeholder="Tackles" min="0" step="0.5">
+                                <input type="number" name="home_player_0_tackles_for_loss" placeholder="TFL" min="0" step="0.5">
+                                <input type="number" name="home_player_0_defensive_sacks" placeholder="Sacks" min="0" step="0.5">
+                                <input type="number" name="home_player_0_defensive_interceptions" placeholder="INTs" min="0">
+                                <input type="number" name="home_player_0_forced_fumbles" placeholder="FF" min="0">
+                                <input type="number" name="home_player_0_fumble_recoveries" placeholder="FR" min="0">
+                            </div>
+                            
+                            <!-- Special Teams -->
+                            <div class="stat-group">
+                                <h4>Special Teams</h4>
+                                <input type="number" name="home_player_0_special_teams_returns" placeholder="Returns" min="0">
+                                <input type="number" name="home_player_0_special_teams_yards" placeholder="Yards" min="0">
+                                <input type="number" name="home_player_0_special_teams_touchdowns" placeholder="TDs" min="0">
+                            </div>
+                            
+                            <!-- Kicking -->
+                            <div class="stat-group">
+                                <h4>Kicking</h4>
+                                <input type="number" name="home_player_0_kicking_attempts" placeholder="FG Attempts" min="0">
+                                <input type="number" name="home_player_0_kicking_made" placeholder="FG Made" min="0">
+                                <input type="number" name="home_player_0_extra_point_attempts" placeholder="XP Attempts" min="0">
+                                <input type="number" name="home_player_0_extra_points_made" placeholder="XP Made" min="0">
+                            </div>
+                            
+                            <!-- Punting -->
+                            <div class="stat-group">
+                                <h4>Punting</h4>
+                                <input type="number" name="home_player_0_punting_attempts" placeholder="Attempts" min="0">
+                                <input type="number" name="home_player_0_punting_yards" placeholder="Yards" min="0">
+                            </div>
+                            
+                            <!-- Misc -->
+                            <div class="stat-group">
+                                <h4>Misc</h4>
+                                <input type="number" name="home_player_0_offensive_sacks" placeholder="OFF Sacks" min="0" step="0.5">
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <button type="button" class="btn-secondary" onclick="addPlayer('home')">Add Player to Home Team</button>
+        </fieldset>
+
+        <!-- Away Team -->
+        <fieldset>
+            <legend>Away Team</legend>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="away_team_id">Team *</label>
+                    <select id="away_team_id" name="away_team_id" required>
+                        <option value="">-- Select Team --</option>
+                        {% for team in teams %}
+                            <option value="{{ team.team_id }}">{{ team.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="away_coach_name">Coach Name *</label>
+                    <input type="text" id="away_coach_name" name="away_coach_name" required maxlength="100"
+                           list="coach_list" placeholder="Start typing or select from list">
+                </div>
+
+                <div class="form-group">
+                    <label for="away_coach_dob">Coach DOB *</label>
+                    <input type="date" id="away_coach_dob" name="away_coach_dob" required>
+                </div>
+            </div>
+            
+            <h3>Away Team Roster</h3>
+            <div id="away_players" class="roster-container">
+                <div class="player-entry">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Player Name</label>
+                            <input type="text" name="away_player_0_name" maxlength="100" class="player-name">
+                        </div>
+                        <div class="form-group">
+                            <label>Number</label>
+                            <input type="number" name="away_player_0_number" min="0" max="999" class="player-number">
+                        </div>
+                        <button type="button" class="btn-remove-player" onclick="removePlayer(this)">Remove</button>
+                    </div>
+                    <details>
+                        <summary>Player Statistics</summary>
+                        <div class="stats-grid">
+                            <!-- Rushing -->
+                            <div class="stat-group">
+                                <h4>Rushing</h4>
+                                <input type="number" name="away_player_0_rushing_yards" placeholder="Yards" min="0">
+                                <input type="number" name="away_player_0_rushing_attempts" placeholder="Attempts" min="0">
+                                <input type="number" name="away_player_0_rushing_touchdowns" placeholder="TDs" min="0">
+                            </div>
+                            
+                            <!-- Receiving -->
+                            <div class="stat-group">
+                                <h4>Receiving</h4>
+                                <input type="number" name="away_player_0_receiving_yards" placeholder="Yards" min="0">
+                                <input type="number" name="away_player_0_receiving_attempts" placeholder="Targets" min="0">
+                                <input type="number" name="away_player_0_receiving_touchdowns" placeholder="TDs" min="0">
+                            </div>
+                            
+                            <!-- Passing -->
+                            <div class="stat-group">
+                                <h4>Passing</h4>
+                                <input type="number" name="away_player_0_passing_yards" placeholder="Yards" min="0">
+                                <input type="number" name="away_player_0_passing_attempts" placeholder="Attempts" min="0">
+                                <input type="number" name="away_player_0_passing_completions" placeholder="Completions" min="0">
+                                <input type="number" name="away_player_0_passing_touchdowns" placeholder="TDs" min="0">
+                                <input type="number" name="away_player_0_offensive_interceptions" placeholder="INTs" min="0">
+                            </div>
+                            
+                            <!-- Defense -->
+                            <div class="stat-group">
+                                <h4>Defense</h4>
+                                <input type="number" name="away_player_0_tackles" placeholder="Tackles" min="0" step="0.5">
+                                <input type="number" name="away_player_0_tackles_for_loss" placeholder="TFL" min="0" step="0.5">
+                                <input type="number" name="away_player_0_defensive_sacks" placeholder="Sacks" min="0" step="0.5">
+                                <input type="number" name="away_player_0_defensive_interceptions" placeholder="INTs" min="0">
+                                <input type="number" name="away_player_0_forced_fumbles" placeholder="FF" min="0">
+                                <input type="number" name="away_player_0_fumble_recoveries" placeholder="FR" min="0">
+                            </div>
+                            
+                            <!-- Special Teams -->
+                            <div class="stat-group">
+                                <h4>Special Teams</h4>
+                                <input type="number" name="away_player_0_special_teams_returns" placeholder="Returns" min="0">
+                                <input type="number" name="away_player_0_special_teams_yards" placeholder="Yards" min="0">
+                                <input type="number" name="away_player_0_special_teams_touchdowns" placeholder="TDs" min="0">
+                            </div>
+                            
+                            <!-- Kicking -->
+                            <div class="stat-group">
+                                <h4>Kicking</h4>
+                                <input type="number" name="away_player_0_kicking_attempts" placeholder="FG Attempts" min="0">
+                                <input type="number" name="away_player_0_kicking_made" placeholder="FG Made" min="0">
+                                <input type="number" name="away_player_0_extra_point_attempts" placeholder="XP Attempts" min="0">
+                                <input type="number" name="away_player_0_extra_points_made" placeholder="XP Made" min="0">
+                            </div>
+                            
+                            <!-- Punting -->
+                            <div class="stat-group">
+                                <h4>Punting</h4>
+                                <input type="number" name="away_player_0_punting_attempts" placeholder="Attempts" min="0">
+                                <input type="number" name="away_player_0_punting_yards" placeholder="Yards" min="0">
+                            </div>
+                            
+                            <!-- Misc -->
+                            <div class="stat-group">
+                                <h4>Misc</h4>
+                                <input type="number" name="away_player_0_offensive_sacks" placeholder="OFF Sacks" min="0" step="0.5">
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <button type="button" class="btn-secondary" onclick="addPlayer('away')">Add Player to Away Team</button>
+        </fieldset>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Add Game & Update Stats</button>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn-secondary">Cancel</a>
+        </div>
+    </form>
+
+    <!-- Datalist for coaches -->
+    <datalist id="coach_list">
+        {% for coach in coaches %}
+            <option value="{{ coach.name }}">
+        {% endfor %}
+    </datalist>
+
+    <script>
+        let homePlayerCount = 1;
+        let awayPlayerCount = 1;
+
+        function addPlayer(team) {
+            const team_prefix = team === 'home' ? 'home_player' : 'away_player';
+            const container = document.getElementById(team + '_players');
+            const count = team === 'home' ? homePlayerCount++ : awayPlayerCount++;
+            
+            const playerEntry = document.createElement('div');
+            playerEntry.className = 'player-entry';
+            playerEntry.innerHTML = `
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Player Name</label>
+                        <input type="text" name="${team_prefix}_${count}_name" maxlength="100" class="player-name">
+                    </div>
+                    <div class="form-group">
+                        <label>Number</label>
+                        <input type="number" name="${team_prefix}_${count}_number" min="0" max="999" class="player-number">
+                    </div>
+                    <button type="button" class="btn-remove-player" onclick="removePlayer(this)">Remove</button>
+                </div>
+                <details>
+                    <summary>Player Statistics</summary>
+                    <div class="stats-grid">
+                        <!-- Rushing -->
+                        <div class="stat-group">
+                            <h4>Rushing</h4>
+                            <input type="number" name="${team_prefix}_${count}_rushing_yards" placeholder="Yards" min="0">
+                            <input type="number" name="${team_prefix}_${count}_rushing_attempts" placeholder="Attempts" min="0">
+                            <input type="number" name="${team_prefix}_${count}_rushing_touchdowns" placeholder="TDs" min="0">
+                        </div>
+                        
+                        <!-- Receiving -->
+                        <div class="stat-group">
+                            <h4>Receiving</h4>
+                            <input type="number" name="${team_prefix}_${count}_receiving_yards" placeholder="Yards" min="0">
+                            <input type="number" name="${team_prefix}_${count}_receiving_attempts" placeholder="Targets" min="0">
+                            <input type="number" name="${team_prefix}_${count}_receiving_touchdowns" placeholder="TDs" min="0">
+                        </div>
+                        
+                        <!-- Passing -->
+                        <div class="stat-group">
+                            <h4>Passing</h4>
+                            <input type="number" name="${team_prefix}_${count}_passing_yards" placeholder="Yards" min="0">
+                            <input type="number" name="${team_prefix}_${count}_passing_attempts" placeholder="Attempts" min="0">
+                            <input type="number" name="${team_prefix}_${count}_passing_completions" placeholder="Completions" min="0">
+                            <input type="number" name="${team_prefix}_${count}_passing_touchdowns" placeholder="TDs" min="0">
+                            <input type="number" name="${team_prefix}_${count}_offensive_interceptions" placeholder="INTs" min="0">
+                        </div>
+                        
+                        <!-- Defense -->
+                        <div class="stat-group">
+                            <h4>Defense</h4>
+                            <input type="number" name="${team_prefix}_${count}_tackles" placeholder="Tackles" min="0" step="0.5">
+                            <input type="number" name="${team_prefix}_${count}_tackles_for_loss" placeholder="TFL" min="0" step="0.5">
+                            <input type="number" name="${team_prefix}_${count}_defensive_sacks" placeholder="Sacks" min="0" step="0.5">
+                            <input type="number" name="${team_prefix}_${count}_defensive_interceptions" placeholder="INTs" min="0">
+                            <input type="number" name="${team_prefix}_${count}_forced_fumbles" placeholder="FF" min="0">
+                            <input type="number" name="${team_prefix}_${count}_fumble_recoveries" placeholder="FR" min="0">
+                        </div>
+                        
+                        <!-- Special Teams -->
+                        <div class="stat-group">
+                            <h4>Special Teams</h4>
+                            <input type="number" name="${team_prefix}_${count}_special_teams_returns" placeholder="Returns" min="0">
+                            <input type="number" name="${team_prefix}_${count}_special_teams_yards" placeholder="Yards" min="0">
+                            <input type="number" name="${team_prefix}_${count}_special_teams_touchdowns" placeholder="TDs" min="0">
+                        </div>
+                        
+                        <!-- Kicking -->
+                        <div class="stat-group">
+                            <h4>Kicking</h4>
+                            <input type="number" name="${team_prefix}_${count}_kicking_attempts" placeholder="FG Attempts" min="0">
+                            <input type="number" name="${team_prefix}_${count}_kicking_made" placeholder="FG Made" min="0">
+                            <input type="number" name="${team_prefix}_${count}_extra_point_attempts" placeholder="XP Attempts" min="0">
+                            <input type="number" name="${team_prefix}_${count}_extra_points_made" placeholder="XP Made" min="0">
+                        </div>
+                        
+                        <!-- Punting -->
+                        <div class="stat-group">
+                            <h4>Punting</h4>
+                            <input type="number" name="${team_prefix}_${count}_punting_attempts" placeholder="Attempts" min="0">
+                            <input type="number" name="${team_prefix}_${count}_punting_yards" placeholder="Yards" min="0">
+                        </div>
+                        
+                        <!-- Misc -->
+                        <div class="stat-group">
+                            <h4>Misc</h4>
+                            <input type="number" name="${team_prefix}_${count}_offensive_sacks" placeholder="OFF Sacks" min="0" step="0.5">
+                        </div>
+                    </div>
+                </details>
+            `;
+            container.appendChild(playerEntry);
+        }
+
+        function removePlayer(button) {
+            const entry = button.closest('.player-entry');
+            const nameInput = entry.querySelector('.player-name');
+            if (nameInput && nameInput.value.trim()) {
+                if (!confirm('Remove this player from the roster?')) return;
+            }
+            entry.remove();
+        }
+    </script>
+</section>
+{% endblock %}
