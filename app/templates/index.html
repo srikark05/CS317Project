@@ -23,4 +23,12 @@
         </div>
     </div>
 </section>
+
+<section>
+    <h2>Search</h2>
+    <form action="{{ url_for('search') }}" method="get">
+        <input type="text" name="q" placeholder="Search players, teams, or coaches..." required>
+        <button type="submit">Search</button>
+    </form>
+</section>
 {% endblock %}

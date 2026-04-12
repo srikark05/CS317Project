@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>{{ team.name }} - Team Information</h2>
+
+    <div class="team-info">
+        <h3>Team Details</h3>
+        <p><strong>Division:</strong> {{ team.division or 'Unknown' }}</p>
+        <p><strong>Address:</strong> {{ team.address or 'Unknown' }}</p>
+        <p><strong>Titles:</strong> {{ team.titles or 0 }}</p>
+        <p><strong>President:</strong> {{ team.president or 'Unknown' }}</p>
+        <p><strong>TV Tag:</strong> {{ team.tv_tag or 'Unknown' }}</p>
+    </div>
+
+    <div class="roster">
+        <h3>Current Roster</h3>
+        {% if roster %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Position</th>
+                    <th>Season</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in roster %}
+                <tr>
+                    <td><a href="{{ url_for('player_stats', name=player.name, number=player.number) }}">{{ player.name }}</a></td>
+                    <td>{{ player.number }}</td>
+                    <td>{{ player.position or 'Unknown' }}</td>
+                    <td>{{ player.season }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No roster information available.</p>
+        {% endif %}
+    </div>
+
+    <div class="coaches">
+        <h3>Coaches</h3>
+        {% if coaches %}
+        <ul>
+            {% for coach in coaches %}
+            <li><a href="{{ url_for('coach_stats', name=coach.name, dob=coach.dob) }}">{{ coach.name }}</a> ({{ coach.season }})</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No coaching staff information available.</p>
+        {% endif %}
+    </div>
+
+    <p><a href="{{ url_for('search', q=team.name) }}">Search for similar teams</a> | <a href="{{ url_for('index') }}">Back to Home</a></p>
+</section>
+{% endblock %}

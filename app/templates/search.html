@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Search Results for "{{ query }}"</h2>
+
+    {% if players or teams or coaches %}
+        {% if players %}
+        <h3>Players</h3>
+        <ul>
+            {% for player in players %}
+            <li><a href="{{ url_for('player_stats', name=player.name, number=player.number) }}">{{ player.name }} (#{{ player.number }})</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if teams %}
+        <h3>Teams</h3>
+        <ul>
+            {% for team in teams %}
+            <li><a href="{{ url_for('team_stats', name=team.name) }}">{{ team.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if coaches %}
+        <h3>Coaches</h3>
+        <ul>
+            {% for coach in coaches %}
+            <li><a href="{{ url_for('coach_stats', name=coach.name, dob=coach.dob) }}">{{ coach.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% else %}
+        <p>No results found for "{{ query }}".</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</section>
+{% endblock %}

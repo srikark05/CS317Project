@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>{{ player.name }} (#{{ player.number }}) - Career Stats</h2>
+
+    <div class="player-info">
+        <h3>Player Information</h3>
+        <p><strong>Position:</strong> {{ player.position or 'Unknown' }}</p>
+        <p><strong>Date of Birth:</strong> {{ player.dob or 'Unknown' }}</p>
+        <p><strong>Height:</strong> {{ player.height or 'Unknown' }} inches</p>
+        <p><strong>Weight:</strong> {{ player.weight or 'Unknown' }} lbs</p>
+        <p><strong>WAR:</strong> {{ player.war or 'N/A' }}</p>
+    </div>
+
+    <div class="teams-played">
+        <h3>Teams Played For</h3>
+        <ul>
+            {% for team in teams %}
+            <li>{{ team.name }} ({{ team.season }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="career-stats">
+        <h3>Career Statistics</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Stat</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="3"><strong>Rushing</strong></td></tr>
+                <tr><td></td><td>Yards</td><td>{{ career_stats.total_rushing_yards or 0 }}</td></tr>
+                <tr><td></td><td>Attempts</td><td>{{ career_stats.total_rushing_attempts or 0 }}</td></tr>
+                <tr><td></td><td>Touchdowns</td><td>{{ career_stats.total_rushing_touchdowns or 0 }}</td></tr>
+
+                <tr><td colspan="3"><strong>Receiving</strong></td></tr>
+                <tr><td></td><td>Yards</td><td>{{ career_stats.total_receiving_yards or 0 }}</td></tr>
+                <tr><td></td><td>Attempts</td><td>{{ career_stats.total_receiving_attempts or 0 }}</td></tr>
+                <tr><td></td><td>Touchdowns</td><td>{{ career_stats.total_receiving_touchdowns or 0 }}</td></tr>
+
+                <tr><td colspan="3"><strong>Passing</strong></td></tr>
+                <tr><td></td><td>Yards</td><td>{{ career_stats.total_passing_yards or 0 }}</td></tr>
+                <tr><td></td><td>Attempts</td><td>{{ career_stats.total_passing_attempts or 0 }}</td></tr>
+                <tr><td></td><td>Completions</td><td>{{ career_stats.total_passing_completions or 0 }}</td></tr>
+                <tr><td></td><td>Touchdowns</td><td>{{ career_stats.total_passing_touchdowns or 0 }}</td></tr>
+                <tr><td></td><td>Interceptions</td><td>{{ career_stats.total_offensive_interceptions or 0 }}</td></tr>
+
+                <tr><td colspan="3"><strong>Defense</strong></td></tr>
+                <tr><td></td><td>Interceptions</td><td>{{ career_stats.total_defensive_interceptions or 0 }}</td></tr>
+                <tr><td></td><td>Sacks</td><td>{{ career_stats.total_defensive_sacks or 0 }}</td></tr>
+                <tr><td></td><td>Tackles</td><td>{{ career_stats.total_tackles or 0 }}</td></tr>
+                <tr><td></td><td>Tackles for Loss</td><td>{{ career_stats.total_tackles_for_loss or 0 }}</td></tr>
+                <tr><td></td><td>Forced Fumbles</td><td>{{ career_stats.total_forced_fumbles or 0 }}</td></tr>
+                <tr><td></td><td>Fumble Recoveries</td><td>{{ career_stats.total_fumble_recoveries or 0 }}</td></tr>
+
+                <tr><td colspan="3"><strong>Special Teams</strong></td></tr>
+                <tr><td></td><td>Returns</td><td>{{ career_stats.total_special_teams_returns or 0 }}</td></tr>
+                <tr><td></td><td>Touchdowns</td><td>{{ career_stats.total_special_teams_touchdowns or 0 }}</td></tr>
+                <tr><td></td><td>Yards</td><td>{{ career_stats.total_special_teams_yards or 0 }}</td></tr>
+
+                <tr><td colspan="3"><strong>Kicking</strong></td></tr>
+                <tr><td></td><td>Field Goals Made</td><td>{{ career_stats.total_kicking_made or 0 }}</td></tr>
+                <tr><td></td><td>Field Goals Attempted</td><td>{{ career_stats.total_kicking_attempts or 0 }}</td></tr>
+                <tr><td></td><td>Extra Points Made</td><td>{{ career_stats.total_extra_points_made or 0 }}</td></tr>
+                <tr><td></td><td>Extra Points Attempted</td><td>{{ career_stats.total_extra_point_attempts or 0 }}</td></tr>
+
+                <tr><td colspan="3"><strong>Punting</strong></td></tr>
+                <tr><td></td><td>Yards</td><td>{{ career_stats.total_punting_yards or 0 }}</td></tr>
+                <tr><td></td><td>Attempts</td><td>{{ career_stats.total_punting_attempts or 0 }}</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p><a href="{{ url_for('search', q=player.name) }}">Search for similar players</a> | <a href="{{ url_for('index') }}">Back to Home</a></p>
+</section>
+{% endblock %}

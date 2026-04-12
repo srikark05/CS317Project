@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>{{ coach.name }} - Coach Information</h2>
+
+    <div class="coach-info">
+        <h3>Coach Details</h3>
+        <p><strong>Name:</strong> {{ coach.name }}</p>
+        <p><strong>Date of Birth:</strong> {{ coach.dob }}</p>
+        <p><strong>Record:</strong> {{ coach.record or 'Unknown' }}</p>
+    </div>
+
+    <div class="teams-coached">
+        <h3>Teams Coached</h3>
+        {% if teams %}
+        <ul>
+            {% for team in teams %}
+            <li><a href="{{ url_for('team_stats', name=team.name) }}">{{ team.name }}</a> ({{ team.season }})</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No coaching history available.</p>
+        {% endif %}
+    </div>
+
+    <p><a href="{{ url_for('search', q=coach.name) }}">Search for similar coaches</a> | <a href="{{ url_for('index') }}">Back to Home</a></p>
+</section>
+{% endblock %}

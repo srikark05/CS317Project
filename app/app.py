@@ -121,6 +121,183 @@ def create_app() -> Flask:
         return render_template("players.html", players=rows,current_sort=sort,
         current_order=order)
 
+    @app.route("/search")
+    def search():
+        query = request.args.get("q", "").strip()
+        if not query:
+            return render_template("search.html", query=query, players=[], teams=[], coaches=[])
+
+        # Search players
+        players = run_all(
+            """
+            SELECT DISTINCT name, number
+            FROM player
+            WHERE name ILIKE %s
+            ORDER BY name
+            """,
+            (f"%{query}%",)
+        )
+
+        # Search teams
+        teams = run_all(
+            """
+            SELECT DISTINCT name
+            FROM team
+            WHERE name ILIKE %s
+            ORDER BY name
+            """,
+            (f"%{query}%",)
+        )
+
+        # Search coaches
+        coaches = run_all(
+            """
+            SELECT DISTINCT name, dob
+            FROM coach
+            WHERE name ILIKE %s
+            ORDER BY name
+            """,
+            (f"%{query}%",)
+        )
+
+        return render_template("search.html", query=query, players=players, teams=teams, coaches=coaches)
+
+    @app.route("/player/<name>/<int:number>")
+    def player_stats(name, number):
+        # Get player info
+        player = run_one(
+            """
+            SELECT name, number, dob, position, weight, height, war
+            FROM player
+            WHERE name = %s AND number = %s
+            """,
+            (name, number)
+        )
+
+        if not player:
+            return render_template("error.html", message="Player not found"), 404
+
+        # Get career stats (sum across seasons)
+        career_stats = run_one(
+            """
+            SELECT
+                SUM(season_rushing_yards) as total_rushing_yards,
+                SUM(season_rushing_attempts) as total_rushing_attempts,
+                SUM(season_rushing_touchdowns) as total_rushing_touchdowns,
+                SUM(season_receiving_yards) as total_receiving_yards,
+                SUM(season_receiving_attempts) as total_receiving_attempts,
+                SUM(season_receiving_touchdowns) as total_receiving_touchdowns,
+                SUM(season_passing_yards) as total_passing_yards,
+                SUM(season_passing_attempts) as total_passing_attempts,
+                SUM(season_passing_completions) as total_passing_completions,
+                SUM(season_passing_touchdowns) as total_passing_touchdowns,
+                SUM(season_offensive_interceptions) as total_offensive_interceptions,
+                SUM(season_defensive_interceptions) as total_defensive_interceptions,
+                SUM(season_offensive_sacks) as total_offensive_sacks,
+                SUM(season_defensive_sacks) as total_defensive_sacks,
+                SUM(season_tackles) as total_tackles,
+                SUM(season_tackles_for_loss) as total_tackles_for_loss,
+                SUM(season_forced_fumbles) as total_forced_fumbles,
+                SUM(season_fumble_recoveries) as total_fumble_recoveries,
+                SUM(season_special_teams_returns) as total_special_teams_returns,
+                SUM(season_special_teams_touchdowns) as total_special_teams_touchdowns,
+                SUM(season_special_teams_yards) as total_special_teams_yards,
+                SUM(season_punting_yards) as total_punting_yards,
+                SUM(season_punting_attempts) as total_punting_attempts,
+                SUM(season_kicking_attempts) as total_kicking_attempts,
+                SUM(season_kicking_made) as total_kicking_made,
+                SUM(season_extra_point_attempts) as total_extra_point_attempts,
+                SUM(season_extra_points_made) as total_extra_points_made
+            FROM season_stats
+            WHERE player_name = %s AND player_number = %s
+            """,
+            (name, number)
+        )
+
+        # Get teams played for
+        teams = run_all(
+            """
+            SELECT DISTINCT t.name, pf.season
+            FROM playsfor pf
+            JOIN team t ON pf.team_id = t.team_id
+            WHERE pf.player_name = %s AND pf.player_number = %s
+            ORDER BY pf.season
+            """,
+            (name, number)
+        )
+
+        return render_template("player_stats.html", player=player, career_stats=career_stats, teams=teams)
+
+    @app.route("/team/<name>")
+    def team_stats(name):
+        # Get team info
+        team = run_one(
+            """
+            SELECT name, division, address, titles, president, tv_tag
+            FROM team
+            WHERE name = %s
+            """,
+            (name,)
+        )
+
+        if not team:
+            return render_template("error.html", message="Team not found"), 404
+
+        # Get current roster (latest season)
+        roster = run_all(
+            """
+            SELECT p.name, p.number, p.position, pf.season
+            FROM playsfor pf
+            JOIN player p ON pf.player_name = p.name AND pf.player_number = p.number
+            WHERE pf.team_id = (SELECT team_id FROM team WHERE name = %s)
+            ORDER BY p.name
+            """,
+            (name,)
+        )
+
+        # Get coaches
+        coaches = run_all(
+            """
+            SELECT c.name, cf.season
+            FROM coachesfor cf
+            JOIN coach c ON cf.coach_name = c.name AND cf.coach_dob = c.dob
+            WHERE cf.team_id = (SELECT team_id FROM team WHERE name = %s)
+            ORDER BY cf.season DESC, c.name
+            """,
+            (name,)
+        )
+
+        return render_template("team_stats.html", team=team, roster=roster, coaches=coaches)
+
+    @app.route("/coach/<name>/<dob>")
+    def coach_stats(name, dob):
+        # Get coach info
+        coach = run_one(
+            """
+            SELECT name, dob, record
+            FROM coach
+            WHERE name = %s AND dob = %s
+            """,
+            (name, dob)
+        )
+
+        if not coach:
+            return render_template("error.html", message="Coach not found"), 404
+
+        # Get teams coached
+        teams = run_all(
+            """
+            SELECT t.name, cf.season
+            FROM coachesfor cf
+            JOIN team t ON cf.team_id = t.team_id
+            WHERE cf.coach_name = %s AND cf.coach_dob = %s
+            ORDER BY cf.season DESC
+            """,
+            (name, dob)
+        )
+
+        return render_template("coach_stats.html", coach=coach, teams=teams)
+
     return app
 
 
