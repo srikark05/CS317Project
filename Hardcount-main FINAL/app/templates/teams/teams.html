@@ -1,0 +1,39 @@
+{% extends "Base.html" %}
+{% block title %}Teams{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Teams</h1>
+</div>
+
+<div class="table-wrapper">
+  <div class="table-header"><h2>All Teams</h2></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Team</th>
+        <th>Division</th>
+        <th>President</th>
+        <th class="num">Titles</th>
+        <th class="num">Roster Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in teams %}
+      <tr>
+        <td>
+          <a href="/teams/{{ t.team_id }}" style="font-weight:700;color:#013369;">{{ t.name }}</a>
+          {% if t.tv_tag %}<div class="team-name">{{ t.tv_tag }}</div>{% endif %}
+        </td>
+        <td>{{ t.division or '—' }}</td>
+        <td>{{ t.president or '—' }}</td>
+        <td class="num">{{ t.titles or 0 }}</td>
+        <td class="num">{{ t.roster_size }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="5" class="text-center text-muted" style="padding:2rem">No teams found.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

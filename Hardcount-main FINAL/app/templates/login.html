@@ -1,0 +1,23 @@
+{% extends "Base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">ADMIN <span class="highlight">LOGIN</span></h1>
+</div>
+
+<div class="card" style="max-width:400px; margin: 2rem auto; padding: 2rem;">
+  <form method="POST" action="{{ url_for('login.login') }}">
+    <div style="margin-bottom:1.25rem;">
+      <label style="display:block; font-weight:700; margin-bottom:0.4rem; text-transform:uppercase; font-size:0.85rem;">Password</label>
+      <input
+        type="password"
+        name="password"
+        required
+        style="width:100%; padding:0.6rem 0.75rem; border:1px solid #ccc; border-radius:4px; font-size:1rem; box-sizing:border-box;"
+      />
+    </div>
+    <button type="submit" class="btn-primary" style="width:100%;">LOGIN</button>
+  </form>
+</div>
+{% endblock %}

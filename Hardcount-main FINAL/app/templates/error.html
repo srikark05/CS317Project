@@ -1,0 +1,15 @@
+{% extends "Base.html" %}
+{% block title %}Error{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Error</h1>
+</div>
+<div class="table-wrapper" style="padding:2rem;text-align:center;">
+  <p style="font-size:1.1rem;color:#721c24;">{{ message or 'An unexpected error occurred.' }}</p>
+  <a href="{{ url_for('main.index') }}"
+     style="display:inline-block;margin-top:1.25rem;padding:0.5rem 1.25rem;background:#013369;color:#fff;border-radius:4px;font-family:'Roboto Condensed',sans-serif;font-weight:700;letter-spacing:0.05em;">
+    BACK TO HOME
+  </a>
+</div>
+{% endblock %}

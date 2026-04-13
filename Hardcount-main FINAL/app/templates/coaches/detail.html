@@ -1,0 +1,35 @@
+{% extends "Base.html" %}
+{% block title %}{{ coach.name if coach else 'Coach' }}{% endblock %}
+
+{% block content %}
+{% if coach %}
+<div class="page-header">
+  <h1>{{ coach.name }}</h1>
+  <p class="subtitle">DOB: {{ coach.dob }} · Record: {{ coach.record or '—' }}</p>
+</div>
+
+<div class="table-wrapper">
+  <div class="table-header"><h2>Coaching History</h2></div>
+  <table>
+    <thead>
+      <tr>
+        <th class="num">Season</th>
+        <th>Team</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for h in history %}
+      <tr>
+        <td class="num">{{ h.season }}</td>
+        <td><a href="/teams/{{ h.team_id }}" style="font-weight:700;color:#013369;">{{ h.team_name }}</a></td>
+      </tr>
+      {% else %}
+      <tr><td colspan="2" class="text-center text-muted" style="padding:2rem">No history found.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<p class="text-muted">Coach not found.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "Base.html" %}
+{% block title %}{{ team.name if team else 'Team' }}{% endblock %}
+
+{% block content %}
+{% if team %}
+<div class="page-header">
+  <h1>{{ team.name }}</h1>
+  {% if team.division %}<p class="subtitle">{{ team.division }}</p>{% endif %}
+</div>
+
+<div class="stats-grid mb-2">
+  <div class="stat-card">
+    <div class="stat-label">President</div>
+    <div class="stat-value" style="font-size:1.2rem">{{ team.president or '—' }}</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Titles</div>
+    <div class="stat-value">{{ team.titles or 0 }}</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Location</div>
+    <div class="stat-value" style="font-size:1rem">{{ team.address or '—' }}</div>
+  </div>
+</div>
+
+<div class="table-wrapper">
+  <div class="table-header"><h2>Roster</h2></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Position</th>
+        <th class="num">#</th>
+        <th class="num">Season</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in roster %}
+      <tr>
+        <td class="player-name">
+          <a href="{{ url_for('players.detail', name=p.name, number=p.number) }}"
+             style="font-weight:700;color:#013369;">{{ p.name }}</a>
+        </td>
+        <td>{{ p.position }}</td>
+        <td class="num">{{ p.number }}</td>
+        <td class="num">{{ p.season }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="4" class="text-center text-muted" style="padding:2rem">No roster data.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if coaches %}
+<div class="table-wrapper mt-2">
+  <div class="table-header"><h2>Coaching Staff</h2></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Coach</th>
+        <th class="num">Season</th>
+        <th>Record</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in coaches %}
+      <tr>
+        <td>
+          <a href="{{ url_for('coaches.detail', name=c.name, dob=c.dob) }}"
+             style="font-weight:700;color:#013369;">{{ c.name }}</a>
+        </td>
+        <td class="num">{{ c.season }}</td>
+        <td>{{ c.record or '—' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+{% else %}
+<p class="text-muted">Team not found.</p>
+{% endif %}
+{% endblock %}

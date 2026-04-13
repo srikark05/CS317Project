@@ -1,0 +1,53 @@
+Player Name,Player Number,Position,Height,Weight,Birth Year,Hometown,Home State,School,Passing Yards,Passing Comp,Passing Att,Passing Pct,Passing TD,Passing Int,Passing Long,Passing Rating,Rushing Yards,Rushing Carries,Rushing Long,Rushing TD,Receiving Yards,Receiving Rec,Receiving Long,Receiving TD,Tackles Solo,Tackles Assists,Tackles For Loss,Sacks,Forced Fumbles,Interceptions,Interception Return Yards,Interception Return Long,Interception Return TD,Fumble Recoveries,Fumble Return Yards,Fumble Return Long,Fumble Return TD,Pass Deflections,Blocked Kicks and Punts,Kickoff Returns,Kickoff Returns Yards,Kickoff Returns Long,Kickoff Returns TD,Punt Returns,Punt Return Yards,Punt Return Long,Punt Return TD,Punts,Punting Yards,Punting Touchbacks,Punting Long,Touchdowns,Field Goals,Field Goal Att,Field Goal Long,PAT Kicks,PAT Kicks Att,Safeties,PAT Conversions
+Bre Griggs,1,DB,5-7,150,1993,Portland,OR,Central Catholic High School,0,0,0,0,0,0,0,0,29,5,28,0,75,12,17,0,1,2,1,0,0,1,6,6,0,0,0,0,0,1,0,4,27,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Tina Tela,3,DL,5-4,145,NR,NR,NR,Southern Utah University,0,0,0,0,0,0,0,0,70,23,13,1,9,1,9,0,6,8,1,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Nicole Attleson,5,DL,5-11,180,1983,Annabella,UT,SLCC,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,16,5,1.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kelly Stack,6,WR,6-0,150,1990,Madison,AL,University of Utah,0,0,0,0,0,0,0,0,0,0,0,0,337,14,78,4,7,8,1,0,1,3,31,20,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0
+Nicole Chaves,7,DB,6-1,155,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hope Memmott,8,DB,5-4,138,1998,Riverton,UT,Riverton High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sheri Kinder,9,WR,5-7,145,1993,Murray,UT,Salt Lake CC,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sara Galica,10,QB,5-2,135,1991,Layton,UT,Weber State University,691,56,135,41.5,5,3,78,61.1,86,34,14,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Brittney Bjork,13,LB,5-3,155,1995,Loveland,CO,Mountain View High School,0,0,0,0,0,0,0,0,51,14,15,1,13,3,7,0,7,11,0.5,0,0,1,45,45,0,0,0,0,0,0,0,1,23,23,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Erin Miller,14,DB,5-7,140,1982,Honolulu,HI,Warner Pacific University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,21,3,1,0,1,10,10,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mackenzie Harmer,17,RB,5-6,140,2002,Coalville,UT,North Summit High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Madeline Murphy,18,RB,5-4,145,NR,NR,NR,NR,0,0,0,0,0,0,0,0,238,50,27,1,214,20,35,0,10,6,1,0,0,0,0,0,0,0,0,0,0,2,0,10,147,24,0,4,43,26,0,0,0,0,0,1,0,0,0,0,0,0,0
+Megan Robertson,21,LB,5-7,175,1990,Chesapeake,VA,University of Notre Dame,0,0,0,0,0,0,0,0,16,2,11,0,0,0,0,0,35,26,15,3,2,1,9,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,20,629,0,48,0,2,4,32,5,6,0,0
+Maki Yamagata,22,DB,5-2,125,1973,Noboribetsu,Japan,University of Utah,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lacy Mile,23,LB,5-2,135,1988,Bellevue,KY,Northern Kentucky University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,10,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jenna Trahan,25,DB,5-2,103,2003,Harris County,UT,Utah Valley University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kim Krinke,28,RB,5-6,145,1980,Salt Lake City,UT,BYU,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dakota Latimer,30,DB,5-6,128,2001,West Jordan,UT,Utah Tech University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Alyssa Olson,31,LB,5-7,140,1995,Nashville,TN,Brigham Young University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,0.5,0,0,0,0,0,0,0,0,0,0,1,0,1,7,7,0,0,0,0,0,3,63,13,33,0,0,0,0,0,0,0,0
+Jessica Cannon,32,LB,5-2,135,1994,New Baltimore,MI,Michigan State / Wake Forest,0,0,0,0,0,0,0,0,8,7,5,1,12,2,11,0,4,10,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Aria Wagaman,33,DB,5-9,140,2003,West Jordan,UT,Utah Military Academy,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Irlanda Diaz,36,DL,5-9,140,1994,Chihuahua,Mexico,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lexie Neslen,37,DL,5-8,200,1996,Salt Lake City,UT,University of Utah,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kala Monserret,39,DB,5-5,130,1991,Magna,UT,Granite Peaks,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nikki Gilbreth,43,OL,5-8,190,1991,Herriman,UT,University of Utah,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kristen Dietz,44,LB,5-6,152,1985,Salt Lake City,UT,Western Governors University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Terry Peterson,45,WR,5-2,150,1980,Salt Lake City,UT,Columbia College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Courtney Shaw,47,OL,5-4,300,1994,Tooele,UT,Stansbury High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LiTara Faatili,48,DL,5-8,275,1989,Utah Valley University,UT,Se etaga,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,6,2.5,0,0,0,0,0,0,2,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+McKenna Morgan,50,OL,5-6,237,2001,Riverton,UT,Riverton High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Danell Robb,53,DL,5-2,170,1980,Minot,ND,West High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jessie Warr,55,OL,5-9,250,1999,Draper,UT,Corner Canyon High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ashley Nguyen Lake,56,OL,5-2,200,2006,Midvale,UT,Hillcrest High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Leialoha Tela,59,DL,5-4,145,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kylie Latimer,62,OL,5-6,210,1998,Tooele,UT,West Jordan High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jaclyn Price,63,DT,5-7,145,1985,Syracuse,UT,GCU,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jennifer Court,64,OL,5-7,250,1980,Mountain View,WY,Argosy University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,11,1.5,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Camille Brimhall,65,OL,5-8,235,1991,West Point,UT,Colorado Mesa University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Montana Meier,70,OL,5-4,210,2003,Cottonwood,UT,Eagle Gate College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Penny Fagnani,71,DL,5-9,220,1987,Upper Darby,PA,UDHS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Shauna Loftin,72,OL,5-8,150,1971,Eagle Mountain,UT,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Brynne Butterfield,73,OL,5-4,145,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Natasha Stoney,77,OL,5-6,215,2001,Salt Lake City,UT,Granite Peaks,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Renate Meckl,80,DB,5-7,175,1995,Oconomowoc,WI,University of New England,0,0,0,0,0,0,0,0,18,4,13,0,31,4,20,1,4,7,0,0,0,0,0,0,0,0,0,0,0,1,0,2,26,16,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Lainie Thompson,84,TE,5-10,155,1990,American Fork,UT,Southern Virginia University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,12,5.5,1,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Claire Cicchetti,85,TE,6-0,175,1998,Menlo Park,CA,Woodside High School / Smith College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Melissa Chandler,87,LB,5-4,145,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Makayla Brown,89,DL,5-4,215,,Christiansburg,VA,Southern Virginia University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sierra Call-Rust,90,OL,5-0,195,1996,Kingsport,TN,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nancy Toutai,93,DL,5-5,310,1991,Fontana,CA,Etiwanda,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,7,1.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cindy Cornell,97,LB,5-3,190,2003,Salt Lake City,UT,APA,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tinisha Quintana,0,RB,5-7,145,1997,Spanish Fork,UT,Provo College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

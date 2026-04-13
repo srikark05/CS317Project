@@ -1,0 +1,125 @@
+{% extends "Base.html" %}
+{% block title %}{{ player.name if player else 'Player' }}{% endblock %}
+
+{% block content %}
+{% if player %}
+<div class="page-header">
+  <h1>{{ player.name }} <span style="color:#d4af37">#{{ player.number }}</span></h1>
+  <p class="subtitle">{{ player.position or '—' }}{% if teams %} &mdash; {{ teams[0].team_name }}{% endif %}</p>
+</div>
+
+<div class="stats-grid mb-2">
+  <div class="stat-card">
+    <div class="stat-label">Position</div>
+    <div class="stat-value" style="font-size:1.6rem">{{ player.position or '—' }}</div>
+  </div>
+  {% if player.height %}
+  <div class="stat-card">
+    <div class="stat-label">Height</div>
+    <div class="stat-value" style="font-size:1.6rem">{{ player.height }}</div>
+  </div>
+  {% endif %}
+  {% if player.weight %}
+  <div class="stat-card">
+    <div class="stat-label">Weight</div>
+    <div class="stat-value" style="font-size:1.6rem">{{ player.weight }}</div>
+  </div>
+  {% endif %}
+  {% if player.war is not none %}
+  <div class="stat-card">
+    <div class="stat-label">WAR</div>
+    <div class="stat-value" style="font-size:1.6rem">{{ player.war }}</div>
+  </div>
+  {% endif %}
+  {% if player.dob %}
+  <div class="stat-card">
+    <div class="stat-label">Date of Birth</div>
+    <div class="stat-value" style="font-size:1rem">{{ player.dob }}</div>
+  </div>
+  {% endif %}
+</div>
+
+{% if teams %}
+<div class="table-wrapper mb-2">
+  <div class="table-header"><h2>Teams</h2></div>
+  <table>
+    <thead>
+      <tr><th>Team</th><th class="num">Season</th></tr>
+    </thead>
+    <tbody>
+      {% for t in teams %}
+      <tr>
+        <td><a href="{{ url_for('teams.detail', team_id=t.team_id) }}" style="font-weight:700;color:#013369;">{{ t.team_name }}</a></td>
+        <td class="num">{{ t.season }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+{% if season_stats %}
+<div class="table-wrapper mb-2">
+  <div class="table-header"><h2>Season Stats</h2></div>
+  <table>
+    <thead>
+      <tr>
+        <th class="num">Season</th>
+        <th class="num">Rush Yds</th>
+        <th class="num">Rush Att</th>
+        <th class="num">Rush TD</th>
+        <th class="num">Rec Yds</th>
+        <th class="num">Rec Att</th>
+        <th class="num">Rec TD</th>
+        <th class="num">Pass Yds</th>
+        <th class="num">Pass Att</th>
+        <th class="num">Pass Cmp</th>
+        <th class="num">Pass TD</th>
+        <th class="num">Tackles</th>
+        <th class="num">Sacks</th>
+        <th class="num">INT</th>
+        <th class="num">TFL</th>
+        <th class="num">FF</th>
+        <th class="num">FR</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s in season_stats %}
+      <tr>
+        <td class="num">{{ s.season }}</td>
+        <td class="num highlight">{{ s.season_rushing_yards or 0 }}</td>
+        <td class="num">{{ s.season_rushing_attempts or 0 }}</td>
+        <td class="num">{{ s.season_rushing_touchdowns or 0 }}</td>
+        <td class="num">{{ s.season_receiving_yards or 0 }}</td>
+        <td class="num">{{ s.season_receiving_attempts or 0 }}</td>
+        <td class="num">{{ s.season_receiving_touchdowns or 0 }}</td>
+        <td class="num">{{ s.season_passing_yards or 0 }}</td>
+        <td class="num">{{ s.season_passing_attempts or 0 }}</td>
+        <td class="num">{{ s.season_passing_completions or 0 }}</td>
+        <td class="num">{{ s.season_passing_touchdowns or 0 }}</td>
+        <td class="num">{{ s.season_tackles or 0 }}</td>
+        <td class="num">{{ s.season_defensive_sacks or 0 }}</td>
+        <td class="num">{{ s.season_defensive_interceptions or 0 }}</td>
+        <td class="num">{{ s.season_tackles_for_loss or 0 }}</td>
+        <td class="num">{{ s.season_forced_fumbles or 0 }}</td>
+        <td class="num">{{ s.season_fumble_recoveries or 0 }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="17" class="text-center text-muted" style="padding:2rem">No stats recorded.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+<div style="margin-top:1rem;">
+  <a href="{{ url_for('players.index') }}"
+     style="color:#013369;font-weight:700;font-family:'Roboto Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.05em;">
+    &larr; BACK TO PLAYERS
+  </a>
+</div>
+
+{% else %}
+<p class="text-muted">Player not found.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,53 @@
+Player Name,Player Number,Position,Height,Weight,Birth Year,Hometown,Home State,School,Passing Yards,Passing Comp,Passing Att,Passing Pct,Passing TD,Passing Int,Passing Long,Passing Rating,Rushing Yards,Rushing Carries,Rushing Long,Rushing TD,Receiving Yards,Receiving Rec,Receiving Long,Receiving TD,Tackles Solo,Tackles Assists,Tackles For Loss,Sacks,Forced Fumbles,Interceptions,Interception Return Yards,Interception Return Long,Interception Return TD,Fumble Recoveries,Fumble Return Yards,Fumble Return Long,Fumble Return TD,Pass Deflections,Blocked Kicks and Punts,Kickoff Returns,Kickoff Returns Yards,Kickoff Returns Long,Kickoff Returns TD,Punt Returns,Punt Return Yards,Punt Return Long,Punt Return TD,Punts,Punting Yards,Punting Touchbacks,Punting Long,Touchdowns,Field Goals,Field Goal Att,Field Goal Long,PAT Kicks,PAT Kicks Att,Safeties,PAT Conversions
+Erica Mason-Austin,1,WR,5-8,175,1999,Youngstown,OH,Vol State,0,0,0,0,0,0,0,0,0,0,0,0,47,7,21,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,11,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Bria Truxon,2,TE,5-9,189,1994,Philadelphia,PA,Penn State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Stephanie Miller,3,QB,5-7,130,1989,St Petersburg,FL,Belmont University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Starry Bady,5,DB,5-6,150,1977,Memphis,TN,Southern University of Baton Rouge,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,1,3,21,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Joanna Young,6,WR,5-4,138,1994,Cannon County,TN,Maryville College,0,0,0,0,0,0,0,0,18,5,12,0,101,4,36,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,122,46,0,1,9,9,0,0,0,0,0,2,0,0,0,0,0,0,0
+Brittany Bassett,7,TE,5-11,178,1985,Memphis,TN,Arkansas State University,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Charniece Carney,8,RB,5-2,128,1994,Philadelphia,PA,Philadelphia Tech University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Almeira Nicole Rizane,9,QB,5-6,152,2005,Spring Hill,TN,Summit HS,8,4,7,57.1,0,2,3,22.6,60,7,30,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Kandy Cooke (Bortz),10,DL,5-6,160,1985,Santiago de los Caballeros,Dominican Republic,Autonomous University of Santo Domingo,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KaNesha Sheriff,11,WR,5-5,145,1991,Jackson,MS,Raymond HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Brennan Crabtree,12,WR,5-8,135,1995,Athens,AL,East Limestone HS,0,0,0,0,0,0,0,0,0,0,0,0,26,1,26,1,2,4,0,0,0,3,70,31,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,21,443,0,50,1,0,0,0,0,0,0,0
+Tessa Ortiz-Marsh,13,QB,5-8,180,1986,Tomah,WI,University of Dayton School of Law,94,8,13,61.5,1,0,24,109.1,6,9,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Stacey Kremer,14,WR,5-7,155,1989,Cherry Hill,NJ,Union University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NR,0,0,0,0
+Aurree King,15,RB,5-4,180,1991,Atwood,TN,West Carroll Jr Sr HS,0,0,0,0,0,0,0,0,44,11,11,0,5,1,5,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Marcy Van Hartesveldt,17,WR,5-10,165,1988,Brooksville,MS,Utica High School,0,0,0,0,0,0,0,0,0,0,0,0,0,1,NR,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Crystal Daniels,19,WR,5-5,135,1991,Chicago,IL,Calumet College of St Joseph,113,16,60,26.7,2,4,36,22.9,284,72,22,1,18,4,7,0,4,1,1,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Pita Lou,21,DB,5-6,120,1997,Smyrna,TN,University of Tennessee Martin,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,6,1.5,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lydia Qualls Jarrett,22,QB,5-7,180,1985,Ripley,TN,Ripley HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cortney Mosier,23,LB,5-3,145,1995,Effingham,IL,Effingham High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,19,1.5,0,0,1,19,19,0,4,0,NR,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Jasmyn Moxley,24,DB,5-7,145,1990,Moreno Valley,CA,California State University Fresno,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Aireka Fowler,26,RB,5-1,115,1997,Philadelphia,PA,Overbrook HS,0,0,0,0,0,0,0,0,4,3,4,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,88,33,0,1,11,11,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dena Triggs,27,RB,5-2,185,1985,St Louis,MO,Parkway Central,0,0,0,0,0,0,0,0,8,3,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Carah Johnson,29,DB,5-6,135,2000,Stillman Valley,IL,Stillman Valley HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Dionna Jackson-Ross,30,DB,5-7,153,1986,Columbus,OH,Devry University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,34,5,2.5,1,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hannah Powell,31,RB,5-2,180,2003,Memphis,TN,Tipton Rosmary Academy,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Pasha Johnson-Rivers,33,RB,5-4,185,1997,Columbus,OH,Dublin Coffman HS,0,0,0,0,0,0,0,0,307,62,49,1,36,8,16,0,3,7,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Vanesia Thompson,34,RB,5-3,128,2001,Clifton,TN,TCAT Crump,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Baiyinah Rahim,35,LB,5-2,145,1984,Antioch,TN,Cedar Creek HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jeree Clark,36,RB,5-4,168,1988,Jersey Middletown,PA,Bishop Academy,0,0,0,0,0,0,0,0,1,2,1,0,0,0,0,0,0,1,0.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Denetria Crawford,37,LB,5-7,189,1989,Huntsville,AL,Jefferson State Community College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,10,3,0.5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dia'Sha Pearson,39,DB,5-1,125,1993,Cincinnati,OH,Marion Franklin HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,1,0,2,16,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tracy Richmond,42,DL,5-3,213,1991,Byhalia,MS,Byhalia HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jasmine Johnson,43,OL,5-3,222,1992,Wenonah,AL,Clay Chalkville HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Rachel Calar,44,LB,5-2,178,1991,Casper,WY,Colorado Christian University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Katherine Wise,48,TE,5-11,200,1989,Memphis,TN,White Station HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DMayla Holliday,50,DL,5-9,230,1993,Knoxville,TN,Bearden HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,13,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nyshavia Riley-Marsh,52,DL,5-3,180,1984,Knoxville,TN,Central HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,40.5,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Aundrea King,53,LB,5-7,200,1990,Indianapolis,IN,Virginia College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,9,2.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Yolanda Johnson,54,OL,5-7,198,1970,Birmingham,AL,Alabama A&M University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Angela Benson,55,OL,5-7,200,1999,Huntsville,AL,Springhill College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jazmyn Freeman,57,OL,5-9,235,1998,Odenville,AL,St Clair Co HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temeka Washington,58,OL,5-11,220,1979,Indianapolis,IN,Clay University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jahogany Ezelle,66,OL,5-7,200,2003,Nashville,TN,Tennessee State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LaTasha Husband,70,OL,5-3,235,1984,Vallejo,CA,Oakhaven HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Glorena Pugh,71,OL,6-1,390,1983,Cleveland,OH,Tennessee State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Essence Lipscomb,72,OL,5-10,240,1991,Columbia,TN,Columbia Central HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lindsay Powell,77,DL,5-7,260,1990,Lawrenceburg,TN,Marian University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,10,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kristyanna Pierce,82,DL,5-8,168,1986,Chicago,IL,Northern Illinois University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Karissa Burnett,88,DB,5-5,136,1991,Memphis,TN,Raleigh Egypt HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,13,0.5,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Za Karia Adams,89,DL,6-1,270,1998,Fairfield,AL,Centerpoint HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sherrette Spicer,98,DL,5-10,254,1981,Birmingham,AL,Belleville East HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Fita Boyce-Jennings,99,DL,5-5,275,1996,Waianae,HI,Leilehua HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.5,9,2,0.5,1,0,0,0,0,2,0,NR,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
