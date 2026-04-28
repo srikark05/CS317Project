@@ -215,3 +215,30 @@ def add_game():
             flash(f'Error adding game: {e}', 'error')
 
     return render_template('admin/add_game.html', teams=teams, coaches=coaches)
+
+@admin_bp.route('/admin/delete-game', methods=['GET', 'POST'])
+@admin_required
+def delete_game():
+    if request.method == 'POST':
+        try:
+            game_date = request.form.get('game_date', '').strip()
+            week = int(request.form.get('week', '').strip())
+            season = int(request.form.get('season', '').strip())
+
+            run_all("""
+                DELETE FROM played_in
+                WHERE game_date = %s AND week = %s AND season = %s
+            """, params=(game_date, week, season))
+
+            run_all("""
+                DELETE FROM games
+                WHERE play_date = %s AND week = %s AND season = %s
+            """, params=(game_date, week, season))
+
+            flash('Game deleted successfully!', 'success')
+            return redirect(url_for('admin.dashboard'))
+
+        except Exception as e:
+            flash(f'Error deleting game: {e}', 'error')
+
+    return render_template('admin/delete_games.html')
