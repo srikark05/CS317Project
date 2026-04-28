@@ -5,7 +5,11 @@
 {% if player %}
 <div class="page-header">
   <h1>{{ player.name }} <span style="color:#d4af37">#{{ player.number }}</span></h1>
-  <p class="subtitle">{{ player.position or '—' }}{% if teams %} &mdash; {{ teams[0].team_name }}{% endif %}</p>
+  <p class="subtitle">
+    {{ player.position or '—' }}
+    {% if teams %}&mdash; {{ teams[0].team_name }}{% endif %}
+    {% if career_view %}&mdash; Career Statistics{% endif %}
+  </p>
 </div>
 
 <div class="stats-grid mb-2">
@@ -39,6 +43,44 @@
   {% endif %}
 </div>
 
+{% if career_stats %}
+<div class="table-wrapper mb-2">
+  <div class="table-header" style="display:flex;justify-content:space-between;align-items:center;">
+    <h2>Career Summary</h2>
+    <a href="{{ url_for('players.career', player_id=player.player_id) }}" style="font-size:0.85rem;font-weight:700;color:#013369;">View full career page</a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th class="num">Seasons</th>
+        <th class="num">Rush Yds</th>
+        <th class="num">Pass Yds</th>
+        <th class="num">Rec Yds</th>
+        <th class="num">Rush TD</th>
+        <th class="num">Pass TD</th>
+        <th class="num">Rec TD</th>
+        <th class="num">Tackles</th>
+        <th class="num">Sacks</th>
+        <th class="num">INT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num">{{ career_stats.seasons or 0 }}</td>
+        <td class="num highlight">{{ career_stats.career_rushing_yards or 0 }}</td>
+        <td class="num">{{ career_stats.career_passing_yards or 0 }}</td>
+        <td class="num">{{ career_stats.career_receiving_yards or 0 }}</td>
+        <td class="num">{{ career_stats.career_rushing_touchdowns or 0 }}</td>
+        <td class="num">{{ career_stats.career_passing_touchdowns or 0 }}</td>
+        <td class="num">{{ career_stats.career_receiving_touchdowns or 0 }}</td>
+        <td class="num">{{ career_stats.career_tackles or 0 }}</td>
+        <td class="num">{{ career_stats.career_sacks or 0 }}</td>
+        <td class="num">{{ career_stats.career_interceptions or 0 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endif %}
 {% if teams %}
 <div class="table-wrapper mb-2">
   <div class="table-header"><h2>Teams</h2></div>

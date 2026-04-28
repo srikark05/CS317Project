@@ -28,7 +28,7 @@ def search():
     like = f"%{query}%"
 
     players = run_all("""
-        SELECT DISTINCT name, number, position
+        SELECT DISTINCT player_id, name, number, position
         FROM player
         WHERE name ILIKE %s
         ORDER BY name
