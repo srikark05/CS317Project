@@ -225,6 +225,12 @@ def delete_game():
             week = int(request.form.get('week', '').strip())
             season = int(request.form.get('season', '').strip())
 
+            affected_players = run_all("""
+                SELECT DISTINCT player_name, player_number
+                FROM played_in
+                WHERE game_date = %s AND week = %s AND season = %s
+            """, params=(game_date, week, season))
+
             run_all("""
                 DELETE FROM played_in
                 WHERE game_date = %s AND week = %s AND season = %s
@@ -234,6 +240,98 @@ def delete_game():
                 DELETE FROM games
                 WHERE play_date = %s AND week = %s AND season = %s
             """, params=(game_date, week, season))
+
+            for p in affected_players:
+                pname = p['player_name']
+                pnum = p['player_number']
+
+                run_all("""
+                    DELETE FROM season_stats
+                    WHERE player_name = %s
+                      AND player_number = %s
+                      AND season = %s
+                      AND NOT EXISTS (
+                          SELECT 1
+                          FROM played_in
+                          WHERE player_name = %s
+                            AND player_number = %s
+                            AND season = %s
+                      )
+                """, params=(pname, pnum, season, pname, pnum, season))
+
+                run_all("""
+                    INSERT INTO season_stats (
+                        player_name, player_number, season,
+                        season_rushing_yards, season_rushing_attempts, season_rushing_touchdowns,
+                        season_receiving_yards, season_receiving_attempts, season_receiving_touchdowns,
+                        season_passing_yards, season_passing_attempts, season_passing_completions,
+                        season_passing_touchdowns, season_offensive_interceptions, season_defensive_interceptions,
+                        season_offensive_sacks, season_defensive_sacks, season_tackles, season_tackles_for_loss,
+                        season_forced_fumbles, season_fumble_recoveries, season_special_teams_returns,
+                        season_special_teams_touchdowns, season_special_teams_yards, season_punting_yards,
+                        season_punting_attempts, season_kicking_attempts, season_kicking_made,
+                        season_extra_point_attempts, season_extra_points_made
+                    )
+                    SELECT %s, %s, %s,
+                        COALESCE(SUM(game_rushing_yards),0),
+                        COALESCE(SUM(game_rushing_attempts),0),
+                        COALESCE(SUM(game_rushing_touchdowns),0),
+                        COALESCE(SUM(game_receiving_yards),0),
+                        COALESCE(SUM(game_receiving_attempts),0),
+                        COALESCE(SUM(game_receiving_touchdowns),0),
+                        COALESCE(SUM(game_passing_yards),0),
+                        COALESCE(SUM(game_passing_attempts),0),
+                        COALESCE(SUM(game_passing_completions),0),
+                        COALESCE(SUM(game_passing_touchdowns),0),
+                        COALESCE(SUM(game_offensive_interceptions),0),
+                        COALESCE(SUM(game_defensive_interceptions),0),
+                        COALESCE(SUM(game_offensive_sacks),0),
+                        COALESCE(SUM(game_defensive_sacks),0),
+                        COALESCE(SUM(game_tackles),0),
+                        COALESCE(SUM(game_tackles_for_loss),0),
+                        COALESCE(SUM(game_forced_fumbles),0),
+                        COALESCE(SUM(game_fumble_recoveries),0),
+                        COALESCE(SUM(game_special_teams_returns),0),
+                        COALESCE(SUM(game_special_teams_touchdowns),0),
+                        COALESCE(SUM(game_special_teams_yards),0),
+                        COALESCE(SUM(game_punting_yards),0),
+                        COALESCE(SUM(game_punting_attempts),0),
+                        COALESCE(SUM(game_kicking_attempts),0),
+                        COALESCE(SUM(game_kicking_made),0),
+                        COALESCE(SUM(game_extra_point_attempts),0),
+                        COALESCE(SUM(game_extra_points_made),0)
+                    FROM played_in
+                    WHERE player_name = %s AND player_number = %s AND season = %s
+                    HAVING COUNT(*) > 0
+                    ON CONFLICT (player_name, player_number, season) DO UPDATE SET
+                        season_rushing_yards = EXCLUDED.season_rushing_yards,
+                        season_rushing_attempts = EXCLUDED.season_rushing_attempts,
+                        season_rushing_touchdowns = EXCLUDED.season_rushing_touchdowns,
+                        season_receiving_yards = EXCLUDED.season_receiving_yards,
+                        season_receiving_attempts = EXCLUDED.season_receiving_attempts,
+                        season_receiving_touchdowns = EXCLUDED.season_receiving_touchdowns,
+                        season_passing_yards = EXCLUDED.season_passing_yards,
+                        season_passing_attempts = EXCLUDED.season_passing_attempts,
+                        season_passing_completions = EXCLUDED.season_passing_completions,
+                        season_passing_touchdowns = EXCLUDED.season_passing_touchdowns,
+                        season_offensive_interceptions = EXCLUDED.season_offensive_interceptions,
+                        season_defensive_interceptions = EXCLUDED.season_defensive_interceptions,
+                        season_offensive_sacks = EXCLUDED.season_offensive_sacks,
+                        season_defensive_sacks = EXCLUDED.season_defensive_sacks,
+                        season_tackles = EXCLUDED.season_tackles,
+                        season_tackles_for_loss = EXCLUDED.season_tackles_for_loss,
+                        season_forced_fumbles = EXCLUDED.season_forced_fumbles,
+                        season_fumble_recoveries = EXCLUDED.season_fumble_recoveries,
+                        season_special_teams_returns = EXCLUDED.season_special_teams_returns,
+                        season_special_teams_touchdowns = EXCLUDED.season_special_teams_touchdowns,
+                        season_special_teams_yards = EXCLUDED.season_special_teams_yards,
+                        season_punting_yards = EXCLUDED.season_punting_yards,
+                        season_punting_attempts = EXCLUDED.season_punting_attempts,
+                        season_kicking_attempts = EXCLUDED.season_kicking_attempts,
+                        season_kicking_made = EXCLUDED.season_kicking_made,
+                        season_extra_point_attempts = EXCLUDED.season_extra_point_attempts,
+                        season_extra_points_made = EXCLUDED.season_extra_points_made
+                """, params=(pname, pnum, season, pname, pnum, season))
 
             flash('Game deleted successfully!', 'success')
             return redirect(url_for('admin.dashboard'))
