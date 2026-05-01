@@ -20,7 +20,7 @@
   {% if player.height %}
   <div class="stat-card">
     <div class="stat-label">Height</div>
-    <div class="stat-value" style="font-size:1.6rem">{{ player.height }}</div>
+    <div class="stat-value" style="font-size:1.6rem">{{ player.height // 12 }}'{{ player.height % 12 }}"</div>
   </div>
   {% endif %}
   {% if player.weight %}
