@@ -47,6 +47,11 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    @app.context_processor
+    def inject_team_logos():
+        rows = run_all("SELECT name, logo FROM team WHERE logo IS NOT NULL")
+        return {'team_logos': {r['name']: r['logo'] for r in rows}}
+
     from app.routes.main import main_bp
     from app.routes.players import players_bp
     from app.routes.teams import teams_bp

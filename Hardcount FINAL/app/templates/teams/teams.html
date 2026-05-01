@@ -1,6 +1,33 @@
 {% extends "Base.html" %}
 {% block title %}Teams{% endblock %}
 
+{% block extra_head %}
+<style>
+  body {
+    background-color: #0a1f3d;
+  }
+  .page-main {
+    background-color: #0a1f3d;
+    background-image: url("{{ url_for('static', filename='images/Teams divisions .jpg') }}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  .page-main::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(1,51,105,0.3);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .page-main > * { position: relative; z-index: 1; }
+  .page-header h1 { color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  .table-wrapper { background: #fff; }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="page-header">
   <h1>Teams</h1>
@@ -14,7 +41,6 @@
         <th>Team</th>
         <th>Location</th>
         <th>Division</th>
-        <th class="num">Titles</th>
         <th class="num">Roster</th>
       </tr>
     </thead>
@@ -22,22 +48,23 @@
       {% for t in teams %}
       <tr>
         <td>
-          <div style="display:flex;align-items:center;gap:0.5rem;">
-            <a href="/teams/{{ t.team_id }}" style="font-weight:700;color:#013369;">{{ t.name }}</a>
-            {% if t.tv_tag %}
-            <span style="font-size:0.7rem;font-weight:700;font-family:'Roboto Condensed',sans-serif;
-                         background:#013369;color:#d4af37;padding:0.1rem 0.35rem;border-radius:3px;
-                         letter-spacing:0.05em;">{{ t.tv_tag }}</span>
+          <div style="display:flex;align-items:center;gap:0.65rem;">
+            {% if t.logo %}
+            <img src="{{ url_for('static', filename='images/' + t.logo) }}"
+                 alt="{{ t.name }}"
+                 style="height:36px;width:36px;object-fit:contain;flex-shrink:0;">
+            {% else %}
+            <div style="height:36px;width:36px;flex-shrink:0;"></div>
             {% endif %}
+            <a href="/teams/{{ t.team_id }}" style="font-weight:700;color:#013369;">{{ t.name }}</a>
           </div>
         </td>
         <td>{{ t.address or '—' }}</td>
         <td>{{ t.division or '—' }}</td>
-        <td class="num">{{ t.titles }}</td>
         <td class="num">{{ t.roster_size }}</td>
       </tr>
       {% else %}
-      <tr><td colspan="5" class="text-center text-muted" style="padding:2rem">No teams found.</td></tr>
+      <tr><td colspan="4" class="text-center text-muted" style="padding:2rem">No teams found.</td></tr>
       {% endfor %}
     </tbody>
   </table>

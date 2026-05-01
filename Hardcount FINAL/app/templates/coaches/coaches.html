@@ -1,4 +1,5 @@
 {% extends "Base.html" %}
+{% from '_macros.html' import team_chip with context %}
 {% block title %}Coaches{% endblock %}
 
 {% block content %}
@@ -41,7 +42,7 @@
         <td>
           <a href="/coaches/{{ c.name }}" style="font-weight:700;color:#013369;">{{ c.name }}</a>
         </td>
-        <td><span class="team-badge">{{ c.team_name }}</span></td>
+        <td>{{ team_chip(c.team_name) }}</td>
         <td class="num">{{ c.season }}</td>
         <td>{{ c.record or '—' }}</td>
       </tr>

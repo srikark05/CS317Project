@@ -1,4 +1,5 @@
 {% extends "Base.html" %}
+{% from '_macros.html' import team_chip with context %}
 {% block title %}Trade Detail{% endblock %}
 
 {% block content %}
@@ -28,8 +29,8 @@
   <table>
     <thead><tr><th>Direction</th><th>Players</th></tr></thead>
     <tbody>
-      <tr><td><span class="team-badge">{{ trade.team_from_name }}</span> sent</td><td>{{ trade.team_from_players or '—' }}</td></tr>
-      <tr><td><span class="team-badge">{{ trade.team_to_name }}</span> sent</td><td>{{ trade.team_to_players or '—' }}</td></tr>
+      <tr><td>{{ team_chip(trade.team_from_name) }} sent</td><td>{{ trade.team_from_players or '—' }}</td></tr>
+      <tr><td>{{ team_chip(trade.team_to_name) }} sent</td><td>{{ trade.team_to_players or '—' }}</td></tr>
     </tbody>
   </table>
 </div>

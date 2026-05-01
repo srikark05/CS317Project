@@ -1,6 +1,31 @@
 {% extends "Base.html" %}
 {% block title %}Standings{% endblock %}
 
+{% block extra_head %}
+<style>
+  body { background-color: #0a1f3d; }
+  .page-main {
+    background-color: #0a1f3d;
+    background-image: url("{{ url_for('static', filename='images/team_smiling.avif') }}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  .page-main::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(1,51,105,0.45);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .page-main > * { position: relative; z-index: 1; }
+  .page-header h1 { color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  .table-wrapper { background: #fff; }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="page-header">
   <h1>Standings</h1>

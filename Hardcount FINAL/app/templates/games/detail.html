@@ -1,4 +1,5 @@
 {% extends "Base.html" %}
+{% from '_macros.html' import team_chip with context %}
 {% block title %}Game Detail{% endblock %}
 
 {% block content %}
@@ -32,7 +33,7 @@
       {% for p in stat_leaders %}
       <tr>
         <td class="player-name">{{ p.player_name }} <span class="text-muted">#{{ p.player_number }}</span></td>
-        <td><span class="team-badge">{{ p.team_name }}</span></td>
+        <td>{{ team_chip(p.team_name) }}</td>
         <td class="num">{{ p.game_rushing_yards or 0 }}</td>
         <td class="num">{{ p.game_passing_yards or 0 }}</td>
         <td class="num">{{ p.game_receiving_yards or 0 }}</td>

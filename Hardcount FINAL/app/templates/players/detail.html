@@ -105,7 +105,8 @@
 {% if season_stats %}
 <div class="table-wrapper mb-2">
   <div class="table-header"><h2>Season Stats</h2></div>
-  <table>
+  <div style="overflow-x:auto;">
+  <table style="min-width:900px;">
     <thead>
       <tr>
         <th class="num">Season</th>
@@ -155,6 +156,7 @@
       {% endfor %}
     </tbody>
   </table>
+  </div>
 </div>
 {% endif %}
 

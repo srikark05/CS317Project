@@ -1,25 +1,60 @@
 {% extends "Base.html" %}
+{% from '_macros.html' import team_chip with context %}
 {% block title %}Players{% endblock %}
+
+{% block extra_head %}
+<style>
+  body { background-color: #0a1f3d; }
+  .page-main {
+    background-color: #0a1f3d;
+    background-image: url("{{ url_for('static', filename='images/team_group_photo.avif') }}");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  .page-main::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(1,51,105,0.45);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .page-main > * { position: relative; z-index: 1; }
+  .page-header h1 { color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  .page-header h1 span { color: #d4af37; }
+  .table-wrapper { background: #fff; }
+  aside { background: #fff !important; }
+</style>
+{% endblock %}
 
 {% block content %}
 <div class="page-header">
   <h1>Players <span style="color:#d4af37">Stats</span></h1>
 </div>
 
-<div class="table-wrapper">
+<!-- Search bar + tabs (full width) -->
+<div class="table-wrapper" style="margin-bottom:0;border-bottom:none;">
   <div class="table-header" style="flex-wrap:wrap;gap:0.75rem;">
     <h2>Player Stats</h2>
-
-    <!-- Search -->
     <form method="get" action="{{ url_for('players.index') }}" style="display:flex;align-items:center;gap:0.5rem;margin-left:auto;">
-      <input type="hidden" name="group" value="{{ current_group }}">
-      <input type="hidden" name="sort"  value="{{ current_sort }}">
-      <input type="hidden" name="order" value="{{ current_order }}">
+      <input type="hidden" name="group"  value="{{ current_group }}">
+      <input type="hidden" name="sort"   value="{{ current_sort }}">
+      <input type="hidden" name="order"  value="{{ current_order }}">
       {% if current_season %}<input type="hidden" name="season" value="{{ current_season }}">{% endif %}
+      {% if team_id %}<input type="hidden" name="team_id" value="{{ team_id }}">{% endif %}
+      {% if min_height %}<input type="hidden" name="min_height" value="{{ min_height }}">{% endif %}
       {% if min_rush %}<input type="hidden" name="min_rush" value="{{ min_rush }}">{% endif %}
       {% if min_pass %}<input type="hidden" name="min_pass" value="{{ min_pass }}">{% endif %}
       {% if min_rec %}<input type="hidden" name="min_rec" value="{{ min_rec }}">{% endif %}
+      {% if min_rush_td %}<input type="hidden" name="min_rush_td" value="{{ min_rush_td }}">{% endif %}
+      {% if min_pass_td %}<input type="hidden" name="min_pass_td" value="{{ min_pass_td }}">{% endif %}
+      {% if min_rec_td %}<input type="hidden" name="min_rec_td" value="{{ min_rec_td }}">{% endif %}
       {% if min_tackles %}<input type="hidden" name="min_tackles" value="{{ min_tackles }}">{% endif %}
+      {% if min_sacks %}<input type="hidden" name="min_sacks" value="{{ min_sacks }}">{% endif %}
+      {% if min_int %}<input type="hidden" name="min_int" value="{{ min_int }}">{% endif %}
+      {% if min_tfl %}<input type="hidden" name="min_tfl" value="{{ min_tfl }}">{% endif %}
       <input type="search" name="q" value="{{ search_query or '' }}" placeholder="Search player…"
              style="padding:0.4rem 0.75rem;border:1px solid #c9d0d8;border-radius:4px;font-size:0.85rem;font-family:inherit;outline:none;">
       <button type="submit"
@@ -27,7 +62,7 @@
         SEARCH
       </button>
       {% if search_query %}
-      <a href="{{ url_for('players.index', group=current_group, season=current_season, min_rush=min_rush, min_pass=min_pass, min_rec=min_rec, min_tackles=min_tackles) }}"
+      <a href="{{ url_for('players.index', group=current_group, sort=current_sort, order=current_order, season=current_season, team_id=team_id, min_height=min_height, min_rush=min_rush, min_pass=min_pass, min_rec=min_rec, min_rush_td=min_rush_td, min_pass_td=min_pass_td, min_rec_td=min_rec_td, min_tackles=min_tackles, min_sacks=min_sacks, min_int=min_int, min_tfl=min_tfl) }}"
          style="padding:0.4rem 0.75rem;background:#e9ecef;color:#0a0e1a;border-radius:4px;font-size:0.8rem;font-family:'Roboto Condensed',sans-serif;font-weight:700;text-decoration:none;">
         CLEAR
       </a>
@@ -36,192 +71,247 @@
   </div>
 
   <!-- Position group tabs -->
-  <div style="display:flex;gap:0;border-bottom:2px solid #dee2e6;margin-bottom:0;">
+  <div style="display:flex;gap:0;border-bottom:2px solid #dee2e6;">
     {% for label, key in [('All', 'all'), ('Offense', 'offense'), ('Defense', 'defense'), ('Special Teams', 'special')] %}
-    <a href="{{ url_for('players.index', group=key, sort=current_sort, order=current_order, q=search_query or none, season=current_season, min_rush=min_rush, min_pass=min_pass, min_rec=min_rec, min_tackles=min_tackles) }}"
+    <a href="{{ url_for('players.index', group=key, sort=current_sort, order=current_order, q=search_query or none, season=current_season, team_id=team_id, min_height=min_height, min_rush=min_rush, min_pass=min_pass, min_rec=min_rec, min_rush_td=min_rush_td, min_pass_td=min_pass_td, min_rec_td=min_rec_td, min_tackles=min_tackles, min_sacks=min_sacks, min_int=min_int, min_tfl=min_tfl) }}"
        style="padding:0.55rem 1.1rem;font-family:'Roboto Condensed',sans-serif;font-weight:700;font-size:0.82rem;
               letter-spacing:0.05em;text-decoration:none;border-bottom:3px solid transparent;margin-bottom:-2px;
-              {% if current_group == key %}
-                color:#013369;border-bottom-color:#013369;
-              {% else %}
-                color:#6c757d;
-              {% endif %}">
+              {% if current_group == key %}color:#013369;border-bottom-color:#013369;{% else %}color:#6c757d;{% endif %}">
       {{ label }}
     </a>
     {% endfor %}
   </div>
+</div>
 
-  <!-- Stat filters -->
-  <form method="get" action="{{ url_for('players.index') }}"
-        style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:flex-end;padding:0.65rem 0.25rem;border-bottom:1px solid #dee2e6;background:#f8f9fa;">
-    <input type="hidden" name="group" value="{{ current_group }}">
-    <input type="hidden" name="sort"  value="{{ current_sort }}">
-    <input type="hidden" name="order" value="{{ current_order }}">
-    <input type="hidden" name="q"     value="{{ search_query or '' }}">
+<!-- Two-column layout: sidebar + table -->
+<div style="display:flex;align-items:flex-start;gap:1rem;margin-top:0;">
 
-    <div style="display:flex;align-items:center;gap:0.35rem;">
-      <label style="font-size:0.72rem;font-weight:700;font-family:'Roboto Condensed',sans-serif;color:#6c757d;letter-spacing:0.05em;white-space:nowrap;">SEASON</label>
-      <select name="season"
-              style="padding:0.3rem 0.4rem;border:1px solid #c9d0d8;border-radius:4px;font-size:0.82rem;font-family:inherit;background:#fff;">
-        <option value="">All</option>
-        {% for yr in available_seasons %}
-        <option value="{{ yr }}" {% if current_season == yr %}selected{% endif %}>{{ yr }}</option>
-        {% endfor %}
-      </select>
-    </div>
+  <!-- ── SIDEBAR FILTERS ── -->
+  <aside style="flex:0 0 210px;min-width:210px;background:#fff;border:1px solid #dee2e6;border-top:none;padding:1rem 0.9rem;font-family:'Roboto Condensed',sans-serif;">
+    <form method="get" action="{{ url_for('players.index') }}">
+      <input type="hidden" name="group" value="{{ current_group }}">
+      <input type="hidden" name="sort"  value="{{ current_sort }}">
+      <input type="hidden" name="order" value="{{ current_order }}">
+      <input type="hidden" name="q"     value="{{ search_query or '' }}">
 
-    {% set filter_fields = [
-      ('MIN RUSH YDS', 'min_rush', min_rush),
-      ('MIN PASS YDS', 'min_pass', min_pass),
-      ('MIN REC YDS',  'min_rec',  min_rec),
-      ('MIN TACKLES',  'min_tackles', min_tackles),
-    ] %}
-    {% for label, key, val in filter_fields %}
-    <div style="display:flex;align-items:center;gap:0.35rem;">
-      <label style="font-size:0.72rem;font-weight:700;font-family:'Roboto Condensed',sans-serif;color:#6c757d;letter-spacing:0.05em;white-space:nowrap;">{{ label }}</label>
-      <input type="number" name="{{ key }}" min="0"
-             value="{{ val if val is not none else '' }}"
-             placeholder="—"
-             style="width:62px;padding:0.3rem 0.4rem;border:1px solid #c9d0d8;border-radius:4px;font-size:0.82rem;font-family:inherit;background:#fff;">
-    </div>
-    {% endfor %}
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#6c757d;margin-bottom:0.6rem;border-bottom:1px solid #dee2e6;padding-bottom:0.4rem;">FILTERS</div>
 
-    <button type="submit"
-            style="padding:0.35rem 0.8rem;background:#013369;color:#fff;border:none;border-radius:4px;font-size:0.78rem;font-family:'Roboto Condensed',sans-serif;font-weight:700;letter-spacing:0.05em;cursor:pointer;">
-      APPLY
-    </button>
+      <!-- Season -->
+      <div style="margin-bottom:0.75rem;">
+        <label style="font-size:0.7rem;font-weight:700;color:#6c757d;letter-spacing:0.05em;display:block;margin-bottom:3px;">SEASON</label>
+        <select name="season" style="width:100%;padding:0.28rem 0.4rem;border:1px solid #c9d0d8;border-radius:4px;font-size:0.82rem;font-family:inherit;background:#fff;">
+          <option value="">All</option>
+          {% for yr in available_seasons %}
+          <option value="{{ yr }}" {% if current_season == yr %}selected{% endif %}>{{ yr }}</option>
+          {% endfor %}
+        </select>
+      </div>
 
-    {% if any_filter_active %}
-    <a href="{{ url_for('players.index', group=current_group, sort=current_sort, order=current_order, q=search_query or none) }}"
-       style="padding:0.35rem 0.7rem;background:#e9ecef;color:#0a0e1a;border-radius:4px;font-size:0.75rem;font-family:'Roboto Condensed',sans-serif;font-weight:700;text-decoration:none;border:1px solid #dee2e6;">
-      RESET FILTERS
-    </a>
-    {% endif %}
-  </form>
+      <!-- Team -->
+      <div style="margin-bottom:0.75rem;">
+        <label style="font-size:0.7rem;font-weight:700;color:#6c757d;letter-spacing:0.05em;display:block;margin-bottom:3px;">TEAM</label>
+        <select name="team_id" style="width:100%;padding:0.28rem 0.4rem;border:1px solid #c9d0d8;border-radius:4px;font-size:0.82rem;font-family:inherit;background:#fff;">
+          <option value="">All</option>
+          {% for t in teams %}
+          <option value="{{ t.team_id }}" {% if team_id == t.team_id %}selected{% endif %}>{{ t.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th class="num">#</th>
+      <!-- Height -->
+      <div style="margin-bottom:0.75rem;">
+        <label style="font-size:0.7rem;font-weight:700;color:#6c757d;letter-spacing:0.05em;display:block;margin-bottom:3px;">MIN HEIGHT</label>
+        <select name="min_height" style="width:100%;padding:0.28rem 0.4rem;border:1px solid #c9d0d8;border-radius:4px;font-size:0.82rem;font-family:inherit;background:#fff;">
+          <option value="">Any</option>
+          {% for h in range(60, 77) %}
+          <option value="{{ h }}" {% if min_height == h %}selected{% endif %}>{{ h // 12 }}'{{ h % 12 }}"</option>
+          {% endfor %}
+        </select>
+      </div>
 
-        {% macro sort_th(label, key, cls='') %}
-        <th{% if cls %} class="{{ cls }}"{% endif %}>
-          <form method="get" action="{{ url_for('players.index') }}" style="margin:0;">
-            <input type="hidden" name="group" value="{{ current_group }}">
-            <input type="hidden" name="q"     value="{{ search_query }}">
-            <input type="hidden" name="sort"  value="{{ key }}">
-            <input type="hidden" name="order"
-              value="{{ 'desc' if current_sort == key and current_order == 'asc' else 'asc' }}">
-            {% if current_season %}<input type="hidden" name="season" value="{{ current_season }}">{% endif %}
-            {% if min_rush %}<input type="hidden" name="min_rush" value="{{ min_rush }}">{% endif %}
-            {% if min_pass %}<input type="hidden" name="min_pass" value="{{ min_pass }}">{% endif %}
-            {% if min_rec %}<input type="hidden" name="min_rec" value="{{ min_rec }}">{% endif %}
-            {% if min_tackles %}<input type="hidden" name="min_tackles" value="{{ min_tackles }}">{% endif %}
-            <button type="submit" class="sort-btn">
-              {{ label }}
-              {% if current_sort == key %}{{ '↑' if current_order == 'asc' else '↓' }}{% endif %}
-            </button>
-          </form>
-        </th>
-        {% endmacro %}
+      <!-- Offense section -->
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;color:#013369;margin:0.8rem 0 0.4rem;border-bottom:1px solid #dee2e6;padding-bottom:0.3rem;">OFFENSE</div>
 
-        {{ sort_th('Player', 'name') }}
-        <th>Team</th>
-        <th class="num">Season</th>
-        <th class="num">Pos</th>
-
-        {% if current_group == 'offense' %}
-          {{ sort_th('Pass Att',  'pass_att',   'num') }}
-          {{ sort_th('Pass Yds',  'passing',    'num') }}
-          {{ sort_th('Pass TD',   'pass_td',    'num') }}
-          {{ sort_th('Rush Att',  'rush_att',   'num') }}
-          {{ sort_th('Rush Yds',  'rushing',    'num') }}
-          {{ sort_th('Rush TD',   'rush_td',    'num') }}
-          {{ sort_th('Rec',       'rec',        'num') }}
-          {{ sort_th('Rec Yds',   'receiving',  'num') }}
-          {{ sort_th('Rec TD',    'rec_td',     'num') }}
-        {% elif current_group == 'defense' %}
-          {{ sort_th('Tackles',   'tackles',          'num') }}
-          {{ sort_th('Sacks',     'sacks',            'num') }}
-          {{ sort_th('INT',       'interceptions',    'num') }}
-          {{ sort_th('TFL',       'tfl',              'num') }}
-          {{ sort_th('FF',        'forced_fumbles',   'num') }}
-          {{ sort_th('FR',        'fumble_recoveries','num') }}
-        {% elif current_group == 'special' %}
-          {{ sort_th('Returns',   'st_returns', 'num') }}
-          {{ sort_th('Ret Yds',   'st_yards',   'num') }}
-          {{ sort_th('Ret TD',    'st_td',      'num') }}
-          {{ sort_th('Punts',     'punt_att',   'num') }}
-          {{ sort_th('Punt Yds',  'punt_yds',   'num') }}
-          {{ sort_th('FG Made',   'fg_made',    'num') }}
-          {{ sort_th('FG Att',    'fg_att',     'num') }}
-          {{ sort_th('XP Made',   'xp_made',    'num') }}
-          {{ sort_th('XP Att',    'xp_att',     'num') }}
-        {% else %}
-          {{ sort_th('Rush Yds',  'rushing',   'num') }}
-          {{ sort_th('Rush TD',   'rush_td',   'num') }}
-          {{ sort_th('Pass Yds',  'passing',   'num') }}
-          {{ sort_th('Pass TD',   'pass_td',   'num') }}
-          {{ sort_th('Rec Yds',   'receiving', 'num') }}
-          {{ sort_th('Tackles',   'tackles',   'num') }}
-        {% endif %}
-      </tr>
-    </thead>
-    <tbody>
-      {% for p in players %}
-      <tr>
-        <td class="num rank">{{ loop.index }}</td>
-        <td>
-          <div class="player-name">
-            <a href="/players/{{ p.player_name }}/{{ p.player_number }}"
-               style="font-weight:700;color:#013369;">{{ p.player_name }}</a>
-          </div>
-          <div style="font-size:0.75rem;color:#6c757d;">#{{ p.player_number }}</div>
-        </td>
-        <td><span class="team-badge">{{ p.team_name }}</span></td>
-        <td class="num">{{ p.season or '—' }}</td>
-        <td class="num">{{ p.position or '—' }}</td>
-
-        {% if current_group == 'offense' %}
-          <td class="num">{{ p.season_passing_attempts }}</td>
-          <td class="num highlight">{{ p.season_passing_yards }}</td>
-          <td class="num">{{ p.season_passing_touchdowns }}</td>
-          <td class="num">{{ p.season_rushing_attempts }}</td>
-          <td class="num highlight">{{ p.season_rushing_yards }}</td>
-          <td class="num">{{ p.season_rushing_touchdowns }}</td>
-          <td class="num">{{ p.season_receiving_attempts }}</td>
-          <td class="num highlight">{{ p.season_receiving_yards }}</td>
-          <td class="num">{{ p.season_receiving_touchdowns }}</td>
-        {% elif current_group == 'defense' %}
-          <td class="num highlight">{{ p.season_tackles }}</td>
-          <td class="num">{{ p.season_defensive_sacks }}</td>
-          <td class="num">{{ p.season_defensive_interceptions }}</td>
-          <td class="num">{{ p.season_tackles_for_loss }}</td>
-          <td class="num">{{ p.season_forced_fumbles }}</td>
-          <td class="num">{{ p.season_fumble_recoveries }}</td>
-        {% elif current_group == 'special' %}
-          <td class="num">{{ p.season_special_teams_returns }}</td>
-          <td class="num highlight">{{ p.season_special_teams_yards }}</td>
-          <td class="num">{{ p.season_special_teams_touchdowns }}</td>
-          <td class="num">{{ p.season_punting_attempts }}</td>
-          <td class="num highlight">{{ p.season_punting_yards }}</td>
-          <td class="num">{{ p.season_kicking_made }}</td>
-          <td class="num">{{ p.season_kicking_attempts }}</td>
-          <td class="num">{{ p.season_extra_points_made }}</td>
-          <td class="num">{{ p.season_extra_point_attempts }}</td>
-        {% else %}
-          <td class="num highlight">{{ p.season_rushing_yards }}</td>
-          <td class="num">{{ p.season_rushing_touchdowns }}</td>
-          <td class="num">{{ p.season_passing_yards }}</td>
-          <td class="num">{{ p.season_passing_touchdowns }}</td>
-          <td class="num">{{ p.season_receiving_yards }}</td>
-          <td class="num">{{ p.season_tackles }}</td>
-        {% endif %}
-      </tr>
-      {% else %}
-      <tr><td colspan="20" class="text-center text-muted" style="padding:2rem">No players found.</td></tr>
+      {% set off_fields = [
+        ('MIN RUSH YDS', 'min_rush',    min_rush),
+        ('MIN RUSH TD',  'min_rush_td', min_rush_td),
+        ('MIN PASS YDS', 'min_pass',    min_pass),
+        ('MIN PASS TD',  'min_pass_td', min_pass_td),
+        ('MIN REC YDS',  'min_rec',     min_rec),
+        ('MIN REC TD',   'min_rec_td',  min_rec_td),
+      ] %}
+      {% for label, key, val in off_fields %}
+      <div style="margin-bottom:0.5rem;">
+        <label style="font-size:0.68rem;font-weight:700;color:#6c757d;letter-spacing:0.04em;display:block;margin-bottom:2px;">{{ label }}</label>
+        <input type="number" name="{{ key }}" min="0" value="{{ val if val is not none else '' }}" placeholder="—"
+               style="width:100%;padding:0.28rem 0.4rem;border:1px solid #c9d0d8;border-radius:4px;font-size:0.82rem;font-family:inherit;background:#fff;box-sizing:border-box;">
+      </div>
       {% endfor %}
-    </tbody>
-  </table>
+
+      <!-- Defense section -->
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;color:#013369;margin:0.8rem 0 0.4rem;border-bottom:1px solid #dee2e6;padding-bottom:0.3rem;">DEFENSE</div>
+
+      {% set def_fields = [
+        ('MIN TACKLES', 'min_tackles', min_tackles),
+        ('MIN SACKS',   'min_sacks',   min_sacks),
+        ('MIN INT',     'min_int',     min_int),
+        ('MIN TFL',     'min_tfl',     min_tfl),
+      ] %}
+      {% for label, key, val in def_fields %}
+      <div style="margin-bottom:0.5rem;">
+        <label style="font-size:0.68rem;font-weight:700;color:#6c757d;letter-spacing:0.04em;display:block;margin-bottom:2px;">{{ label }}</label>
+        <input type="number" name="{{ key }}" min="0" value="{{ val if val is not none else '' }}" placeholder="—"
+               style="width:100%;padding:0.28rem 0.4rem;border:1px solid #c9d0d8;border-radius:4px;font-size:0.82rem;font-family:inherit;background:#fff;box-sizing:border-box;">
+      </div>
+      {% endfor %}
+
+      <button type="submit"
+              style="width:100%;margin-top:0.75rem;padding:0.45rem 0;background:#013369;color:#d4af37;border:none;border-radius:4px;font-size:0.78rem;font-family:'Roboto Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;cursor:pointer;">
+        APPLY FILTERS
+      </button>
+
+      {% if any_filter_active %}
+      <a href="{{ url_for('players.index', group=current_group, sort=current_sort, order=current_order, q=search_query or none) }}"
+         style="display:block;width:100%;margin-top:0.45rem;padding:0.4rem 0;background:#e9ecef;color:#0a0e1a;border-radius:4px;font-size:0.75rem;font-family:'Roboto Condensed',sans-serif;font-weight:700;text-decoration:none;text-align:center;border:1px solid #dee2e6;box-sizing:border-box;">
+        RESET FILTERS
+      </a>
+      {% endif %}
+    </form>
+  </aside>
+
+  <!-- ── TABLE ── -->
+  <div style="flex:1;min-width:0;">
+    <div class="table-wrapper" style="margin-top:0;border-top:none;">
+      <table>
+        <thead>
+          <tr>
+            {% macro sort_th(label, key, cls='') %}
+            <th{% if cls %} class="{{ cls }}"{% endif %}>
+              <form method="get" action="{{ url_for('players.index') }}" style="margin:0;">
+                <input type="hidden" name="group"  value="{{ current_group }}">
+                <input type="hidden" name="q"      value="{{ search_query }}">
+                <input type="hidden" name="sort"   value="{{ key }}">
+                <input type="hidden" name="order"  value="{{ 'desc' if current_sort == key and current_order == 'asc' else 'asc' }}">
+                {% if current_season %}<input type="hidden" name="season" value="{{ current_season }}">{% endif %}
+                {% if team_id %}<input type="hidden" name="team_id" value="{{ team_id }}">{% endif %}
+                {% if min_height %}<input type="hidden" name="min_height" value="{{ min_height }}">{% endif %}
+                {% if min_rush %}<input type="hidden" name="min_rush" value="{{ min_rush }}">{% endif %}
+                {% if min_pass %}<input type="hidden" name="min_pass" value="{{ min_pass }}">{% endif %}
+                {% if min_rec %}<input type="hidden" name="min_rec" value="{{ min_rec }}">{% endif %}
+                {% if min_rush_td %}<input type="hidden" name="min_rush_td" value="{{ min_rush_td }}">{% endif %}
+                {% if min_pass_td %}<input type="hidden" name="min_pass_td" value="{{ min_pass_td }}">{% endif %}
+                {% if min_rec_td %}<input type="hidden" name="min_rec_td" value="{{ min_rec_td }}">{% endif %}
+                {% if min_tackles %}<input type="hidden" name="min_tackles" value="{{ min_tackles }}">{% endif %}
+                {% if min_sacks %}<input type="hidden" name="min_sacks" value="{{ min_sacks }}">{% endif %}
+                {% if min_int %}<input type="hidden" name="min_int" value="{{ min_int }}">{% endif %}
+                {% if min_tfl %}<input type="hidden" name="min_tfl" value="{{ min_tfl }}">{% endif %}
+                <button type="submit" class="sort-btn">
+                  {{ label }}
+                  {% if current_sort == key %}{{ '↑' if current_order == 'asc' else '↓' }}{% endif %}
+                </button>
+              </form>
+            </th>
+            {% endmacro %}
+
+            {{ sort_th('Player', 'name') }}
+            <th>Team</th>
+            <th class="num">Season</th>
+            <th class="num">Pos</th>
+
+            {% if current_group == 'offense' %}
+              {{ sort_th('Pass Att',  'pass_att',   'num') }}
+              {{ sort_th('Pass Yds',  'passing',    'num') }}
+              {{ sort_th('Pass TD',   'pass_td',    'num') }}
+              {{ sort_th('Rush Att',  'rush_att',   'num') }}
+              {{ sort_th('Rush Yds',  'rushing',    'num') }}
+              {{ sort_th('Rush TD',   'rush_td',    'num') }}
+              {{ sort_th('Rec',       'rec',        'num') }}
+              {{ sort_th('Rec Yds',   'receiving',  'num') }}
+              {{ sort_th('Rec TD',    'rec_td',     'num') }}
+            {% elif current_group == 'defense' %}
+              {{ sort_th('Tackles',   'tackles',           'num') }}
+              {{ sort_th('Sacks',     'sacks',             'num') }}
+              {{ sort_th('INT',       'interceptions',     'num') }}
+              {{ sort_th('TFL',       'tfl',               'num') }}
+              {{ sort_th('FF',        'forced_fumbles',    'num') }}
+              {{ sort_th('FR',        'fumble_recoveries', 'num') }}
+            {% elif current_group == 'special' %}
+              {{ sort_th('Returns',   'st_returns', 'num') }}
+              {{ sort_th('Ret Yds',   'st_yards',   'num') }}
+              {{ sort_th('Ret TD',    'st_td',      'num') }}
+              {{ sort_th('Punts',     'punt_att',   'num') }}
+              {{ sort_th('Punt Yds',  'punt_yds',   'num') }}
+              {{ sort_th('FG Made',   'fg_made',    'num') }}
+              {{ sort_th('FG Att',    'fg_att',     'num') }}
+              {{ sort_th('XP Made',   'xp_made',    'num') }}
+              {{ sort_th('XP Att',    'xp_att',     'num') }}
+            {% else %}
+              {{ sort_th('Rush Yds',  'rushing',   'num') }}
+              {{ sort_th('Rush TD',   'rush_td',   'num') }}
+              {{ sort_th('Pass Yds',  'passing',   'num') }}
+              {{ sort_th('Pass TD',   'pass_td',   'num') }}
+              {{ sort_th('Rec Yds',   'receiving', 'num') }}
+              {{ sort_th('Tackles',   'tackles',   'num') }}
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in players %}
+          <tr>
+            <td>
+              <div class="player-name">
+                <a href="/players/{{ p.player_name }}/{{ p.player_number }}"
+                   style="font-weight:700;color:#013369;">{{ p.player_name }}</a>
+              </div>
+              <div style="font-size:0.75rem;color:#6c757d;">#{{ p.player_number }}</div>
+            </td>
+            <td>{{ team_chip(p.team_name) }}</td>
+            <td class="num">{{ p.season or '—' }}</td>
+            <td class="num">{{ p.position or '—' }}</td>
+
+            {% if current_group == 'offense' %}
+              <td class="num">{{ p.season_passing_attempts }}</td>
+              <td class="num highlight">{{ p.season_passing_yards }}</td>
+              <td class="num">{{ p.season_passing_touchdowns }}</td>
+              <td class="num">{{ p.season_rushing_attempts }}</td>
+              <td class="num highlight">{{ p.season_rushing_yards }}</td>
+              <td class="num">{{ p.season_rushing_touchdowns }}</td>
+              <td class="num">{{ p.season_receiving_attempts }}</td>
+              <td class="num highlight">{{ p.season_receiving_yards }}</td>
+              <td class="num">{{ p.season_receiving_touchdowns }}</td>
+            {% elif current_group == 'defense' %}
+              <td class="num highlight">{{ p.season_tackles }}</td>
+              <td class="num">{{ p.season_defensive_sacks }}</td>
+              <td class="num">{{ p.season_defensive_interceptions }}</td>
+              <td class="num">{{ p.season_tackles_for_loss }}</td>
+              <td class="num">{{ p.season_forced_fumbles }}</td>
+              <td class="num">{{ p.season_fumble_recoveries }}</td>
+            {% elif current_group == 'special' %}
+              <td class="num">{{ p.season_special_teams_returns }}</td>
+              <td class="num highlight">{{ p.season_special_teams_yards }}</td>
+              <td class="num">{{ p.season_special_teams_touchdowns }}</td>
+              <td class="num">{{ p.season_punting_attempts }}</td>
+              <td class="num highlight">{{ p.season_punting_yards }}</td>
+              <td class="num">{{ p.season_kicking_made }}</td>
+              <td class="num">{{ p.season_kicking_attempts }}</td>
+              <td class="num">{{ p.season_extra_points_made }}</td>
+              <td class="num">{{ p.season_extra_point_attempts }}</td>
+            {% else %}
+              <td class="num highlight">{{ p.season_rushing_yards }}</td>
+              <td class="num">{{ p.season_rushing_touchdowns }}</td>
+              <td class="num">{{ p.season_passing_yards }}</td>
+              <td class="num">{{ p.season_passing_touchdowns }}</td>
+              <td class="num">{{ p.season_receiving_yards }}</td>
+              <td class="num">{{ p.season_tackles }}</td>
+            {% endif %}
+          </tr>
+          {% else %}
+          <tr><td colspan="20" class="text-center text-muted" style="padding:2rem">No players found.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
 {% endblock %}

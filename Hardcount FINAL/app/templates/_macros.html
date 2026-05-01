@@ -1,0 +1,9 @@
+{% macro team_chip(name) %}
+<span style="display:inline-flex;align-items:center;gap:0.35rem;font-family:'Roboto Condensed',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.04em;color:#0a0e1a;white-space:nowrap;">
+  {% if team_logos.get(name) %}
+  <img src="{{ url_for('static', filename='images/' + team_logos[name]) }}"
+       alt="" style="height:20px;width:20px;object-fit:contain;flex-shrink:0;">
+  {% endif %}
+  {{ name }}
+</span>
+{% endmacro %}

@@ -14,6 +14,7 @@ def index():
             t.titles,
             t.president,
             t.tv_tag,
+            t.logo,
             (SELECT COUNT(DISTINCT pf.player_name)
              FROM playsfor pf WHERE pf.team_id = t.team_id) AS roster_size
         FROM team t
@@ -44,12 +45,15 @@ def detail(team_id):
     """, params=(team_id,))
 
     coaches = run_all("""
-        SELECT st.head_coach AS name, NULL AS dob, NULL AS record, st.season
+        SELECT DISTINCT ON (st.head_coach)
+            st.head_coach AS name,
+            MIN(st.season) OVER (PARTITION BY st.head_coach) AS season_start,
+            MAX(st.season) OVER (PARTITION BY st.head_coach) AS season_end
         FROM staging_wnfc_teams st
         JOIN team t ON LOWER(TRIM(t.name)) = LOWER(TRIM(st.team_name))
         WHERE t.team_id = %s
           AND st.head_coach IS NOT NULL AND st.head_coach NOT IN ('NR', '')
-        ORDER BY st.season DESC, st.head_coach
+        ORDER BY st.head_coach, st.season DESC
     """, params=(team_id,))
 
     return render_template('teams/detail.html', team=team, roster=roster, coaches=coaches)

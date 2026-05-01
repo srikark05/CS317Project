@@ -5,24 +5,16 @@
 <style>
   /* ── Hero ── */
   .hero {
-    background: linear-gradient(135deg, #0a0e1a 0%, #013369 60%, #0a1f3d 100%);
+    background-image: linear-gradient(to right, rgba(10,14,26,0.88) 45%, rgba(10,14,26,0.45) 100%),
+                      url("{{ url_for('static', filename='images/two_football_players.avif') }}");
+    background-size: cover;
+    background-position: center 30%;
     margin: -2rem -1.5rem 2.5rem;
     padding: 4rem 1.5rem 3.5rem;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 40px,
-      rgba(212,175,55,0.03) 40px,
-      rgba(212,175,55,0.03) 41px
-    );
-  }
+  .hero::before { content: none; }
   .hero-inner {
     max-width: 780px;
     position: relative;
@@ -328,7 +320,7 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">Women's National Football Conference</div>
-    <h1>The Official<br><span>WNFC Stats</span> Hub</h1>
+    <h1><span>WNFC Stats</span> Hub</h1>
     <p class="hero-sub">
       Complete player stats, team standings, game results, and roster history
       for every season of WNFC football.
@@ -356,6 +348,10 @@
         <div class="result-row">
           <div class="result-week">Wk {{ g.week }}</div>
           <div class="result-team">
+            {% if team_logos.get(g.home_team_name) %}
+            <img src="{{ url_for('static', filename='images/' + team_logos[g.home_team_name]) }}"
+                 style="height:20px;width:20px;object-fit:contain;vertical-align:middle;margin-right:4px;">
+            {% endif %}
             {% if g.home_team_id %}
               <a href="/teams/{{ g.home_team_id }}">{{ g.home_team_name }}</a>
             {% else %}
@@ -364,6 +360,10 @@
           </div>
           <div class="result-score">{{ g.score or '—' }}</div>
           <div class="result-team result-away">
+            {% if team_logos.get(g.away_team_name) %}
+            <img src="{{ url_for('static', filename='images/' + team_logos[g.away_team_name]) }}"
+                 style="height:20px;width:20px;object-fit:contain;vertical-align:middle;margin-right:4px;">
+            {% endif %}
             {% if g.away_team_id %}
               <a href="/teams/{{ g.away_team_id }}">{{ g.away_team_name }}</a>
             {% else %}
@@ -384,6 +384,7 @@
       <h2>Standings Snapshot</h2>
       <a href="{{ url_for('standings.index') }}">Full Standings &rsaquo;</a>
     </div>
+    <div style="padding:0.4rem 1rem 0;font-size:0.72rem;font-weight:700;font-family:'Roboto Condensed',sans-serif;letter-spacing:0.08em;color:#013369;">2025 SEASON</div>
     <div class="panel-body">
       {% if top_standings %}
         {% set ns = namespace(current_div='') %}
@@ -394,7 +395,11 @@
           {% endif %}
           <div class="standing-row">
             <div class="standing-rank {% if t.rn == 1 %}top{% endif %}">{{ t.rn }}</div>
-            <div class="standing-name">
+            <div class="standing-name" style="display:flex;align-items:center;gap:0.4rem;">
+              {% if team_logos.get(t.team_name) %}
+              <img src="{{ url_for('static', filename='images/' + team_logos[t.team_name]) }}"
+                   style="height:20px;width:20px;object-fit:contain;flex-shrink:0;">
+              {% endif %}
               {% if t.team_id %}
                 <a href="/teams/{{ t.team_id }}">{{ t.team_name }}</a>
               {% else %}

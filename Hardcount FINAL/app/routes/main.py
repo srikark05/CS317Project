@@ -24,10 +24,7 @@ def index():
     """)
 
     top_standings = run_all("""
-        WITH latest AS (
-            SELECT MAX(season) AS s FROM staging_wnfc_teams
-        ),
-        ranked AS (
+        WITH ranked AS (
             SELECT
                 st.team_name,
                 st.division,
@@ -43,7 +40,7 @@ def index():
                 ) AS rn
             FROM staging_wnfc_teams st
             LEFT JOIN team t ON LOWER(TRIM(t.name)) = LOWER(TRIM(st.team_name))
-            WHERE st.season = (SELECT s FROM latest)
+            WHERE st.season = 2025
         )
         SELECT * FROM ranked WHERE rn <= 3
         ORDER BY division ASC, rn ASC
