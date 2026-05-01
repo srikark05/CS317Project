@@ -32,6 +32,7 @@ CREATE TABLE Special_Teams (
 );
 
 CREATE TABLE Player (
+    player_id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     dob DATE,
     position VARCHAR(2),
@@ -39,7 +40,7 @@ CREATE TABLE Player (
     weight INT,
     height INT,
     war FLOAT,
-    PRIMARY KEY (name, number),
+    UNIQUE (name, number),
     FOREIGN KEY (position) REFERENCES Positions(position)
 );
 
@@ -85,11 +86,13 @@ CREATE TABLE Trade (
 );
 
 CREATE TABLE PlaysFor (
+    player_id INT,
     player_name VARCHAR(100),
     player_number INT,
     team_id INT,
     season INT,
-    PRIMARY KEY (player_name, player_number, team_id, season),
+    PRIMARY KEY (player_id, team_id, season),
+    FOREIGN KEY (player_id) REFERENCES Player(player_id),
     FOREIGN KEY (player_name, player_number) REFERENCES Player(name, number),
     FOREIGN KEY (team_id) REFERENCES Team(team_id)
 );
@@ -105,6 +108,7 @@ CREATE TABLE CoachesFor (
 );
 
 CREATE TABLE season_stats (
+    player_id INT,
     player_name VARCHAR(100),
     player_number INT,
     season INT,
@@ -136,12 +140,14 @@ CREATE TABLE season_stats (
     season_kicking_made INT DEFAULT 0,
     season_extra_point_attempts INT DEFAULT 0,
     season_extra_points_made INT DEFAULT 0,
-    PRIMARY KEY (player_name, player_number, season),
+    PRIMARY KEY (player_id, season),
+    FOREIGN KEY (player_id) REFERENCES Player(player_id),
     FOREIGN KEY (player_name, player_number) REFERENCES Player(name, number)
 );
 
 
 CREATE TABLE Played_In (
+    player_id INT,
     player_name VARCHAR(100),
     player_number INT,
     game_date DATE,
@@ -176,7 +182,8 @@ CREATE TABLE Played_In (
     game_kicking_made INT DEFAULT 0,
     game_extra_point_attempts INT DEFAULT 0,
     game_extra_points_made INT DEFAULT 0,
-    PRIMARY KEY (player_name, player_number, week, season, home_team),
+    PRIMARY KEY (player_id, week, season, home_team),
+    FOREIGN KEY (player_id) REFERENCES Player(player_id),
     FOREIGN KEY (player_name, player_number) REFERENCES Player(name, number),
     FOREIGN KEY (week, season, home_team) REFERENCES Games(week, season, home_team)
 );
@@ -262,8 +269,7 @@ BEGIN
             season_kicking_made             = season_kicking_made             + NEW.game_kicking_made,
             season_extra_point_attempts     = season_extra_point_attempts     + NEW.game_extra_point_attempts,
             season_extra_points_made        = season_extra_points_made        + NEW.game_extra_points_made
-        WHERE player_name = NEW.player_name
-        AND player_number = NEW.player_number
+        WHERE (player_id = NEW.player_id OR (player_name = NEW.player_name AND player_number = NEW.player_number))
         AND season = NEW.season;
     END IF;
     RETURN NEW;

@@ -32,6 +32,7 @@ def detail(team_id):
 
     roster = run_all("""
         SELECT
+            p.player_id,
             p.name,
             p.number,
             p.position,
