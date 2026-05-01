@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict lcSEoPD302GwdM81ZeSjXLWu5jixVbNZnKgztlcxzrZVnYtpB8WpdYz5eONazP6
+\restrict SBe5dKpfREOeDvEvXSeYNDxIrr3Y2bNefKbBoKCZFQzfYF0uco4BwuJvkEMdwbd
 
 -- Dumped from database version 16.13 (Homebrew)
 -- Dumped by pg_dump version 16.13 (Homebrew)
@@ -11939,24 +11939,24 @@ COPY public.staging_wnfc_teams (team_index, team_name, division, team_website, h
 COPY public.team (team_id, name, division, address, titles, president, tv_tag) FROM stdin;
 50	Oregon Ravens	Northwest	Portland, OR	0	\N	ORA
 57	Washington Prodigy	Atlantic	Washington, DC	0	\N	WPR
+40	Atlanta Truth	Atlantic	Atlanta, GA	0	\N	ATR
+41	Chicago Winds	Central	Chicago, IL	0	\N	CWI
+42	Denver Bandits	Central	Denver, CO	0	\N	DBA
+43	Florida Avengers	Atlantic	Orlando, FL	0	\N	FAV
+58	Golden State Storm	Pacific	Oakland, CA	0	\N	GSS
+44	Houston Mambas	Central	Houston, TX	0	\N	HMA
+45	Jersey Shore Wave	Atlantic	Toms River, NJ	0	\N	JSW
+46	Kansas City Glory	Northwest	Kansas City, MO	0	\N	KCG
+47	Las Vegas Silver Stars	Pacific	Las Vegas, NV	0	\N	LVS
+48	Los Angeles Legends	Pacific	Los Angeles, CA	0	\N	LAL
+49	Mississippi Panthers	Central	Jackson, MS	0	\N	MPA
+51	Philly Phantomz	Atlantic	Philadelphia, PA	0	\N	PPH
+52	San Diego Rebellion	Pacific	San Diego, CA	0	\N	SDR
+53	Seattle Majestics	Northwest	Seattle, WA	0	\N	SMA
+54	Tennesse Trojans	Central	Nashville, TN	0	\N	TTR
+55	Texas Elite Spartans	Central	Dallas, TX	0	\N	TES
+56	Utah Falconz	Northwest	Salt Lake City, UT	0	\N	UFA
 39	Atlanta Phoenix	Atlantic	Atlanta, GA	0	\N	APH
-40	Atlanta Truth	Atlantic	GA	0	\N	ATR
-41	Chicago Winds	Central	IL	0	\N	CWI
-42	Denver Bandits	Central	CO	0	\N	DBA
-43	Florida Avengers	Atlantic	FL	0	\N	FAV
-44	Houston Mambas	Central	TX	0	\N	HMA
-45	Jersey Shore Wave	Atlantic	NJ	0	\N	JSW
-46	Kansas City Glory	Northwest	MO	0	\N	KCG
-47	Las Vegas Silver Stars	Pacific	NV	0	\N	LVS
-48	Los Angeles Legends	Pacific	CA	0	\N	LAL
-49	Mississippi Panthers	Central	MS	0	\N	MPA
-51	Philly Phantomz	Atlantic	PA	0	\N	PPH
-52	San Diego Rebellion	Pacific	CA	0	\N	SDR
-53	Seattle Majestics	Northwest	WA	0	\N	SMA
-54	Tennesse Trojans	Central	TN	0	\N	TTR
-55	Texas Elite Spartans	Central	TX	0	\N	TES
-56	Utah Falconz	Northwest	UT	0	\N	UFA
-58	Golden State Storm	Pacific	CA	0	\N	GSS
 \.
 
 
@@ -12258,5 +12258,5 @@ ALTER TABLE ONLY public.trade
 -- PostgreSQL database dump complete
 --
 
-\unrestrict lcSEoPD302GwdM81ZeSjXLWu5jixVbNZnKgztlcxzrZVnYtpB8WpdYz5eONazP6
+\unrestrict SBe5dKpfREOeDvEvXSeYNDxIrr3Y2bNefKbBoKCZFQzfYF0uco4BwuJvkEMdwbd
 
