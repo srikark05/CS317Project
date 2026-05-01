@@ -125,16 +125,46 @@
         </th>
         {% endmacro %}
 
-        {{ sort_th('Player',    'name') }}
+        {{ sort_th('Player', 'name') }}
         <th>Team</th>
         <th class="num">Season</th>
         <th class="num">Pos</th>
-        {{ sort_th('Rush Yds',  'rushing',   'num') }}
-        {{ sort_th('Rush TD',   'rush_td',   'num') }}
-        {{ sort_th('Pass Yds',  'passing',   'num') }}
-        {{ sort_th('Pass TD',   'pass_td',   'num') }}
-        {{ sort_th('Rec Yds',   'receiving', 'num') }}
-        {{ sort_th('Tackles',   'tackles',   'num') }}
+
+        {% if current_group == 'offense' %}
+          {{ sort_th('Pass Att',  'pass_att',   'num') }}
+          {{ sort_th('Pass Yds',  'passing',    'num') }}
+          {{ sort_th('Pass TD',   'pass_td',    'num') }}
+          {{ sort_th('Rush Att',  'rush_att',   'num') }}
+          {{ sort_th('Rush Yds',  'rushing',    'num') }}
+          {{ sort_th('Rush TD',   'rush_td',    'num') }}
+          {{ sort_th('Rec',       'rec',        'num') }}
+          {{ sort_th('Rec Yds',   'receiving',  'num') }}
+          {{ sort_th('Rec TD',    'rec_td',     'num') }}
+        {% elif current_group == 'defense' %}
+          {{ sort_th('Tackles',   'tackles',          'num') }}
+          {{ sort_th('Sacks',     'sacks',            'num') }}
+          {{ sort_th('INT',       'interceptions',    'num') }}
+          {{ sort_th('TFL',       'tfl',              'num') }}
+          {{ sort_th('FF',        'forced_fumbles',   'num') }}
+          {{ sort_th('FR',        'fumble_recoveries','num') }}
+        {% elif current_group == 'special' %}
+          {{ sort_th('Returns',   'st_returns', 'num') }}
+          {{ sort_th('Ret Yds',   'st_yards',   'num') }}
+          {{ sort_th('Ret TD',    'st_td',      'num') }}
+          {{ sort_th('Punts',     'punt_att',   'num') }}
+          {{ sort_th('Punt Yds',  'punt_yds',   'num') }}
+          {{ sort_th('FG Made',   'fg_made',    'num') }}
+          {{ sort_th('FG Att',    'fg_att',     'num') }}
+          {{ sort_th('XP Made',   'xp_made',    'num') }}
+          {{ sort_th('XP Att',    'xp_att',     'num') }}
+        {% else %}
+          {{ sort_th('Rush Yds',  'rushing',   'num') }}
+          {{ sort_th('Rush TD',   'rush_td',   'num') }}
+          {{ sort_th('Pass Yds',  'passing',   'num') }}
+          {{ sort_th('Pass TD',   'pass_td',   'num') }}
+          {{ sort_th('Rec Yds',   'receiving', 'num') }}
+          {{ sort_th('Tackles',   'tackles',   'num') }}
+        {% endif %}
       </tr>
     </thead>
     <tbody>
@@ -151,15 +181,45 @@
         <td><span class="team-badge">{{ p.team_name }}</span></td>
         <td class="num">{{ p.season or '—' }}</td>
         <td class="num">{{ p.position or '—' }}</td>
-        <td class="num highlight">{{ p.season_rushing_yards }}</td>
-        <td class="num">{{ p.season_rushing_touchdowns }}</td>
-        <td class="num">{{ p.season_passing_yards }}</td>
-        <td class="num">{{ p.season_passing_touchdowns }}</td>
-        <td class="num">{{ p.season_receiving_yards }}</td>
-        <td class="num">{{ p.season_tackles }}</td>
+
+        {% if current_group == 'offense' %}
+          <td class="num">{{ p.season_passing_attempts }}</td>
+          <td class="num highlight">{{ p.season_passing_yards }}</td>
+          <td class="num">{{ p.season_passing_touchdowns }}</td>
+          <td class="num">{{ p.season_rushing_attempts }}</td>
+          <td class="num highlight">{{ p.season_rushing_yards }}</td>
+          <td class="num">{{ p.season_rushing_touchdowns }}</td>
+          <td class="num">{{ p.season_receiving_attempts }}</td>
+          <td class="num highlight">{{ p.season_receiving_yards }}</td>
+          <td class="num">{{ p.season_receiving_touchdowns }}</td>
+        {% elif current_group == 'defense' %}
+          <td class="num highlight">{{ p.season_tackles }}</td>
+          <td class="num">{{ p.season_defensive_sacks }}</td>
+          <td class="num">{{ p.season_defensive_interceptions }}</td>
+          <td class="num">{{ p.season_tackles_for_loss }}</td>
+          <td class="num">{{ p.season_forced_fumbles }}</td>
+          <td class="num">{{ p.season_fumble_recoveries }}</td>
+        {% elif current_group == 'special' %}
+          <td class="num">{{ p.season_special_teams_returns }}</td>
+          <td class="num highlight">{{ p.season_special_teams_yards }}</td>
+          <td class="num">{{ p.season_special_teams_touchdowns }}</td>
+          <td class="num">{{ p.season_punting_attempts }}</td>
+          <td class="num highlight">{{ p.season_punting_yards }}</td>
+          <td class="num">{{ p.season_kicking_made }}</td>
+          <td class="num">{{ p.season_kicking_attempts }}</td>
+          <td class="num">{{ p.season_extra_points_made }}</td>
+          <td class="num">{{ p.season_extra_point_attempts }}</td>
+        {% else %}
+          <td class="num highlight">{{ p.season_rushing_yards }}</td>
+          <td class="num">{{ p.season_rushing_touchdowns }}</td>
+          <td class="num">{{ p.season_passing_yards }}</td>
+          <td class="num">{{ p.season_passing_touchdowns }}</td>
+          <td class="num">{{ p.season_receiving_yards }}</td>
+          <td class="num">{{ p.season_tackles }}</td>
+        {% endif %}
       </tr>
       {% else %}
-      <tr><td colspan="11" class="text-center text-muted" style="padding:2rem">No players found.</td></tr>
+      <tr><td colspan="20" class="text-center text-muted" style="padding:2rem">No players found.</td></tr>
       {% endfor %}
     </tbody>
   </table>

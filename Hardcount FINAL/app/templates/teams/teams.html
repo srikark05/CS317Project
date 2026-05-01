@@ -12,22 +12,28 @@
     <thead>
       <tr>
         <th>Team</th>
+        <th>Location</th>
         <th>Division</th>
-        <th>President</th>
         <th class="num">Titles</th>
-        <th class="num">Roster Size</th>
+        <th class="num">Roster</th>
       </tr>
     </thead>
     <tbody>
       {% for t in teams %}
       <tr>
         <td>
-          <a href="/teams/{{ t.team_id }}" style="font-weight:700;color:#013369;">{{ t.name }}</a>
-          {% if t.tv_tag %}<div class="team-name">{{ t.tv_tag }}</div>{% endif %}
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <a href="/teams/{{ t.team_id }}" style="font-weight:700;color:#013369;">{{ t.name }}</a>
+            {% if t.tv_tag %}
+            <span style="font-size:0.7rem;font-weight:700;font-family:'Roboto Condensed',sans-serif;
+                         background:#013369;color:#d4af37;padding:0.1rem 0.35rem;border-radius:3px;
+                         letter-spacing:0.05em;">{{ t.tv_tag }}</span>
+            {% endif %}
+          </div>
         </td>
+        <td>{{ t.address or '—' }}</td>
         <td>{{ t.division or '—' }}</td>
-        <td>{{ t.president or '—' }}</td>
-        <td class="num">{{ t.titles or 0 }}</td>
+        <td class="num">{{ t.titles }}</td>
         <td class="num">{{ t.roster_size }}</td>
       </tr>
       {% else %}

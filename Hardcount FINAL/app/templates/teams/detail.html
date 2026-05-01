@@ -4,22 +4,33 @@
 {% block content %}
 {% if team %}
 <div class="page-header">
-  <h1>{{ team.name }}</h1>
-  {% if team.division %}<p class="subtitle">{{ team.division }}</p>{% endif %}
+  <h1>
+    {{ team.name }}
+    {% if team.tv_tag %}
+    <span style="font-size:1rem;font-weight:700;font-family:'Roboto Condensed',sans-serif;
+                 background:#013369;color:#d4af37;padding:0.2rem 0.5rem;border-radius:4px;
+                 letter-spacing:0.08em;vertical-align:middle;margin-left:0.4rem;">{{ team.tv_tag }}</span>
+    {% endif %}
+  </h1>
+  {% if team.division %}<p class="subtitle">{{ team.division }} Division</p>{% endif %}
 </div>
 
 <div class="stats-grid mb-2">
   <div class="stat-card">
-    <div class="stat-label">President</div>
-    <div class="stat-value" style="font-size:1.2rem">{{ team.president or '—' }}</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-label">Titles</div>
-    <div class="stat-value">{{ team.titles or 0 }}</div>
+    <div class="stat-label">Team Tag</div>
+    <div class="stat-value">{{ team.tv_tag or '—' }}</div>
   </div>
   <div class="stat-card">
     <div class="stat-label">Location</div>
     <div class="stat-value" style="font-size:1rem">{{ team.address or '—' }}</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Division</div>
+    <div class="stat-value" style="font-size:1rem">{{ team.division or '—' }}</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Championships</div>
+    <div class="stat-value">{{ team.titles }}</div>
   </div>
 </div>
 
