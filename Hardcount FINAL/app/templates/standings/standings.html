@@ -1,0 +1,82 @@
+{% extends "Base.html" %}
+{% block title %}Standings{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Standings</h1>
+</div>
+
+<!-- Season filter -->
+<form method="get" action="/standings" style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+  <label style="font-weight:700;font-size:0.9rem;color:#013369;">Season</label>
+  <select name="season" style="padding:0.4rem 0.75rem;border:1px solid #ccc;border-radius:4px;font-size:0.9rem;">
+    {% for s in seasons %}
+      <option value="{{ s.season }}" {% if s.season == current_season %}selected{% endif %}>
+        {{ s.season }}
+      </option>
+    {% endfor %}
+  </select>
+  <button type="submit" style="padding:0.4rem 1rem;background:#013369;color:#fff;border:none;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;">
+    Go
+  </button>
+</form>
+
+{% if divisions %}
+  {% for division, teams in divisions.items() %}
+  <div class="table-wrapper" style="margin-bottom:2rem;">
+    <div class="table-header"><h2>{{ division }}</h2></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th class="num">W</th>
+          <th class="num">L</th>
+          <th class="num">T</th>
+          <th class="num">PCT</th>
+          <th class="num">PF</th>
+          <th class="num">PA</th>
+          <th class="num">+/-</th>
+          <th class="num">Home</th>
+          <th class="num">Road</th>
+          <th class="num">Div</th>
+          <th class="num">Streak</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for t in teams %}
+        <tr>
+          <td>
+            {% if t.team_id %}
+              <a href="/teams/{{ t.team_id }}" style="font-weight:700;color:#013369;">{{ t.name }}</a>
+            {% else %}
+              <span style="font-weight:700;">{{ t.name }}</span>
+            {% endif %}
+          </td>
+          <td class="num">{{ t.wins }}</td>
+          <td class="num">{{ t.losses }}</td>
+          <td class="num">{{ t.ties }}</td>
+          <td class="num">{{ "%.3f"|format(t.pct) if t.pct is not none else '—' }}</td>
+          <td class="num">{{ t.pf if t.pf is not none else '—' }}</td>
+          <td class="num">{{ t.pa if t.pa is not none else '—' }}</td>
+          <td class="num" style="color:{% if t.point_diff > 0 %}#2a7a2a{% elif t.point_diff < 0 %}#b22222{% else %}inherit{% endif %};">
+            {% if t.point_diff > 0 %}+{% endif %}{{ t.point_diff }}
+          </td>
+          <td class="num">{{ t.home_rec if t.home_rec is not none else '—' }}</td>
+          <td class="num">{{ t.road_rec if t.road_rec is not none else '—' }}</td>
+          <td class="num">{{ t.div_rec if t.div_rec is not none else '—' }}</td>
+          <td class="num">{{ t.streak if t.streak is not none else '—' }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="12" class="text-center text-muted" style="padding:2rem">No standings data available.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endfor %}
+{% else %}
+  <div class="table-wrapper">
+    <div class="table-header"><h2>{{ current_season }} Standings</h2></div>
+    <p class="text-center text-muted" style="padding:2rem">No standings data found for {{ current_season }}.</p>
+  </div>
+{% endif %}
+{% endblock %}

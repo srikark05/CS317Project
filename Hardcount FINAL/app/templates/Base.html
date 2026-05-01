@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Hardcount{% endblock %} | WNFC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <!-- ── TOP PROMO BANNER ── -->
+  <div class="promo-bar">
+    <span class="promo-text">&#9679; WNFC 2026 SEASON &mdash; LIVE STATS &amp; STANDINGS AVAILABLE NOW</span>
+    <a href="#" class="promo-cta">VIEW SEASON &rsaquo;</a>
+  </div>
+
+  <!-- ── PRIMARY NAV ── -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="{{ url_for('main.index') }}" class="logo">
+        <span class="logo-hc">HARD</span><span class="logo-count">COUNT</span>
+      </a>
+
+      <!-- Nav links -->
+      <nav class="primary-nav">
+        <a href="{{ url_for('main.index') }}"
+           class="nav-link {% if request.endpoint == 'main.index' %}active{% endif %}">
+          HOME
+        </a>
+        <a href="{{ url_for('teams.index') }}"
+           class="nav-link {% if request.blueprint == 'teams' %}active{% endif %}">
+          TEAMS
+        </a>
+        <a href="{{ url_for('players.index') }}"
+           class="nav-link {% if request.blueprint == 'players' %}active{% endif %}">
+          PLAYERS
+        </a>
+        <a href="{{ url_for('games.index') }}"
+           class="nav-link {% if request.blueprint == 'games' %}active{% endif %}">
+          GAMES
+        </a>
+        <a href="{{ url_for('standings.index') }}"
+           class="nav-link {% if request.blueprint == 'standings' %}active{% endif %}">
+          STANDINGS
+        </a>
+        <a href="{{ url_for('trades.index') }}"
+           class="nav-link {% if request.blueprint == 'trades' %}active{% endif %}">
+          TRADES
+        </a>
+        <a href="{{ url_for('coaches.index') }}"
+           class="nav-link {% if request.blueprint == 'coaches' %}active{% endif %}">
+          COACHES
+        </a>
+      </nav>
+
+      <!-- Right-side actions -->
+      <div class="header-actions">
+        <a href="{{ url_for('main.search') }}"
+           class="nav-link {% if request.endpoint == 'main.search' %}active{% endif %}"
+           style="font-size:0.82rem;">SEARCH</a>
+        <span class="season-badge">2026 SEASON</span>
+        {% if session.get('admin') %}
+          <a href="{{ url_for('admin.dashboard') }}" class="nav-link {% if request.blueprint == 'admin' %}active{% endif %}">ADMIN</a>
+          <a href="{{ url_for('login.logout') }}" class="nav-link">LOGOUT</a>
+        {% else %}
+          <a href="{{ url_for('login.login') }}" class="nav-link {% if request.blueprint == 'login' %}active{% endif %}">LOGIN</a>
+        {% endif %}
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ── PAGE CONTENT ── -->
+  <main class="page-main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-container">
+          {% for category, message in messages %}
+            <div class="flash flash--{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">HARDCOUNT</span>
+      <span class="footer-copy">&copy; 2025 Women's National Football Conference. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

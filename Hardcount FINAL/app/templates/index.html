@@ -1,0 +1,461 @@
+{% extends "Base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block extra_head %}
+<style>
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, #0a0e1a 0%, #013369 60%, #0a1f3d 100%);
+    margin: -2rem -1.5rem 2.5rem;
+    padding: 4rem 1.5rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(212,175,55,0.03) 40px,
+      rgba(212,175,55,0.03) 41px
+    );
+  }
+  .hero-inner {
+    max-width: 780px;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: #d4af37;
+  }
+  .hero h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .hero h1 span { color: #d4af37; }
+  .hero-sub {
+    font-size: 1rem;
+    color: #8896a8;
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .hero-cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .btn-gold {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: #d4af37;
+    color: #0a0e1a;
+    padding: 0.65rem 1.5rem;
+    border-radius: 3px;
+    transition: opacity 0.15s;
+  }
+  .btn-gold:hover { opacity: 0.88; }
+  .btn-outline {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: transparent;
+    color: #c8d0e0;
+    border: 1.5px solid #3a4a60;
+    padding: 0.65rem 1.5rem;
+    border-radius: 3px;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .btn-outline:hover { border-color: #d4af37; color: #d4af37; }
+
+  /* ── Two-col layout ── */
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  @media (max-width: 768px) {
+    .home-grid { grid-template-columns: 1fr; }
+    .hero { margin: -1.25rem -1rem 2rem; padding: 2.5rem 1rem 2.5rem; }
+  }
+
+  /* ── Panel card ── */
+  .panel {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    overflow: hidden;
+  }
+  .panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background: #0a0e1a;
+    border-bottom: 2px solid #d4af37;
+  }
+  .panel-head h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #d4af37;
+  }
+  .panel-head a {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8896a8;
+    transition: color 0.15s;
+  }
+  .panel-head a:hover { color: #d4af37; }
+  .panel-body { padding: 0; }
+
+  /* Recent results */
+  .result-row {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr auto 1fr;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid #f0f2f5;
+    gap: 0.5rem;
+  }
+  .result-row:last-child { border-bottom: none; }
+  .result-week {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9aa5b4;
+    text-align: center;
+    background: #f0f2f5;
+    padding: 3px 5px;
+    border-radius: 3px;
+  }
+  .result-team {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .result-team a { color: #013369; font-weight: 700; }
+  .result-team a:hover { text-decoration: underline; }
+  .result-score {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a0e1a;
+    text-align: center;
+    letter-spacing: 0.05em;
+    background: #f4f7fb;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .result-away { text-align: right; }
+
+  /* Standings snapshot */
+  .div-label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #9aa5b4;
+    background: #f4f7fb;
+    padding: 0.4rem 1.25rem;
+    border-bottom: 1px solid #e9ecef;
+  }
+  .standing-row {
+    display: grid;
+    grid-template-columns: 1.8rem 1fr auto;
+    align-items: center;
+    padding: 0.6rem 1.25rem;
+    border-bottom: 1px solid #f0f2f5;
+    gap: 0.5rem;
+  }
+  .standing-row:last-child { border-bottom: none; }
+  .standing-rank {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #9aa5b4;
+    text-align: center;
+  }
+  .standing-rank.top { color: #d4af37; }
+  .standing-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #013369;
+  }
+  .standing-name a { color: #013369; }
+  .standing-name a:hover { text-decoration: underline; }
+  .standing-rec {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ── Section nav cards (image backgrounds) ── */
+  .section-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  @media (max-width: 700px) {
+    .section-nav { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 420px) {
+    .section-nav { grid-template-columns: 1fr; }
+  }
+  .sec-card {
+    position: relative;
+    display: block;
+    height: 190px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #0a0e1a;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+  .sec-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+  }
+  .sec-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.80) 0%,
+      rgba(1,51,105,0.45) 55%,
+      rgba(0,0,0,0.18) 100%
+    );
+    transition: background 0.25s;
+    z-index: 1;
+  }
+  .sec-card:hover::before {
+    background: linear-gradient(
+      to top,
+      rgba(1,51,105,0.92) 0%,
+      rgba(0,0,0,0.55) 100%
+    );
+  }
+  .sec-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #d4af37;
+    transition: width 0.3s ease;
+    z-index: 3;
+  }
+  .sec-card:hover::after { width: 100%; }
+  .sec-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.1rem 1.25rem 1.2rem;
+    z-index: 2;
+  }
+  .sec-card-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 1;
+    display: block;
+    transition: color 0.2s;
+  }
+  .sec-card:hover .sec-card-title { color: #d4af37; }
+  .sec-card-sub {
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 0.3rem;
+    letter-spacing: 0.03em;
+    display: block;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Women's National Football Conference</div>
+    <h1>The Official<br><span>WNFC Stats</span> Hub</h1>
+    <p class="hero-sub">
+      Complete player stats, team standings, game results, and roster history
+      for every season of WNFC football.
+    </p>
+    <div class="hero-cta-row">
+      <a href="{{ url_for('standings.index') }}" class="btn-gold">View Standings</a>
+      <a href="{{ url_for('players.index') }}" class="btn-outline">Browse Players</a>
+      <a href="{{ url_for('games.index') }}" class="btn-outline">Game Results</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAIN GRID: recent results + standings snapshot ── -->
+<div class="home-grid">
+
+  <!-- Recent Results -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Recent Results</h2>
+      <a href="{{ url_for('games.index') }}">All Games &rsaquo;</a>
+    </div>
+    <div class="panel-body">
+      {% if recent_games %}
+        {% for g in recent_games %}
+        <div class="result-row">
+          <div class="result-week">Wk {{ g.week }}</div>
+          <div class="result-team">
+            {% if g.home_team_id %}
+              <a href="/teams/{{ g.home_team_id }}">{{ g.home_team_name }}</a>
+            {% else %}
+              {{ g.home_team_name }}
+            {% endif %}
+          </div>
+          <div class="result-score">{{ g.score or '—' }}</div>
+          <div class="result-team result-away">
+            {% if g.away_team_id %}
+              <a href="/teams/{{ g.away_team_id }}">{{ g.away_team_name }}</a>
+            {% else %}
+              {{ g.away_team_name }}
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="text-muted text-center" style="padding:2rem">No results available.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Standings Snapshot -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Standings Snapshot</h2>
+      <a href="{{ url_for('standings.index') }}">Full Standings &rsaquo;</a>
+    </div>
+    <div class="panel-body">
+      {% if top_standings %}
+        {% set ns = namespace(current_div='') %}
+        {% for t in top_standings %}
+          {% if t.division != ns.current_div %}
+            {% set ns.current_div = t.division %}
+            <div class="div-label">{{ t.division }}</div>
+          {% endif %}
+          <div class="standing-row">
+            <div class="standing-rank {% if t.rn == 1 %}top{% endif %}">{{ t.rn }}</div>
+            <div class="standing-name">
+              {% if t.team_id %}
+                <a href="/teams/{{ t.team_id }}">{{ t.team_name }}</a>
+              {% else %}
+                {{ t.team_name }}
+              {% endif %}
+            </div>
+            <div class="standing-rec">{{ t.wins }}-{{ t.losses }}{% if t.ties and t.ties > 0 %}-{{ t.ties }}{% endif %}</div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="text-muted text-center" style="padding:2rem">No standings data available.</p>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+<!-- ── SECTION NAV CARDS ── -->
+<div class="section-nav">
+  <a href="{{ url_for('teams.index') }}" class="sec-card"
+     style="background-image: url('{{ url_for('images.static', filename='Teams divisions .jpg') }}');">
+    <div class="sec-card-content">
+      <span class="sec-card-title">Teams</span>
+      <span class="sec-card-sub">Rosters &amp; franchise history</span>
+    </div>
+  </a>
+  <a href="{{ url_for('players.index') }}" class="sec-card"
+     style="background-image: url('{{ url_for('images.static', filename='player_emote.jpg') }}');">
+    <div class="sec-card-content">
+      <span class="sec-card-title">Players</span>
+      <span class="sec-card-sub">Season &amp; career statistics</span>
+    </div>
+  </a>
+  <a href="{{ url_for('standings.index') }}" class="sec-card"
+     style="background-image: url('{{ url_for('images.static', filename='Two_teams_gamestart.jpg') }}');">
+    <div class="sec-card-content">
+      <span class="sec-card-title">Standings</span>
+      <span class="sec-card-sub">Division rankings &amp; splits</span>
+    </div>
+  </a>
+  <a href="{{ url_for('games.index') }}" class="sec-card"
+     style="background-image: url('{{ url_for('images.static', filename='twoteam_tackle.jpg') }}');">
+    <div class="sec-card-content">
+      <span class="sec-card-title">Schedule</span>
+      <span class="sec-card-sub">Results &amp; box scores</span>
+    </div>
+  </a>
+  <a href="{{ url_for('coaches.index') }}" class="sec-card"
+     style="background-image: url('{{ url_for('images.static', filename='football_w_logo.webp') }}');">
+    <div class="sec-card-content">
+      <span class="sec-card-title">Coaches</span>
+      <span class="sec-card-sub">Staff records by season</span>
+    </div>
+  </a>
+  <a href="{{ url_for('trades.index') }}" class="sec-card"
+     style="background-color:#0a1f3d; background-image: url('{{ url_for('images.static', filename='Golden-State-Storm-3.png.webp') }}'); background-size: 65%; background-position: center 35%; background-repeat: no-repeat;">
+    <div class="sec-card-content">
+      <span class="sec-card-title">Trades</span>
+      <span class="sec-card-sub">Player movement &amp; transactions</span>
+    </div>
+  </a>
+</div>
+
+{% endblock %}

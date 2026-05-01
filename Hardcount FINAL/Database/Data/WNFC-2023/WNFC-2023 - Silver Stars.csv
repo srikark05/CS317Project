@@ -1,0 +1,61 @@
+Player Name,Player Number,Position,Height,Weight,Birth Year,Hometown,Home State,School,Passing Yards,Passing Comp,Passing Att,Passing Pct,Passing TD,Passing Int,Passing Long,Passing Rating,Rushing Yards,Rushing Carries,Rushing Long,Rushing TD,Receiving Yards,Receiving Rec,Receiving Long,Receiving TD,Tackles Solo,Tackles Assists,Tackles For Loss,Sacks,Forced Fumbles,Interceptions,Interception Return Yards,Interception Return Long,Interception Return TD,Fumble Recoveries,Fumble Return Yards,Fumble Return Long,Fumble Return TD,Pass Deflections,Blocked Kicks and Punts,Kickoff Returns,Kickoff Returns Yards,Kickoff Returns Long,Kickoff Returns TD,Punt Returns,Punt Return Yards,Punt Return Long,Punt Return TD,Punts,Punting Yards,Punting Touchbacks,Punting Long,Touchdowns,Field Goals,Field Goal Att,Field Goal Long,PAT Kicks,PAT Kicks Att,Safeties,PAT Conversions
+Danielle Galloway,0,WR,5-3,155,1997,Los Angeles,CA,"Cal state, northridge",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Miriah Lopez,1,WR,5-3,127,1994,Dallas,TX,Creekview high,0,0,0,0,0,0,0,0,0,0,0,0,125,8,46,2,0,0,0,0,0,1,30,NR,0,0,0,0,0,1,0,4,33,22,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0
+Maria Acension,2,DB,5-4,135,1990,Las Vegas,NV,Rancho High School,0,0,0,0,0,0,0,0,0,0,0,0,45,2,40,0,9,1,0,0,0,1,5,5,0,0,0,0,0,0,0,1,6,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cindy Teitsma,3,DB,5-6,140,1982,Las Vegas,NV,Taft College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cindylou Rasiang,4,QB,5-6,165,2003,Las Vegas,NV,Bonanza High School,151,15,49,30.6,1,3,NR,21.7,26,9,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Malissa Miles,5,WR,5-9,170,1988,Los Angeles,CA,"Cal State, Northridge",0,0,0,0,0,0,0,0,2,1,2,0,54,9,14,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Skylar Pringle-Hicks,6,DL,NR,NR,2003,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Christina Montoya,7,WR,5-5,145,1990,Las Vegas,NV,University of Phoenix,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Samantha Caruth,8,WR,5-10,170,1998,Las Vegas,NV,Central Methodist University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kalyx Lewis,9,RB,5-5,140,1997,West Orange,NJ,University of Nevada Las Vegas,0,0,0,0,0,0,0,0,231,58,17,1,58,7,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Megan Biggers,10,K,5-5,150,1997,West Plains,MO,Community College of the Air Force,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,1,NR,6,7,0,0
+Alysia Bisquera Dominguez,11,WR,5-3,102,1987,Santa Barbara,CA,Santa Barbara High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,12,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ty Rodriguez,12,QB,5-8,180,1986,Patterson,NJ,Palo Verde,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Maha Hawwass,13,LB,5-5,160,1985,Las Vegas,NV,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,7,0,0,0,1,0,NR,0,2,0,NR,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Christina Vollrath,14,WR,5-3,125,1997,Sacramento,CA,NR,0,0,0,0,0,0,0,0,0,0,0,0,6,1,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mariah Makupson,15,LB,5-3,185,1994,Seattle,WA,Advanced Training Institute,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Khyla Easler,17,OL,NR,NR,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mahogany Gaines,18,LB,5-7,145,1997,Shelby,NC,Crest High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,9,9,3,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Maikia Williams,19,DB,5-8,125,2001,Watts,CA,Liberty High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,4,0,0,3,2,52,52,0,2,0,NR,0,0,0,0,0,0,0,3,26,18,0,0,0,0,0,0,0,0,0,0,0,0,0
+Robin Johnson,20,QB,5-6,145,1990,Las Vegas,NV,Silverado High School/ DeVry University,189,20,48,41.7,3,3,NR,48,65,33,14,1,34,1,34,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Marissa Lopez,21,QB,5-5,135,1993,Dallas,TX,Creekview,90,6,14,42.9,1,0,NR,88.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Alejandra Rivera Rivera,22,WR,5-9,185,2001,Phoenix,AZ,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jennifer Ingargiola,23,RB,5-4,190,1991,Colorado Springs,CO,Colorado State University,0,0,0,0,0,0,0,0,157,31,33,2,71,9,13,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,12,12,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0
+Xiana Dillon,24,OL,5-4,275,2000,Oakland,CA,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Raquel Sharper,25,OL,5-6,160,1970,New York,NY,Rockland College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kristin Carter,26,LB,5-4,190,1995,San Leandro,CA,"University of Nevada, Reno",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Malaysia Flowers,27,DB,5-8,130,1999,Los Angeles,CA,Crenshaw High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,1.5,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Rachel Lund,30,OL,5-11,165,1994,Lancaster,CA,Fresno State,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Shalynn Splettstoesser,33,LB,5-5,185,1991,San Francisco,CA,UNLV,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Serena Smith,36,OL,5-4,205,1988,Los Angeles,CA,Granada Hills Charter High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Christi Acacio,40,LB,4-11,170,1983,Las Vegas,NV,Valley High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Brittaney Warren,43,OL,5-7,340,1992,Las Vegas,NV,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Heather Puletasi,44,RB,5-5,215,1987,Ewa Beach,HI,Clarendon College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Terry Viena,45,DB,5-4,180,1991,Waipahu,HI,Waipahu High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Osmara Gissell Nunez Barrera,50,DL,5-4,170,1999,Las Vegas,NV,San Bernadino Valley College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,7,6.5,3,3,0,0,0,0,1,14,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jaynna Valdez,52,DB,5-3,145,2002,Las Vegas,NV,Unity College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,4,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Charlotte CJ Madrid,53,DL,5-4,175,1995,Las Vegas,NV,Centennial high school,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,8,7,2.5,0,0,0,0,0,0,0,0,0,1,0,6,77,26,0,0,0,0,0,9,219,0,37,0,0,0,0,0,0,0,0
+Felicia Lilo,54,DL,5-6,250,1984,San Diego,CA,Morse high school,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Monica Johnson,56,DL,NR,NR,1985,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Yvonne LuLu Harris,60,RB,5-3,165,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kristine Eisler,64,DL,5-5,190,1984,Victorville,CA,University of La Verne College of Law,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Audra Gutierrez,66,OL,5-4,275,1981,Escondido,CA,"Cal State, Northridge",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Debrina Wright,67,DL,5-5,165,1976,Compton,CA,Cal State Long Beach,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jessica Hill,68,LB,5-5,188,1990,St. Joseph,MO,Missouri Western State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Similiti Lealiki,70,DL,5-4,180,1990,Compton,CA,Rancho High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,7,4.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dayton Yingling,72,RB,NR,NR,1996,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Caitlynn Jones,73,OL,5-10,300,1992,Myrtle Beach,SC,Carolina Forest High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ariana Gonzalez,75,DL,5-6,200,2001,Las Vegas,NV,University of Nevada Las Vegas,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sarah Schwartz,76,DL,5-8,225,1998,Las Vegas,NV,University of Nevada Las Vegas,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jessica Estes,81,OL,5-4,170,1987,Houston,TX,Humble High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Irlanda Diaz,82,DL,NR,NR,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,2.5,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kylie Mitchell,88,WR,5-7,155,1994,Los Angeles,CA,Grand Canyon University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Diane Koinva,91,OL,5-1,230,1988,Hotevilla,AZ,Hopi High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kimberly Weaver,93,DL,NR,NR,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Alecsys Williams,94,OL,5-3,228,1987,Las Vegas,NV,South University Online,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Yamilex Jimenez,95,LB,5-8,200,1995,Phoenix,AZ,Phoenix College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,1,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dora Alvarez,96,OL,5-2,200,1989,Los Angeles,CA,Sonoma State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Victoria Reed,97,OL,5-7,235,1998,Las Vegas,NV,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Adriane Utt,98,OL,5-6,250,1985,San Jose,CA,UNLV,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Barbriel Davis,99,DL,5-10,250,1988,Inglewood,CA,Pima Medical Institute-Las Vegas,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

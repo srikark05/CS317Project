@@ -1,0 +1,52 @@
+Player Name,Player Number,Position,Height,Weight,Birth Year,Hometown,Home State,School,Passing Yards,Passing Comp,Passing Att,Passing Pct,Passing TD,Passing Int,Passing Long,Passing Rating,Rushing Yards,Rushing Carries,Rushing Long,Rushing TD,Receiving Yards,Receiving Rec,Receiving Long,Receiving TD,Tackles Solo,Tackles Assists,Tackles For Loss,Sacks,Forced Fumbles,Interceptions,Interception Return Yards,Interception Return Long,Interception Return TD,Fumble Recoveries,Fumble Return Yards,Fumble Return Long,Fumble Return TD,Pass Deflections,Blocked Kicks and Punts,Kickoff Returns,Kickoff Returns Yards,Kickoff Returns Long,Kickoff Returns TD,Punt Returns,Punt Return Yards,Punt Return Long,Punt Return TD,Punts,Punting Yards,Punting Touchbacks,Punting Long,Touchdowns,Field Goals,Field Goal Att,Field Goal Long,PAT Kicks,PAT Kicks Att,Safeties,PAT Conversions
+Erica Mason-Austin,1,WR,5-8,175,NR,Youngstown,OH,Vol State,0,0,0,0,0,0,0,0,0,0,0,0,15,3,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,46,24,0,1,13,13,0,0,0,0,0,0,0,0,0,0,0,0,0
+Bria Truxon,2,TE,5-9,189,NR,Philadelphia,PA,Penn State University,0,0,0,0,0,0,0,0,0,0,0,0,3,1,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Erinn Payton,4,RB,5-10,202,NR,Detroit,MI,Macomb Community College,0,0,0,0,0,0,0,0,34,18,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Starry Bady,5,DB,5-6,150,NR,Memphis,TN,Southern University of Baton Rouge,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,0,0,0,1,0,NR,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Joanna Young,6,WR,5-4,138,NR,Cannon County,TN,Maryville College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Brittany Bassett,7,TE,5-11,178,NR,Memphis,TN,Arkansas State University,0,0,0,0,0,0,0,0,0,0,0,0,15,3,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Charniece Carney,8,DB,5-2,128,NR,Philadelphia,PA,Lasalle University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kandy Bortz,10,WR,5-6,160,NR,Santiago de los Caballeros,Dominican Republic,Autonomous University of Santa Domingo,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Carah Johnson,11,DB,5-6,133,NR,Stillman Valley,IL,Tennessee College of Applied Technology,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,24,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Brennan Crabtree,12,WR,5-8,135,NR,Athens,AL,University of Memphis,0,0,0,0,0,0,0,0,0,0,0,0,46,3,34,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,271,0,33,0,0,0,0,0,0,0,0
+Tessa Ortiz-Marsh,13,QB,5-8,180,NR,Tomah,WI,University of Dayton School of Law,171,18,39,46.2,0,0,5,58.8,27,27,8,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Stacey Kremer,14,WR,5-7,155,NR,Cherry Hill,NJ,Union University,0,0,0,0,0,0,0,0,0,0,0,0,84,6,46,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
+Aurree King,15,RB,5-4,180,NR,Atwood,TN,South College,0,0,0,0,0,0,0,0,29,31,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ayshia Slaughter,16,DB,5-5,175,NR,Columbus,OH,Columbus State Community College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Marcy Van Hartesveldt,17,WR,5-10,165,NR,Southfield,MI,University of Michigan,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Michelle Dunham,18,WR,5-5,135,NR,Birmingham,AL,Oxford University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Diamond Griggs Tucker,20,DB,5-6,132,NR,Gary,IN,Tennessee State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,0,0,1,61,61,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Pita Lou,21,WR,5-6,120,NR,Smyrna,TN,University of Tennessee Martin,0,0,0,0,0,0,0,0,0,0,0,0,9,2,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lydia Qualls Jarrett,22,LB,5-7,180,NR,Ripley,TN,University of Tennessee Knoxville,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,3,1,0,0,1,0,NR,0,1,0,NR,0,0,0,1,11,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Cortney Mosier,23,LB,5-3,145,NR,Effingham,IL,Effingham HS,0,0,0,0,0,0,0,0,6,6,4,0,0,0,0,0,2,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Neshara Watrous,24,DB,5-3,145,NR,Ocean Springs,MS,Ocean Springs HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sydney Blahnik,25,LB,5-7,225,NR,Grand Rapids,MI,Eastern Michigan University,10,2,4,50,0,0,NR,56.2,3,9,NR,0,0,0,0,0,6,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Aireka Fowler,26,RB,5-1,115,NR,Philadelphia,PA,Overbrook HS,0,0,0,0,0,0,0,0,4,10,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,31,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tiffany Hopkins,27,DL,5-2,200,NR,St. Louis,MO,University of Northern Alabama,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,5,3.5,1,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kia Armstrong,28,WR,5-9,170,NR,Nashville,TN,Middle Tennessee State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dionna Jackson-Ross,30,DB,5-7,153,NR,Columbus,OH,Keller University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,9,4.5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Pasha Rivers,33,LB,5-4,185,NR,Columbus,OH,Ohio State College of Barber Styling,0,0,0,0,0,0,0,0,0,2,NR,0,0,0,0,0,13,3,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Baiyinah Rahim,35,DL,5-2,145,NR,Antioch,TN,Cedarcreek Home School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vanesia Thompson,39,DB,5-3,128,NR,Clifton,TN,Penn Foster University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tiara Woodard,44,DL,5-6,180,NR,Antioch,TN,Cane Ridge HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,5,2,1.5,1,0,0,0,0,1,5,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sasha Stevenson,48,LB,5-2,185,NR,Nashville,TN,Pearl Cohn HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dmayla Holliday,50,DL,5-9,230,NR,Knoxville,TN,Cuyahoga Community College,0,0,0,0,0,0,0,0,6,2,4,0,0,0,0,0,10,4,6.5,4,0,0,0,0,0,1,9,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sheldon Bins,51,OL,5-6,255,NR,Nashville,TN,Academy at Old Cockrill,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,1.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nyshavia Riley-Marsh,52,DL,5-3,180,NR,Knoxville,TN,Virginia College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Aundrea Radford King,53,LB,5-7,200,NR,Indianapolis,IN,Houston Community College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,5,3.5,1.5,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Angel Benson,55,OL,5-7,200,NR,Huntsville,AL,Spring Hill College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tosha Bins,58,DL,5-9,215,NR,Louisville,KY,Louisville Central High Magnet Career A,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jahogony Ezelle,66,DL,5-7,200,NR,Nashville,TN,Tennessee State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nichole Bressner,69,LB,5-4,195,NR,Fairbury,IL,Austin Peay State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Shari Cherenfant,70,OL,5-3,215,NR,Brooklyn,NY,Southern University of Chattanooga,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Essence Lipscomb,72,OL,5-10,240,NR,Columbia,TN,Columbia Central HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Arlyssa Perry,75,OL,5-3,190,NR,Nashville,TN,Miles College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lindsay Powell,77,OL,5-7,260,NR,Lawrenceburg,TN,Marian University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lanie Ford,79,OL,5-9,250,NR,Niles,MI,Austin Peay State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kirstyanna Quinn Pierce,82,DL,5-8,168,NR,Chicago,IL,Northern Illinois University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Asha Evans,85,DL,5-6,182,NR,Newton,NC,Northwestern University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Karissa Burnett,88,DB,5-5,136,NR,Memphis,TN,Tennessee State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,4,0,0,0,0,0,0,0,0,0,0,0,0,0,3,15,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Brooke Mugridge,92,OL,5-4,220,NR,New South Wales,Australia,Western Sydney University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Fita Boyce-Jennings,99,DL,5-5,275,NR,Waianae,HI,Leilehua HS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Louann Cody,N/A,NR,NR,NR,NR,NR,NR,NR,0,0,0,0,0,0,0,0,9,1,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Imani Corbett,N/A,NR,NR,NR,NR,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,18,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

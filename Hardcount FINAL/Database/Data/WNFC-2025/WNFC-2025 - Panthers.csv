@@ -1,0 +1,54 @@
+Player Name,Player Number,Position,Height,Weight,Birth Year,Hometown,Home State,School,Passing Yards,Passing Comp,Passing Att,Passing Pct,Passing TD,Passing Int,Passing Long,Passing Rating,Rushing Yards,Rushing Carries,Rushing Long,Rushing TD,Receiving Yards,Receiving Rec,Receiving Long,Receiving TD,Tackles Solo,Tackles Assists,Tackles For Loss,Sacks,Forced Fumbles,Interceptions,Interception Return Yards,Interception Return Long,Interception Return TD,Fumble Recoveries,Fumble Return Yards,Fumble Return Long,Fumble Return TD,Pass Deflections,Blocked Kicks and Punts,Kickoff Returns,Kickoff Returns Yards,Kickoff Returns Long,Kickoff Returns TD,Punt Returns,Punt Return Yards,Punt Return Long,Punt Return TD,Punts,Punting Yards,Punting Touchbacks,Punting Long,Touchdowns,Field Goals,Field Goal Att,Field Goal Long,PAT Kicks,PAT Kicks Att,Safeties,PAT Conversions
+Tara Thomas,0,RB,5-4,145,1989,Dallas,TX,University of Miami and Texas Tech,0,0,0,0,0,0,0,0,103,16,37,1,92,11,19,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,5,93,47,1,0,0,0,0,3,0,0,0,0,0,0,1
+Alyssa McCarron,1,DB,5-6,160,1999,Baton Rouge,LA,Millsaps,0,0,0,0,0,0,0,0,0,1,NR,0,0,0,0,0,3,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,84,0,38,0,0,0,0,0,0,0,0
+Jasmine Coleman,2,WR,5-4,145,1993,Decatur,GA,South Carolina State University,0,0,0,0,0,0,0,0,0,0,0,0,9,2,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Regena Jackson,3,DB,5-4,145,NR,Denham Springs,LA,Belhaven University,0,0,0,0,0,0,0,0,0,0,0,0,9,1,9,0,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DAjah Scott,4,WR,5-8,165,1992,Washington,DC,Black Hawk College,0,0,0,0,0,0,0,0,125,12,54,3,204,19,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,6,142,63,1,0,0,0,0,5,0,0,0,0,0,0,1
+Takera Mitchell,5,DB,5-6,150,1993,Waynesboro,MS,East Mississippi Community College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,0,1,0,2,47,38,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tenazhia Hinkson,6,WR,5-4,145,1996,San Diego,CA,Co-Lin / Dillard / Mississippi Univ. for W,0,0,0,0,0,0,0,0,0,0,0,0,35,1,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Candice Davis,7,DB,5-3,160,1991,Greenwood,MS,USM,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,2,0,0,0,0,0,0,0,0,0,0,1,0,1,13,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Melyse Brown,8,QB,5-9,170,1993,Halifax,VA,Virginia Union University,1105,78,139,56.1,9,2,75,97.6,125,23,25,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0
+Kristen London,9,DB,5-9,160,1987,Richmond,VA,Virginia,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,15,1.5,0,0,0,0,0,0,0,0,0,0,1,0,2,10,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Diamond Wright,10,DB,5-7,145,1993,Nashville,TN,Wilberforce University / Clark Atlanta U,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,9,0.5,0,0,0,0,0,0,0,0,0,0,4,0,1,13,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ashya Elder,11,WR,5-4,145,1996,Atlanta,GA,Kentucky University,0,0,0,0,0,0,0,0,0,0,0,0,71,4,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mary Woodard,12,DB,5-4,145,1997,Lansdale,PA,University of Alabama at Birmingham,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Natalie Nicks,13,WR,5-7,155,1999,Pensacola,FL,US Air Force Academy,0,0,0,0,0,0,0,0,0,0,0,0,310,21,56,3,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0
+Aalicia Norrell,14,DE,5-7,150,2002,Terry,MS,Hinds Community College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kymesha Taylor,15,DB,5-7,170,1992,Jackson,MS,Mississippi State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,1,23,23,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sharketie Leverette,16,RB,5-4,145,1991,Columbia,MS,NR,0,0,0,0,0,0,0,0,48,9,9,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Ileshia Preston,17,LB,5-4,145,1992,Sumrall,MS,JCJC,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nyeisha Wright,18,WR,5-7,175,1989,Brooklyn,NY,Middle Tennessee State University,0,0,0,0,0,0,0,0,0,0,0,0,105,6,75,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Rashida Young,19,WR,5-4,145,1991,Yazoo,MS,Concordia College Alabama,0,0,0,0,0,0,0,0,0,0,0,0,179,8,60,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0
+Chassidy White,20,RB,5-4,145,1994,Jackson,MS,Hinds Community College,0,0,0,0,0,0,0,0,5,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Shanice Wheeler,21,RB,5-4,145,1990,Bristol,CT,Piedmont College & University of New Haven,0,0,0,0,0,0,0,0,30,7,16,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Jenea Walker,22,RB,5-6,175,1993,Baxley,GA,NR,0,0,0,0,0,0,0,0,265,40,28,6,13,1,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0
+CharLyshia Bradford,23,DL,5-4,145,1993,Clarksdale,MS,The University of Southern Mississippi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,18,6,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Aezioni Nakai-Fuller,24,DL,5-9,280,1994,Santa Rosa,CA,Santa Rosa Junior College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,2,1.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Shaniqual Davis,25,DB,5-4,145,1994,Laurel,MS,Jones County JC / William Carey University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kahriya Williams,26,RB,5-6,170,1999,Tyler,TX,University of Texas at Arlington,0,0,0,0,0,0,0,0,38,9,9,0,0,0,0,0,2,1,0,0,0,1,7,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Anita Brown,28,DB,5-4,145,1993,Rock Hill,SC,Duke University / Texas A&M University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+English Bennett,29,DL,5-4,145,1991,Jackson,MS,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,2,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Shardonay Jenkins,31,DL,5-9,220,220,New Orleans,LA,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,5,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Adrienne Marsh,33,LB,5-5,183,1988,Florence,AL,Auburn University in Montgomery,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,7,1.5,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Versace Lee,41,DL,5-4,145,1998,Yazoo City,MS,Hinds CC / Tougaloo / Walden University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Carla Odom,44,LB,5-9,176,NR,Atlanta,GA,XULA / CAU / GSU,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,15,2.5,1.5,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LaShanda Williams,45,LB,5-8,166,1983,Vicksburg,MS,Columbia State / Jackson State / SNHU,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,12,1.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Joy Longley,48,DL,5-4,145,1997,Atlanta,GA,Wittenberg University & Georgia State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,7,1.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Voldavia Roberts,50,OL,5-4,145,1990,Atlanta,GA,Georgia Gwinnett College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Myeshia Johnson,51,OL,5-4,145,1985,Eastabuchie,MS,Holmes Community College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tekesha Zo Williams,53,OL,5-4,145,1989,Brandon,MS,Hinds Community College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Allyssa Weatherd,54,LB,5-8,195,1993,Fort Worth,TX,Dominican University of California,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,10,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tymija Hackett,55,OL,5-5,210,1998,Yazoo City,MS,Holmes CC,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Meredith Mitchiner,56,P/K,5-7,175,2000,Spring,TX,Mississippi College,0,0,0,0,0,0,0,0,0,2,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,0,4,0,0,1,NR,8,10,0,0
+Jalessa Harvey,61,OL,5-4,145,1990,Brandon,MS,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Robin Cooper,65,OL,5-4,145,1993,Vicksburg,MS,Mississippi College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tracy Dorcemont,68,OL,5-4,145,1995,Miami,FL,Georgia State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Patricia Fultz,69,OL,5-10,255,1986,Edwards,MS,Hinds Community College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Madison Jones,71,OL,6-0,250,1994,Hattiesburg,MS,University of Southern Mississippi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Monique Larrieu,72,DL,5-6,200,1989,Chicago,IL,Emmanuel University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4,5.5,2.5,1,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tenisha Williams,73,OL,5-10,305,1988,Brandon,MS,Mississippi State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Montye Cooke,75,OL,5-4,145,2000,Lumberton,MS,University of Southern Mississippi,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kassidi Wynter,82,DL,5-8,195,1990,Toronto,Ontario,Kennesaw State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,7,3.5,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Makiya Adams,96,DL,5-4,145,2004,Vicksburg,MS,Jackson State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Eden Henry,97,DL,5-4,145,1996,Jackson,MS,Hinds Community College & Delta Tech,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+JaKiera Mallory,99,DL,5-10,250,NR,Jackson,MS,Jackson State University,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

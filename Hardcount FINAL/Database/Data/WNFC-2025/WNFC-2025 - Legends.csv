@@ -1,0 +1,42 @@
+Player Name,Player Number,Position,Height,Weight,Birth Year,Hometown,Home State,School,Passing Yards,Passing Comp,Passing Att,Passing Pct,Passing TD,Passing Int,Passing Long,Passing Rating,Rushing Yards,Rushing Carries,Rushing Long,Rushing TD,Receiving Yards,Receiving Rec,Receiving Long,Receiving TD,Tackles Solo,Tackles Assists,Tackles For Loss,Sacks,Forced Fumbles,Interceptions,Interception Return Yards,Interception Return Long,Interception Return TD,Fumble Recoveries,Fumble Return Yards,Fumble Return Long,Fumble Return TD,Pass Deflections,Blocked Kicks and Punts,Kickoff Returns,Kickoff Returns Yards,Kickoff Returns Long,Kickoff Returns TD,Punt Returns,Punt Return Yards,Punt Return Long,Punt Return TD,Punts,Punting Yards,Punting Touchbacks,Punting Long,Touchdowns,Field Goals,Field Goal Att,Field Goal Long,PAT Kicks,PAT Kicks Att,Safeties,PAT Conversions
+Miriah Lopez,1,WR,5-3,135,1994,Carrollton,TX,Texas State,0,0,0,0,0,0,0,0,17,3,15,0,99,8,33,0,11,18,1,0,0,2,25,25,0,0,0,0,0,4,0,5,85,31,0,1,14,14,0,0,0,0,0,0,0,0,0,0,0,0,2
+Angie Hamilton,2,DB,5-6,150,1983,Cambridge,MA,Kennesaw State,0,0,0,0,0,0,0,0,117,29,34,1,0,0,0,0,4,12,1.5,0,1,2,3,NR,0,0,0,0,0,5,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0
+Marissa Lopez,5,QB,5-5,145,1993,Dallas,TX,University of Texas,321,23,63,36.5,3,6,65,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,2
+Ricki Alex,6,S,5-11,150,1992,Navarre,FL,Florida University,0,0,5,0,0,0,NR,42.4,0,1,NR,0,117,6,33,1,2,1,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,7,0,7,1,0,0,0,0,0,0,1
+Laurisa Hollenshed,7,LB,5-6,175,1988,Lancaster,CA,Antelope Valley High,7,1,3,33.3,7,0,7,42.4,0,1,NR,0,0,0,0,0,11.5,13,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lanika Manning,8,DB,5-9,145,1979,Los Angeles,CA,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3.5,6,0.5,0,0,1,0,NR,0,0,0,0,0,0,0,2,24,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Jazmin Gamble,9,LB,5-5,200,1990,Bakersfield,CA,Mt Diablo High,0,0,0,0,0,0,0,0,549,49,66,3,83,3,65,1,14,16,4,3,1,1,14,14,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,1
+Jasmine McDonald,10,DB,5-4,165,1987,Redlands,CA,USC,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Alysia Dominguez,11,WR,5-3,115,1987,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Alexis Dixon Fontaine,13,RB,5-3,121,1992,Miami,FL,Miami Dade College,0,0,0,0,0,0,0,0,28,8,10,0,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,74,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Deztine Thomas,14,DB,5-5,120,1993,Compton,CA,Dominguez High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Kayla Chambers,15,DB,5-9,155,1992,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Leslie Medina,18,LB,5-5,145,1982,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mallory Torres,19,DB,5-0,129,1994,El Monte,CA,Cal State Northridge,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Annsleigh Anderson,23,QB,5-7,165,2004,Dallas,TX,Texas State,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,11,0.5,0,0,1,20,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ryan Meismer-Thompson,26,DB,5-6,125,2004,Northridge,CA,Cal State Northridge,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Natasha Johnson,31,LB,5-8,170,NR,Grob Gerau,Germany,Harrison High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,0.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,28,0,28,0,0,0,0,0,0,0,0
+Lindsey Moore,33,LB,5-6,175,1992,Los Angeles,CA,Southwest College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Salina Samario,35,DB,5-8,160,1994,El Monte,CA,Fullerton College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Meagan Curtis,38,RB,5-8,175,1997,Torrance,CA,Washington University,0,0,0,0,0,0,0,0,506,72,64,5,0,0,0,0,6,6,3.5,0,0,0,0,0,0,0,0,0,0,0,0,1,16,16,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0
+Mary Rachel Love,41,LB,5-7,180,1991,Venice,CA,Santa Monica College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tiffany Gonzales,43,OL,5-2,200,1981,Whittier,CA,El Rancho High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Lauren Davis,44,LB,5-7,175,1982,Compton,CA,Purdue,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,22,3.5,1.5,1,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Precious Moses,50,DL,5-6,230,1994,Victorville,CA,Victor Valley High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,6,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dawna Zike,52,LB,5-9,190,1989,San Jose,CA,University of Arizona,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,17,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,5,113,0,33,0,0,0,0,0,0,0,0
+Jessica Jackson,54,OL,5-0,200,1982,Carson,CA,CSUDH,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Shaina Cato,59,DL,5-7,260,1984,Compton,CA,CSUDH,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mila Porter Lawson,62,OL,5-8,245,1998,Oakland,CA,Santa Monica College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Darlene Martinez,65,OL,5-5,182,2005,Monrovia,CA,Monrovia High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jennifer Ramirez,67,OL,5-7,280,1995,Riverside,CA,Riverside College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Nayla Cerna,73,OL,5-8,265,1995,Compton,CA,Locke High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Matalya Johnson,75,DL,5-5,165,2000,Los Angeles,CA,Southwest College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,12,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Natasha Jackson,77,OL,5-3,160,1982,Los Angeles,CA,Manual Arts High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Sabrina Casillas,79,DL,5-10,300,2001,Downey,CA,Cerritos College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,6,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Aly Montesino,80,OL,5-7,180,2002,NR,NR,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Echo Levell,84,DB,5-7,160,1990,Pomona,CA,Garey High School,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Olivia Morgan,85,WR,5-7,170,1988,Santa Cruz,CA,University of Nevada,0,0,0,0,0,0,0,0,0,1,NR,0,29,2,22,1,3,7,0,0,0,1,0,NR,0,0,0,0,0,6,0,0,0,0,0,4,29,18,0,0,0,0,0,1,0,0,0,0,0,0,0
+Malaysia Quimby,87,WR,5-4,220,1987,Orange,NJ,Cal State LA,0,0,0,0,0,0,0,0,99,14,31,3,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0
+Tina Orrick,90,OL,5-6,245,2001,Mammoth Lakes,CA,Mammoth High,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6,3.5,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jessica Phillips,93,DL,5-9,315,1993,Carson,CA,Carson High School,0,0,0,0,0,0,0,0,14,4,8,0,13,1,13,0,2,7,0.5,0.5,1,0,0,0,0,1,0,NR,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Shardae Bell,95,OL,5-4,180,1986,Inland Empire,CA,San Bernadino College,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,0 +1,58 @@
+{% extends "Base.html" %}
+{% block title %}Games{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Games</h1>
+</div>
+
+<form method="get" style="margin-bottom:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end;">
+  <div>
+    <label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:4px;">WEEK</label>
+    <select name="week" style="padding:6px 10px;border:1px solid #dee2e6;border-radius:4px;">
+      <option value="">All</option>
+      {% for w in weeks %}<option value="{{ w.week }}" {% if current_week == w.week|string %}selected{% endif %}>Week {{ w.week }}</option>{% endfor %}
+    </select>
+  </div>
+  <div>
+    <label style="font-size:.8rem;font-weight:700;display:block;margin-bottom:4px;">SEASON</label>
+    <select name="season" style="padding:6px 10px;border:1px solid #dee2e6;border-radius:4px;">
+      <option value="">All</option>
+      {% for s in seasons %}<option value="{{ s.season }}" {% if current_season == s.season|string %}selected{% endif %}>{{ s.season }}</option>{% endfor %}
+    </select>
+  </div>
+  <button type="submit" style="padding:6px 16px;background:#013369;color:#d4af37;border:none;border-radius:4px;font-weight:700;cursor:pointer;">Filter</button>
+</form>
+
+<div class="table-wrapper">
+  <div class="table-header"><h2>Schedule</h2></div>
+  <table>
+    <thead>
+      <tr>
+        <th class="num">Wk</th>
+        <th class="num">Season</th>
+        <th>Date</th>
+        <th>Home</th>
+        <th>Away</th>
+        <th>Score</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for g in games %}
+      <tr>
+        <td class="num">{{ g.week }}</td>
+        <td class="num">{{ g.season }}</td>
+        <td>{{ g.play_date }}</td>
+        <td><span class="team-badge">{{ g.home_team_name }}</span></td>
+        <td><span class="team-badge">{{ g.away_team_name }}</span></td>
+        <td class="highlight">{{ g.score or '—' }}</td>
+        <td class="text-muted">{{ g.address or '—' }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="7" class="text-center text-muted" style="padding:2rem">No games found.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
