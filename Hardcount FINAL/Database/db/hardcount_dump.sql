@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict SBe5dKpfREOeDvEvXSeYNDxIrr3Y2bNefKbBoKCZFQzfYF0uco4BwuJvkEMdwbd
+\restrict F18aRKiyYv5ujjXLfTYwf5ndD0RYFe72wiYxBh5Om1luB0BwG63h58zrwZqfOhC
 
 -- Dumped from database version 16.13 (Homebrew)
 -- Dumped by pg_dump version 16.13 (Homebrew)
@@ -460,7 +460,9 @@ CREATE TABLE public.team (
     address character varying(100),
     titles integer,
     president character varying(100),
-    tv_tag character varying(3)
+    tv_tag character varying(3),
+    phone character varying(50),
+    email character varying(300)
 );
 
 
@@ -11936,27 +11938,27 @@ COPY public.staging_wnfc_teams (team_index, team_name, division, team_website, h
 -- Data for Name: team; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.team (team_id, name, division, address, titles, president, tv_tag) FROM stdin;
-50	Oregon Ravens	Northwest	Portland, OR	0	\N	ORA
-57	Washington Prodigy	Atlantic	Washington, DC	0	\N	WPR
-40	Atlanta Truth	Atlantic	Atlanta, GA	0	\N	ATR
-41	Chicago Winds	Central	Chicago, IL	0	\N	CWI
-42	Denver Bandits	Central	Denver, CO	0	\N	DBA
-43	Florida Avengers	Atlantic	Orlando, FL	0	\N	FAV
-58	Golden State Storm	Pacific	Oakland, CA	0	\N	GSS
-44	Houston Mambas	Central	Houston, TX	0	\N	HMA
-45	Jersey Shore Wave	Atlantic	Toms River, NJ	0	\N	JSW
-46	Kansas City Glory	Northwest	Kansas City, MO	0	\N	KCG
-47	Las Vegas Silver Stars	Pacific	Las Vegas, NV	0	\N	LVS
-48	Los Angeles Legends	Pacific	Los Angeles, CA	0	\N	LAL
-49	Mississippi Panthers	Central	Jackson, MS	0	\N	MPA
-51	Philly Phantomz	Atlantic	Philadelphia, PA	0	\N	PPH
-52	San Diego Rebellion	Pacific	San Diego, CA	0	\N	SDR
-53	Seattle Majestics	Northwest	Seattle, WA	0	\N	SMA
-54	Tennesse Trojans	Central	Nashville, TN	0	\N	TTR
-55	Texas Elite Spartans	Central	Dallas, TX	0	\N	TES
-56	Utah Falconz	Northwest	Salt Lake City, UT	0	\N	UFA
-39	Atlanta Phoenix	Atlantic	Atlanta, GA	0	\N	APH
+COPY public.team (team_id, name, division, address, titles, president, tv_tag, phone, email) FROM stdin;
+46	Kansas City Glory	Northwest	Kansas City, MO	0	\N	KCG	\N	kcglory@wnfcfootball.com
+41	Chicago Winds	Central	Chicago, IL	0	\N	CWI	\N	chicagowinds@wnfcfootball.com
+45	Jersey Shore Wave	Atlantic	Toms River, NJ	0	\N	JSW	\N	wave@jerseyshorefb.com
+48	Los Angeles Legends	Pacific	Los Angeles, CA	0	\N	LAL	424-232-8902	info@lalegendsfootball.com
+55	Texas Elite Spartans	Central	Dallas, TX	0	\N	TES	469-986-5672	txelitespartans@wnfcfootball.com
+58	Golden State Storm	Pacific	Oakland, CA	0	\N	GSS	\N	\N
+50	Oregon Ravens	Northwest	Portland, OR	0	\N	ORA	503-853-1919	oregonravensfootball@gmail.com
+57	Washington Prodigy	Atlantic	Washington, DC	0	\N	WPR	215-327-4825	prodigy@wnfcfootball.com
+40	Atlanta Truth	Atlantic	Atlanta, GA	0	\N	ATR	943-888-2286	atlantatruth@wnfcfootball.com
+42	Denver Bandits	Central	Denver, CO	0	\N	DBA	303-669-0581	Denverbandits@wnfcfootball.com
+43	Florida Avengers	Atlantic	Orlando, FL	0	\N	FAV	904-334-5026	floridaavengers@wnfcfootball.com
+44	Houston Mambas	Central	Houston, TX	0	\N	HMA	832-626-2212	Info@houstonmambas.com
+47	Las Vegas Silver Stars	Pacific	Las Vegas, NV	0	\N	LVS	702-595-4811	lvsilverstarsfootball@gmail.com
+49	Mississippi Panthers	Central	Jackson, MS	0	\N	MPA	601-451-2498	Mspanthers@wnfcfootball.com
+51	Philly Phantomz	Atlantic	Philadelphia, PA	0	\N	PPH	610-931-4150	Info@phillyphantomz.com
+52	San Diego Rebellion	Pacific	San Diego, CA	0	\N	SDR	650-521-1756	sdrebellion@wnfcfootball.com
+53	Seattle Majestics	Northwest	Seattle, WA	0	\N	SMA	206-696-0197	seattlemajestics@wnfcfootball.com
+54	Tennesse Trojans	Central	Nashville, TN	0	\N	TTR	615-640-1382	tntrojans@wnfcfootball.com
+56	Utah Falconz	Northwest	Salt Lake City, UT	0	\N	UFA	859-816-3671	Utahfalconz@gmail.com
+39	Atlanta Phoenix	Atlantic	Atlanta, GA	0	\N	APH	404-662-1242	Atlantaphoenix@wnfcfootball.com
 \.
 
 
@@ -12258,5 +12260,5 @@ ALTER TABLE ONLY public.trade
 -- PostgreSQL database dump complete
 --
 
-\unrestrict SBe5dKpfREOeDvEvXSeYNDxIrr3Y2bNefKbBoKCZFQzfYF0uco4BwuJvkEMdwbd
+\unrestrict F18aRKiyYv5ujjXLfTYwf5ndD0RYFe72wiYxBh5Om1luB0BwG63h58zrwZqfOhC
 

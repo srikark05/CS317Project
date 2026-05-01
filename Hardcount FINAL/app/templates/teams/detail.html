@@ -32,6 +32,18 @@
     <div class="stat-label">Championships</div>
     <div class="stat-value">{{ team.titles }}</div>
   </div>
+  <div class="stat-card">
+    <div class="stat-label">Phone</div>
+    <div class="stat-value" style="font-size:1rem">{{ team.phone or '—' }}</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Email</div>
+    <div class="stat-value" style="font-size:0.85rem;word-break:break-all;">
+      {% if team.email %}
+      <a href="mailto:{{ team.email }}" style="color:#013369;">{{ team.email }}</a>
+      {% else %}—{% endif %}
+    </div>
+  </div>
 </div>
 
 <div class="table-wrapper">
