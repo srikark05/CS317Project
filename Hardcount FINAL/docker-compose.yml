@@ -26,6 +26,8 @@ services:
       DB_NAME: hardcount
       SECRET_KEY: hardcount-dev-secret-key-2026
       ADMIN_PASSWORD: ADMIN
+    volumes:
+      - ./app/static/images:/app/app/static/images:ro
     depends_on:
       db:
         condition: service_healthy
